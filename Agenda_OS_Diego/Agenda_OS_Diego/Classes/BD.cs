@@ -10,14 +10,14 @@ using System.Windows.Forms;
 namespace Agenda_OS_Diego.Classes
 {
     class BD
-    {
+    {   //conexão com banco de dados
         public MySqlConnection con;
 
         public BD() 
         {
             string host = "localhost";
             string db = "agenda";
-            string port = "3308";
+            string port = "3306";
             string user = "root";
             string pass = " ";
             string constring = "datasource =" + host + "; database=" + db + "; port=" + port + "; username=" + user + "; password=" + pass + "; SslMode=none";
@@ -49,7 +49,6 @@ namespace Agenda_OS_Diego.Classes
         //CREATE
         public void Criar_Dados() 
         {
-
 
                 string CommandText = "INSERT INTO empresa VALUES (null, @razao, @fantasia, @cnpj, @rua, @bairro, @cidade, @numero, @cep, @telefone, @celular) ";
                 MySqlCommand cmd = new MySqlCommand(CommandText, con);
@@ -101,15 +100,14 @@ namespace Agenda_OS_Diego.Classes
         public void Deletar_Dados(string id) 
         {
             con.Open();
-            using (MySqlCommand cmd = new MySqlCommand())
-            {
-                cmd.CommandText = "DELETE FROM empresa WHERE id=@id ";
+            string query = "DELETE FROM empresa WHERE id=@id";
+            MySqlCommand cmd = new MySqlCommand(query, con);
+            
+            cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
 
-                cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
-
-                cmd.ExecuteNonQuery();
-                con.Close();
-            }
+            cmd.ExecuteNonQuery();
+            con.Close();
+            
         }
 
         //Listar DTV
@@ -119,7 +117,8 @@ namespace Agenda_OS_Diego.Classes
             string query = "SELECT * FROM empresa";
             MySqlDataAdapter MDA = new MySqlDataAdapter(query, con);
             MDA.Fill(dt);
-            dgv.DataSource = dt; 
+            dgv.DataSource = dt;
+            con.Close();
         }
     }
 }

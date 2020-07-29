@@ -43,8 +43,11 @@
             this.dgv_empresa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_empresa.Location = new System.Drawing.Point(1, 171);
             this.dgv_empresa.Name = "dgv_empresa";
+            this.dgv_empresa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_empresa.Size = new System.Drawing.Size(967, 334);
             this.dgv_empresa.TabIndex = 2;
+            this.dgv_empresa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_empresa_CellClick);
+            
             // 
             // btn_editar
             // 

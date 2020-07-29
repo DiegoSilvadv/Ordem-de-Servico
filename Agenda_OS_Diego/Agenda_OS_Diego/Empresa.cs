@@ -59,8 +59,21 @@ namespace Agenda_OS_Diego
 
         private void btn_excluir_Click(object sender, EventArgs e)
         {
-            int linha = dgv_empresa.CurrentCell.RowIndex;
-            dgv_empresa.Rows.RemoveAt(linha);
+            string id = crud.id;
+            crud.Deletar_Dados(id);
+            //int linha = dgv_empresa.CurrentCell.RowIndex;
+            //dgv_empresa.Rows.RemoveAt(linha);
+        }
+
+        
+
+        private void dgv_empresa_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+                //selecionando uma linha para enviar o id para ser deletado
+                dgv_empresa.CurrentRow.Selected = true;
+                crud.id = dgv_empresa.Rows[e.RowIndex].Cells["id"].FormattedValue.ToString();
+                MessageBox.Show("favor selecionar um item");
+            
         }
 
         //deletar empresa
