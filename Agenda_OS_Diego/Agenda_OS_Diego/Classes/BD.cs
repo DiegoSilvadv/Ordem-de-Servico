@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Data;
 
+
 namespace Agenda_OS_Diego.Classes
 {
     class BD
@@ -16,7 +17,7 @@ namespace Agenda_OS_Diego.Classes
         {
             string host = "localhost";
             string db = "agenda";
-            string port = "3306";
+            string port = "3308";
             string user = "root";
             string pass = "";
             string constring = "datasource =" + host + "; database=" + db + "; port=" + port + "; username=" + user + "; password=" + pass + "; SslMode=none";
@@ -24,16 +25,19 @@ namespace Agenda_OS_Diego.Classes
         }
     }
 
-    class CRUD : BD 
+    class CRUD:BD 
     {
-        public string ID { set; get; }
-        public string CNPJ { set; get;}
-        public string RAZAO { set; get;}
-        public string NOME { set; get;}
-        public string ENDERECO { set; get;}
-        public string CEP { set; get;}
-        public string TELEFONE { set; get;}
-        public string CELULAR { set; get;}
+        public string id { set; get; }
+        public string razao { set; get;}
+        public string fantasia { set; get; }
+        public string cnpj { set; get; }
+        public string rua { set; get; }
+        public string bairro { set; get;}
+        public string cidade { set; get; }
+        public string numero { set; get; }
+        public string cep { set; get;}
+        public string telefone { set; get;}
+        public string celular { set; get;}
 
 
 
@@ -47,15 +51,18 @@ namespace Agenda_OS_Diego.Classes
         {
             con.Open();
             using (MySqlCommand cmd = new MySqlCommand()) {
-                cmd.CommandText = "INSERT INTO `empresa` (`cnpj`, `razao`, `nome`, `endereco`, `cep`, `telefone`, `celular`) VALUES (NULL, '@CNPJ', '@RAZAO', '@NOME', '@ENDERECO', '@CEP', '@TELEFONE', '@CELULAR') ";
+                cmd.CommandText = "INSERT INTO `empresa` VALUES (0, '@razao', '@fantasia', '@cnpj', '@rua', '@bairro', '@cidade', '@numero', '@cep', '@telefone', '@celular') ";
 
-                cmd.Parameters.Add("@CNPJ", MySqlDbType.VarChar).Value = CNPJ;
-                cmd.Parameters.Add("@RAZAO", MySqlDbType.VarChar).Value = RAZAO;
-                cmd.Parameters.Add("@NOME", MySqlDbType.VarChar).Value = NOME;
-                cmd.Parameters.Add("@ENDERECO", MySqlDbType.VarChar).Value = ENDERECO;
-                cmd.Parameters.Add("@CEP", MySqlDbType.VarChar).Value = CEP;
-                cmd.Parameters.Add("@TELEFONE", MySqlDbType.VarChar).Value = TELEFONE;
-                cmd.Parameters.Add("@CELULAR", MySqlDbType.VarChar).Value = CELULAR;
+                cmd.Parameters.Add("@razao", MySqlDbType.VarChar).Value = razao;
+                cmd.Parameters.Add("@fantasia", MySqlDbType.VarChar).Value = fantasia;
+                cmd.Parameters.Add("@cnpj", MySqlDbType.VarChar).Value = cnpj;
+                cmd.Parameters.Add("@rua", MySqlDbType.VarChar).Value = rua;
+                cmd.Parameters.Add("@bairro", MySqlDbType.VarChar).Value = bairro;
+                cmd.Parameters.Add("@cidade", MySqlDbType.VarChar).Value = cidade;
+                cmd.Parameters.Add("@numero", MySqlDbType.VarChar).Value = numero;
+                cmd.Parameters.Add("@cep", MySqlDbType.VarChar).Value = cep;
+                cmd.Parameters.Add("@telefone", MySqlDbType.VarChar).Value = telefone;
+                cmd.Parameters.Add("@celular", MySqlDbType.VarChar).Value = celular;
 
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -68,18 +75,20 @@ namespace Agenda_OS_Diego.Classes
             con.Open();
             using (MySqlCommand cmd = new MySqlCommand())
             {
-                cmd.CommandText = "UPDATE empresa SET cnpj = @CNPJ, razao=@RAZAO, nome=@NOME, endereco=@ENDERECO, cep=@CEP, telefone=@TELEFONE, celular=@CELULAR WHERE id=@ID ";
+                cmd.CommandText = "UPDATE empresa SET razao = @razao, fantasia=@fantasia, nome=@NOME, cnpj=@cnpj, rua=@rua, bairro=@bairro, cidade=@cidade, numero=@numero, cep=@cep, telefone=@telefone, celular=@celular  WHERE id=@id ";
+                
+                cmd.Parameters.Add("@razao", MySqlDbType.VarChar).Value = razao;
+                cmd.Parameters.Add("@fantasia", MySqlDbType.VarChar).Value = fantasia;
+                cmd.Parameters.Add("@cnpj", MySqlDbType.VarChar).Value = cnpj;
+                cmd.Parameters.Add("@rua", MySqlDbType.VarChar).Value = rua;
+                cmd.Parameters.Add("@bairro", MySqlDbType.VarChar).Value = bairro;
+                cmd.Parameters.Add("@cidade", MySqlDbType.VarChar).Value = cidade;
+                cmd.Parameters.Add("@numero", MySqlDbType.VarChar).Value = numero;
+                cmd.Parameters.Add("@cep", MySqlDbType.VarChar).Value = cep;
+                cmd.Parameters.Add("@telefone", MySqlDbType.VarChar).Value = telefone;
+                cmd.Parameters.Add("@celular", MySqlDbType.VarChar).Value = celular;
 
-                cmd.Parameters.Add("@CNPJ", MySqlDbType.VarChar).Value = CNPJ;
-                cmd.Parameters.Add("@RAZAO", MySqlDbType.VarChar).Value = RAZAO;
-                cmd.Parameters.Add("@NOME", MySqlDbType.VarChar).Value = NOME;
-                cmd.Parameters.Add("@ENDERECO", MySqlDbType.VarChar).Value = ENDERECO;
-                cmd.Parameters.Add("@CEP", MySqlDbType.VarChar).Value = CEP;
-                cmd.Parameters.Add("@TELEFONE", MySqlDbType.VarChar).Value = TELEFONE;
-                cmd.Parameters.Add("@CELULAR", MySqlDbType.VarChar).Value = CELULAR;
-
-
-                cmd.Parameters.Add("@ID", MySqlDbType.VarChar).Value = ID;
+                cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
 
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -92,9 +101,9 @@ namespace Agenda_OS_Diego.Classes
             con.Open();
             using (MySqlCommand cmd = new MySqlCommand())
             {
-                cmd.CommandText = "DELETE FROM empresa WHERE id=@ID ";
+                cmd.CommandText = "DELETE FROM empresa WHERE id=@id ";
 
-                cmd.Parameters.Add("@ID", MySqlDbType.VarChar).Value = ID;
+                cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
 
                 cmd.ExecuteNonQuery();
                 con.Close();

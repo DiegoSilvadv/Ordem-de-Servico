@@ -16,7 +16,7 @@ namespace Agenda_OS_Diego
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Empresa());
+            Application.Run(new Home());
         }
     }
 }
