@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Data;
-
+using System.Windows.Forms;
 
 namespace Agenda_OS_Diego.Classes
 {
@@ -111,13 +111,16 @@ namespace Agenda_OS_Diego.Classes
         }
 
         //Read function
-        public void Listar_Dados()
+        public void Listar_Dados(DataGridView dgv)
         {
-            dt.Clear();
+            con.Open();
+            //dt.Clear();
             string query = "SELECT * FROM empresa";
             MySqlDataAdapter MDA = new MySqlDataAdapter(query, con);
-            MDA.Fill(ds);
-            dt = ds.Tables[0];
+            MDA.Fill(dt);
+            dgv.DataSource = dt; 
+            //dt = ds.Tables[0];
+            
         }
     }
 }

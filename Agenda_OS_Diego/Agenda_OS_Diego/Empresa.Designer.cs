@@ -107,6 +107,7 @@
             this.Controls.Add(this.dgv_empresa);
             this.Name = "Empresa";
             this.Text = "Empresa";
+            this.Load += new System.EventHandler(this.Empresa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_empresa)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

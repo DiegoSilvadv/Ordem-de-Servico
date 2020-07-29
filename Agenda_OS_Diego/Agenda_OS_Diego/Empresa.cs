@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Agenda_OS_Diego.Classes;
 using Agenda_OS_Diego;
+using MySql.Data.MySqlClient;
+using MySql.Data;
 
 
 namespace Agenda_OS_Diego
@@ -44,7 +46,7 @@ namespace Agenda_OS_Diego
         public void ListarEmpresa() 
         {
             dgv_empresa.DataSource = null;
-            crud.Listar_Dados();
+            crud.Listar_Dados(dgv_empresa);
             dgv_empresa.DataSource = crud.dt;
         }
 
@@ -64,8 +66,13 @@ namespace Agenda_OS_Diego
             }
         }
 
+        private void Empresa_Load(object sender, EventArgs e)
+        {
+            crud.Listar_Dados(dgv_empresa);
+        }
+
         //deletar empresa
-        
-        
+
+
     }
 }
