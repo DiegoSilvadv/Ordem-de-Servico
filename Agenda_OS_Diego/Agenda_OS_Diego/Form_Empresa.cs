@@ -23,7 +23,9 @@ namespace Agenda_OS_Diego
 
         private void btn_cadastrar_empresa_Click(object sender, EventArgs e)
         {
+            
             CriarEmpresa();
+            crud.Criar_Dados();
         }
 
         //Pegando os dados dos campos do formulario para inserir no banco
@@ -40,7 +42,6 @@ namespace Agenda_OS_Diego
             crud.telefone = mtb_telefone.Text;
             crud.celular = mtb_celular.Text;
 
-            crud.Criar_Dados();
         }
 
         public void AlterarEmpresa() 

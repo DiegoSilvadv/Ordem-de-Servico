@@ -12,8 +12,8 @@ create table empresa(
   cidade VARCHAR(100),
   numero VARCHAR(5),
   cep CHAR(10),
-  telefone VARCHAR(14),
-  celular VARCHAR(16)
+  telefone VARCHAR(20),
+  celular VARCHAR(20)
 ) ENGINE = innodb;
 
 insert into empresa VALUES(0, "nike", "nike ltd", "12345678912345",

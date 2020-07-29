@@ -50,25 +50,17 @@ namespace Agenda_OS_Diego
             dgv_empresa.DataSource = crud.dt;
         }
 
-        private void dgv_empresa_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridView enviarAoGrid = (DataGridView) sender;
-            try
-            {
-                if (dgv_empresa.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
-                {
-                    
-                }
-            }
-            catch 
-            {
 
-            }
-        }
 
         private void Empresa_Load(object sender, EventArgs e)
         {
             crud.Listar_Dados(dgv_empresa);
+        }
+
+        private void btn_excluir_Click(object sender, EventArgs e)
+        {
+            int linha = dgv_empresa.CurrentCell.RowIndex;
+            dgv_empresa.Rows.RemoveAt(linha);
         }
 
         //deletar empresa

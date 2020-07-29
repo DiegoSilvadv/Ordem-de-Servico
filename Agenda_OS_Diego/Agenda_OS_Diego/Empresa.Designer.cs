@@ -45,7 +45,6 @@
             this.dgv_empresa.Name = "dgv_empresa";
             this.dgv_empresa.Size = new System.Drawing.Size(967, 334);
             this.dgv_empresa.TabIndex = 2;
-            this.dgv_empresa.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_empresa_CellContentClick);
             // 
             // btn_editar
             // 
@@ -73,6 +72,7 @@
             this.btn_excluir.TabIndex = 4;
             this.btn_excluir.Text = "Excluir";
             this.btn_excluir.UseVisualStyleBackColor = false;
+            this.btn_excluir.Click += new System.EventHandler(this.btn_excluir_Click);
             // 
             // btn_novo
             // 

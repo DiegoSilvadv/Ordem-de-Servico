@@ -19,7 +19,7 @@ namespace Agenda_OS_Diego.Classes
             string db = "agenda";
             string port = "3308";
             string user = "root";
-            string pass = "";
+            string pass = " ";
             string constring = "datasource =" + host + "; database=" + db + "; port=" + port + "; username=" + user + "; password=" + pass + "; SslMode=none";
             con = new MySqlConnection(constring);
         }
@@ -49,24 +49,26 @@ namespace Agenda_OS_Diego.Classes
         //CREATE
         public void Criar_Dados() 
         {
-            con.Open();
-            using (MySqlCommand cmd = new MySqlCommand()) {
-                cmd.CommandText = "INSERT INTO `empresa` VALUES (0, '@razao', '@fantasia', '@cnpj', '@rua', '@bairro', '@cidade', '@numero', '@cep', '@telefone', '@celular') ";
 
-                cmd.Parameters.Add("@razao", MySqlDbType.VarChar).Value = razao;
-                cmd.Parameters.Add("@fantasia", MySqlDbType.VarChar).Value = fantasia;
-                cmd.Parameters.Add("@cnpj", MySqlDbType.VarChar).Value = cnpj;
-                cmd.Parameters.Add("@rua", MySqlDbType.VarChar).Value = rua;
-                cmd.Parameters.Add("@bairro", MySqlDbType.VarChar).Value = bairro;
-                cmd.Parameters.Add("@cidade", MySqlDbType.VarChar).Value = cidade;
-                cmd.Parameters.Add("@numero", MySqlDbType.VarChar).Value = numero;
-                cmd.Parameters.Add("@cep", MySqlDbType.VarChar).Value = cep;
-                cmd.Parameters.Add("@telefone", MySqlDbType.VarChar).Value = telefone;
-                cmd.Parameters.Add("@celular", MySqlDbType.VarChar).Value = celular;
 
+                string CommandText = "INSERT INTO empresa VALUES (null, @razao, @fantasia, @cnpj, @rua, @bairro, @cidade, @numero, @cep, @telefone, @celular) ";
+                MySqlCommand cmd = new MySqlCommand(CommandText, con);
+
+                cmd.Parameters.AddWithValue("@razao", razao);
+                cmd.Parameters.AddWithValue("@fantasia", fantasia);
+                cmd.Parameters.AddWithValue("@cnpj", cnpj);
+                cmd.Parameters.AddWithValue("@rua", rua);
+                cmd.Parameters.AddWithValue("@bairro", bairro);
+                cmd.Parameters.AddWithValue("@cidade", cidade);
+                cmd.Parameters.AddWithValue("@numero", numero);
+                cmd.Parameters.AddWithValue("@cep", cep);
+                cmd.Parameters.AddWithValue("@telefone", telefone);
+                cmd.Parameters.AddWithValue("@celular", celular);
+                con.Open();
                 cmd.ExecuteNonQuery();
+                cmd.Parameters.Clear();
                 con.Close();
-            }
+            
         }
 
         //UPDATE 
@@ -96,7 +98,7 @@ namespace Agenda_OS_Diego.Classes
         }
 
         //DELETE
-        public void Deletar_Dados() 
+        public void Deletar_Dados(string id) 
         {
             con.Open();
             using (MySqlCommand cmd = new MySqlCommand())
@@ -110,17 +112,14 @@ namespace Agenda_OS_Diego.Classes
             }
         }
 
-        //Read function
+        //Listar DTV
         public void Listar_Dados(DataGridView dgv)
         {
             con.Open();
-            //dt.Clear();
             string query = "SELECT * FROM empresa";
             MySqlDataAdapter MDA = new MySqlDataAdapter(query, con);
             MDA.Fill(dt);
             dgv.DataSource = dt; 
-            //dt = ds.Tables[0];
-            
         }
     }
 }
