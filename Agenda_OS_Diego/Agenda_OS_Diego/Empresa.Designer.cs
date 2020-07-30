@@ -32,7 +32,7 @@
             this.btn_editar = new System.Windows.Forms.Button();
             this.btn_excluir = new System.Windows.Forms.Button();
             this.btn_novo = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_pesquisa = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_cadastrar_empresa = new System.Windows.Forms.Button();
             this.gb_empresa = new System.Windows.Forms.GroupBox();
@@ -59,6 +59,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txt_razao = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.btn_pesquisar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_empresa)).BeginInit();
             this.gb_empresa.SuspendLayout();
             this.SuspendLayout();
@@ -116,12 +117,13 @@
             this.btn_novo.UseVisualStyleBackColor = false;
             this.btn_novo.Click += new System.EventHandler(this.btn_novo_Click);
             // 
-            // textBox1
+            // txt_pesquisa
             // 
-            this.textBox1.Location = new System.Drawing.Point(83, 25);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(398, 20);
-            this.textBox1.TabIndex = 6;
+            this.txt_pesquisa.Location = new System.Drawing.Point(83, 24);
+            this.txt_pesquisa.Name = "txt_pesquisa";
+            this.txt_pesquisa.Size = new System.Drawing.Size(398, 20);
+            this.txt_pesquisa.TabIndex = 6;
+            this.txt_pesquisa.TextChanged += new System.EventHandler(this.txt_pesquisa_TextChanged);
             // 
             // panel1
             // 
@@ -367,16 +369,27 @@
             this.label11.TabIndex = 10;
             this.label11.Text = "label11";
             // 
+            // btn_pesquisar
+            // 
+            this.btn_pesquisar.Location = new System.Drawing.Point(516, 22);
+            this.btn_pesquisar.Name = "btn_pesquisar";
+            this.btn_pesquisar.Size = new System.Drawing.Size(75, 23);
+            this.btn_pesquisar.TabIndex = 12;
+            this.btn_pesquisar.Text = "pesquisar";
+            this.btn_pesquisar.UseVisualStyleBackColor = true;
+           
+            // 
             // Empresa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 749);
+            this.Controls.Add(this.btn_pesquisar);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.btn_cadastrar_empresa);
             this.Controls.Add(this.gb_empresa);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_pesquisa);
             this.Controls.Add(this.btn_novo);
             this.Controls.Add(this.btn_excluir);
             this.Controls.Add(this.btn_editar);
@@ -398,7 +411,7 @@
         private System.Windows.Forms.Button btn_editar;
         private System.Windows.Forms.Button btn_excluir;
         private System.Windows.Forms.Button btn_novo;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_pesquisa;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_cadastrar_empresa;
         private System.Windows.Forms.GroupBox gb_empresa;
@@ -425,5 +438,6 @@
         private System.Windows.Forms.Label lbl_id;
         private System.Windows.Forms.Label ID;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button btn_pesquisar;
     }
 }

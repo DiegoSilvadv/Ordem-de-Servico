@@ -19,7 +19,7 @@ namespace Agenda_OS_Diego
     {   
         //instanciando a class crud
         CRUD crud = new CRUD();
-        Form_Empresa frmempresa = new Form_Empresa();
+       
 
         public Empresa()
         {
@@ -28,14 +28,12 @@ namespace Agenda_OS_Diego
         //adicionar uma empresa
         private void btn_novo_Click(object sender, EventArgs e)
         {
-            Form_Empresa frm_empresa = new Form_Empresa();
-            this.Hide();
-            frm_empresa.ShowDialog();
+            
         }
         //editar uma empresa
         private void btn_editar_Click(object sender, EventArgs e)
         {
-            PuxarDadosEmpresa();  
+            PuxarDadosEmpresa();
         }
         
         //metodo para listar uma empresa
@@ -52,11 +50,10 @@ namespace Agenda_OS_Diego
         }
 
         private void btn_excluir_Click(object sender, EventArgs e)
-        {
-            string id = crud.id;
+        {   
+            //id passado para fazer a exclusão
+            string id = dgv_empresa.CurrentRow.Cells["id"].Value.ToString();
             crud.Deletar_Dados(id);
-
-            
         }
 
         public void PuxarDadosEmpresa() {
@@ -95,17 +92,43 @@ namespace Agenda_OS_Diego
             mtb_celular.Text = crud.celular;
         }
 
+        public void CamposDeCadastro() {
+            crud.id = lbl_id.Text;
+            crud.razao = txt_razao.Text;
+            crud.fantasia = txt_fantasia.Text;
+            crud.cnpj = mtb_cnpj.Text;
+            crud.rua = txt_rua.Text;
+            crud.bairro = txt_bairro.Text;
+            crud.cidade = txt_cidade.Text;
+            crud.numero = txt_numero.Text;
+            crud.cep = mtb_cep.Text;
+            crud.telefone = mtb_telefone.Text;
+            crud.celular = mtb_telefone.Text;
+        }
+
         private void btn_cadastrar_empresa_Click(object sender, EventArgs e)
         {
             if (btn_cadastrar_empresa.Text == "Gravar")
             {
-                PuxarCampos();
-                crud.Alterar_Dados(lbl_id.Text);
+               
+                CamposDeCadastro();
+                MessageBox.Show("ola"+crud.razao);
+
+                crud.Alterar_Dados();
             }
-            else {
-                PuxarCampos();
+            else if(btn_cadastrar_empresa.Text == "Cadastrar")
+            {
+                CamposDeCadastro();
                 crud.Criar_Dados();
+                MessageBox.Show("Cadastrado com sucesso!");
             }
+        }
+
+        private void txt_pesquisa_TextChanged(object sender, EventArgs e)
+        {
+            
+            string razao = txt_pesquisa.Text;
+            crud.Listar_Dados_Especificos(dgv_empresa, razao);
         }
     }
 }

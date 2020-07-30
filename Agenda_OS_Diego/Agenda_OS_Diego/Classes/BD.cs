@@ -17,7 +17,7 @@ namespace Agenda_OS_Diego.Classes
         {
             string host = "localhost";
             string db = "agenda";
-            string port = "3308";
+            string port = "3306";
             string user = "root";
             string pass = " ";
             string constring = "datasource =" + host + "; database=" + db + "; port=" + port + "; username=" + user + "; password=" + pass + "; SslMode=none";
@@ -44,58 +44,52 @@ namespace Agenda_OS_Diego.Classes
         private DataSet ds = new DataSet();
 
         //CREATE
-        public void Criar_Dados() 
+        public void Criar_Dados()
         {
+            con.Open();
+            string CommandText = "INSERT INTO empresa VALUES (0, @razao, @fantasia, @cnpj, @rua, @bairro, @cidade, @numero, @cep, @telefone, @celular) ";
+            MySqlCommand cmd = new MySqlCommand(CommandText, con);
 
-                string CommandText = "INSERT INTO empresa VALUES (null, @razao, @fantasia, @cnpj, @rua, @bairro, @cidade, @numero, @cep, @telefone, @celular) ";
-                MySqlCommand cmd = new MySqlCommand(CommandText, con);
-
-                cmd.Parameters.AddWithValue("@razao", razao);
-                cmd.Parameters.AddWithValue("@fantasia", fantasia);
-                cmd.Parameters.AddWithValue("@cnpj", cnpj);
-                cmd.Parameters.AddWithValue("@rua", rua);
-                cmd.Parameters.AddWithValue("@bairro", bairro);
-                cmd.Parameters.AddWithValue("@cidade", cidade);
-                cmd.Parameters.AddWithValue("@numero", numero);
-                cmd.Parameters.AddWithValue("@cep", cep);
-                cmd.Parameters.AddWithValue("@telefone", telefone);
-                cmd.Parameters.AddWithValue("@celular", celular);
-                con.Open();
-                cmd.ExecuteNonQuery();
-                cmd.Parameters.Clear();
-                con.Close();
-            
+            cmd.Parameters.AddWithValue("@razao", razao);
+            cmd.Parameters.AddWithValue("@fantasia", fantasia);
+            cmd.Parameters.AddWithValue("@cnpj", cnpj);
+            cmd.Parameters.AddWithValue("@rua", rua);
+            cmd.Parameters.AddWithValue("@bairro", bairro);
+            cmd.Parameters.AddWithValue("@cidade", cidade);
+            cmd.Parameters.AddWithValue("@numero", numero);
+            cmd.Parameters.AddWithValue("@cep", cep);
+            cmd.Parameters.AddWithValue("@telefone", telefone);
+            cmd.Parameters.AddWithValue("@celular", celular);
+           
+            cmd.ExecuteNonQuery();
+            cmd.Parameters.Clear();
+            con.Close();
+           
         }
 
         //UPDATE 
-        public void Alterar_Dados(string id) 
+        public void Alterar_Dados() 
         {
             con.Open();
-
-            string query = "UPDATE empresa SET razao = @razao, fantasia=@fantasia, cnpj=@cnpj, cnpj=@cnpj, rua=@rua, bairro=@bairro, cidade=@cidade, numero=@numero, cep=@cep, telefone=@telefone, celular=@celular  WHERE id=@id ";
+            string query = "UPDATE empresa SET razao=@razao, fantasia=@fantasia, cnpj=@cnpj, rua=@rua, bairro=@bairro, cidade=@cidade, numero=@numero, cep=@cep, telefone=@telefone, celular=@celular WHERE id=@id ";
             MySqlCommand cmd = new MySqlCommand(query, con);
-            
-            
-                
-                
-                cmd.Parameters.Add("@razao", MySqlDbType.VarChar).Value = razao;
-                cmd.Parameters.Add("@fantasia", MySqlDbType.VarChar).Value = fantasia;
-                cmd.Parameters.Add("@cnpj", MySqlDbType.VarChar).Value = cnpj;
-                cmd.Parameters.Add("@rua", MySqlDbType.VarChar).Value = rua;
-                cmd.Parameters.Add("@bairro", MySqlDbType.VarChar).Value = bairro;
-                cmd.Parameters.Add("@cidade", MySqlDbType.VarChar).Value = cidade;
-                cmd.Parameters.Add("@numero", MySqlDbType.VarChar).Value = numero;
-                cmd.Parameters.Add("@cep", MySqlDbType.VarChar).Value = cep;
-                cmd.Parameters.Add("@telefone", MySqlDbType.VarChar).Value = telefone;
-                cmd.Parameters.Add("@celular", MySqlDbType.VarChar).Value = celular;
+            MessageBox.Show("" + id);
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@razao", razao);
+            cmd.Parameters.AddWithValue("@fantasia", fantasia);
+            cmd.Parameters.AddWithValue("@cnpj", cnpj);
+            cmd.Parameters.AddWithValue("@rua", rua);
+            cmd.Parameters.AddWithValue("@bairro", bairro);
+            cmd.Parameters.AddWithValue("@cidade", cidade);
+            cmd.Parameters.AddWithValue("@numero", numero);
+            cmd.Parameters.AddWithValue("@cep", cep);
+            cmd.Parameters.AddWithValue("@telefone", telefone);
+            cmd.Parameters.AddWithValue("@celular", celular);
 
-                cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
-
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Alterado com sucesso");
-            
-                con.Close();
-            
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Alterado com sucesso");
+            cmd.Parameters.Clear();
+            con.Close();
         }
 
         //DELETE
@@ -107,8 +101,8 @@ namespace Agenda_OS_Diego.Classes
             cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
             cmd.ExecuteNonQuery();
             MessageBox.Show("Deletado com sucesso!");
-            con.Close();
-            
+            cmd.Parameters.Clear();
+            con.Close();  
         }
 
         //Listar DTV
@@ -122,8 +116,16 @@ namespace Agenda_OS_Diego.Classes
             con.Close();
         }
 
-        
+        public void Listar_Dados_Especificos(DataGridView dgv, string razao)
+        {
+            con.Open();
+            string query = "SELECT * FROM empresa WHERE razao like'%" + razao + "%';";
+            MySqlDataAdapter MDA = new MySqlDataAdapter(query, con);
+            MDA.Fill(dt);
+            dgv.DataSource = dt;
+            con.Close();
+        }
 
-          
+
     }
 }
