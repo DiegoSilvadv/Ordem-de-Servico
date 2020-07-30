@@ -17,7 +17,7 @@ namespace Agenda_OS_Diego.Classes
         {
             string host = "localhost";
             string db = "agenda";
-            string port = "3306";
+            string port = "3308";
             string user = "root";
             string pass = " ";
             string constring = "datasource =" + host + "; database=" + db + "; port=" + port + "; username=" + user + "; password=" + pass + "; SslMode=none";
@@ -39,12 +39,9 @@ namespace Agenda_OS_Diego.Classes
         public string telefone { set; get;}
         public string celular { set; get;}
 
-
-
         //Read Properties
         public DataTable dt = new DataTable();
         private DataSet ds = new DataSet();
-
 
         //CREATE
         public void Criar_Dados() 
@@ -71,12 +68,15 @@ namespace Agenda_OS_Diego.Classes
         }
 
         //UPDATE 
-        public void Alterar_Dados() 
+        public void Alterar_Dados(string id) 
         {
             con.Open();
-            using (MySqlCommand cmd = new MySqlCommand())
-            {
-                cmd.CommandText = "UPDATE empresa SET razao = @razao, fantasia=@fantasia, nome=@NOME, cnpj=@cnpj, rua=@rua, bairro=@bairro, cidade=@cidade, numero=@numero, cep=@cep, telefone=@telefone, celular=@celular  WHERE id=@id ";
+
+            string query = "UPDATE empresa SET razao = @razao, fantasia=@fantasia, cnpj=@cnpj, cnpj=@cnpj, rua=@rua, bairro=@bairro, cidade=@cidade, numero=@numero, cep=@cep, telefone=@telefone, celular=@celular  WHERE id=@id ";
+            MySqlCommand cmd = new MySqlCommand(query, con);
+            
+            
+                
                 
                 cmd.Parameters.Add("@razao", MySqlDbType.VarChar).Value = razao;
                 cmd.Parameters.Add("@fantasia", MySqlDbType.VarChar).Value = fantasia;
@@ -92,8 +92,10 @@ namespace Agenda_OS_Diego.Classes
                 cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
 
                 cmd.ExecuteNonQuery();
+                MessageBox.Show("Alterado com sucesso");
+            
                 con.Close();
-            }
+            
         }
 
         //DELETE
@@ -102,10 +104,9 @@ namespace Agenda_OS_Diego.Classes
             con.Open();
             string query = "DELETE FROM empresa WHERE id=@id";
             MySqlCommand cmd = new MySqlCommand(query, con);
-            
             cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
-
             cmd.ExecuteNonQuery();
+            MessageBox.Show("Deletado com sucesso!");
             con.Close();
             
         }
@@ -120,5 +121,9 @@ namespace Agenda_OS_Diego.Classes
             dgv.DataSource = dt;
             con.Close();
         }
+
+        
+
+          
     }
 }

@@ -19,38 +19,32 @@ namespace Agenda_OS_Diego
     {   
         //instanciando a class crud
         CRUD crud = new CRUD();
+        Form_Empresa frmempresa = new Form_Empresa();
 
         public Empresa()
         {
             InitializeComponent();
-            Form_Empresa frmempresa = new Form_Empresa();
-            frmempresa.PuxarDados();
         }
-
+        //adicionar uma empresa
         private void btn_novo_Click(object sender, EventArgs e)
         {
             Form_Empresa frm_empresa = new Form_Empresa();
             this.Hide();
             frm_empresa.ShowDialog();
         }
-
+        //editar uma empresa
         private void btn_editar_Click(object sender, EventArgs e)
         {
-            Form_Empresa frm_empresa = new Form_Empresa();
-            this.Hide();
-            frm_empresa.ShowDialog();
+            PuxarDadosEmpresa();  
         }
         
-        
-        //listar
+        //metodo para listar uma empresa
         public void ListarEmpresa() 
         {
             dgv_empresa.DataSource = null;
             crud.Listar_Dados(dgv_empresa);
             dgv_empresa.DataSource = crud.dt;
         }
-
-
 
         private void Empresa_Load(object sender, EventArgs e)
         {
@@ -61,23 +55,57 @@ namespace Agenda_OS_Diego
         {
             string id = crud.id;
             crud.Deletar_Dados(id);
-            //int linha = dgv_empresa.CurrentCell.RowIndex;
-            //dgv_empresa.Rows.RemoveAt(linha);
-        }
 
-        
-
-        private void dgv_empresa_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-                //selecionando uma linha para enviar o id para ser deletado
-                dgv_empresa.CurrentRow.Selected = true;
-                crud.id = dgv_empresa.Rows[e.RowIndex].Cells["id"].FormattedValue.ToString();
-                MessageBox.Show("favor selecionar um item");
             
         }
 
-        //deletar empresa
+        public void PuxarDadosEmpresa() {
+            if (dgv_empresa.SelectedRows.Count > 0)
+            {
+                lbl_id.Text = dgv_empresa.CurrentRow.Cells["id"].Value.ToString();
+                txt_razao.Text = dgv_empresa.CurrentRow.Cells["razao"].Value.ToString();
+                txt_fantasia.Text = dgv_empresa.CurrentRow.Cells["fantasia"].Value.ToString();
+                mtb_cnpj.Text = dgv_empresa.CurrentRow.Cells["cnpj"].Value.ToString();
+                txt_rua.Text = dgv_empresa.CurrentRow.Cells["rua"].Value.ToString();
+                txt_bairro.Text = dgv_empresa.CurrentRow.Cells["bairro"].Value.ToString();
+                txt_cidade.Text = dgv_empresa.CurrentRow.Cells["cidade"].Value.ToString();
+                txt_numero.Text = dgv_empresa.CurrentRow.Cells["numero"].Value.ToString();
+                mtb_cep.Text = dgv_empresa.CurrentRow.Cells["cep"].Value.ToString();
+                mtb_telefone.Text = dgv_empresa.CurrentRow.Cells["telefone"].Value.ToString();
+                mtb_celular.Text = dgv_empresa.CurrentRow.Cells["celular"].Value.ToString();
+                btn_cadastrar_empresa.Text = "Gravar";
+            }
+            else
+            {
+                MessageBox.Show("Selecione um registro");
+            }
+        }
 
+        public void PuxarCampos() {
+            lbl_id.Text = crud.id;
+            txt_razao.Text = crud.razao;
+            txt_fantasia.Text = crud.fantasia;
+            mtb_cnpj.Text = crud.cnpj;
+            txt_rua.Text = crud.rua;
+            txt_bairro.Text = crud.bairro;
+            txt_cidade.Text = crud.cidade;
+            txt_numero.Text = crud.numero;
+            mtb_cep.Text = crud.cep;
+            mtb_telefone.Text = crud.telefone;
+            mtb_celular.Text = crud.celular;
+        }
 
+        private void btn_cadastrar_empresa_Click(object sender, EventArgs e)
+        {
+            if (btn_cadastrar_empresa.Text == "Gravar")
+            {
+                PuxarCampos();
+                crud.Alterar_Dados(lbl_id.Text);
+            }
+            else {
+                PuxarCampos();
+                crud.Criar_Dados();
+            }
+        }
     }
 }
