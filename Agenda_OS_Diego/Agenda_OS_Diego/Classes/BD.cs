@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Data;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Runtime.Serialization;
 
 namespace Agenda_OS_Diego.Classes
 {
@@ -17,7 +19,7 @@ namespace Agenda_OS_Diego.Classes
         {
             string host = "localhost";
             string db = "agenda";
-            string port = "3306";
+            string port = "3308";
             string user = "root";
             string pass = " ";
             string constring = "datasource =" + host + "; database=" + db + "; port=" + port + "; username=" + user + "; password=" + pass + "; SslMode=none";
@@ -43,7 +45,7 @@ namespace Agenda_OS_Diego.Classes
         public DataTable dt = new DataTable();
         private DataSet ds = new DataSet();
 
-        //CREATE
+        //CREATE dados
         public void Criar_Dados()
         {
             con.Open();
@@ -67,7 +69,7 @@ namespace Agenda_OS_Diego.Classes
            
         }
 
-        //UPDATE 
+        //UPDATE alterar dados
         public void Alterar_Dados() 
         {
             con.Open();
@@ -85,14 +87,15 @@ namespace Agenda_OS_Diego.Classes
             cmd.Parameters.AddWithValue("@cep", cep);
             cmd.Parameters.AddWithValue("@telefone", telefone);
             cmd.Parameters.AddWithValue("@celular", celular);
-
             cmd.ExecuteNonQuery();
+
             MessageBox.Show("Alterado com sucesso");
+
             cmd.Parameters.Clear();
             con.Close();
         }
-
-        //DELETE
+       
+        //DELETE dados
         public void Deletar_Dados(string id) 
         {
             con.Open();
@@ -105,25 +108,33 @@ namespace Agenda_OS_Diego.Classes
             con.Close();  
         }
 
-        //Listar DTV
+        //Listar datagridview
         public void Listar_Dados(DataGridView dgv)
         {
             con.Open();
-            string query = "SELECT * FROM empresa";
-            MySqlDataAdapter MDA = new MySqlDataAdapter(query, con);
-            MDA.Fill(dt);
-            dgv.DataSource = dt;
+
+            MySqlDataAdapter MyDA = new MySqlDataAdapter();
+            string sqlSelectAll = "SELECT * FROM empresa";
+            MyDA.SelectCommand = new MySqlCommand(sqlSelectAll, con);
+
+            DataTable table = new DataTable();
+            MyDA.Fill(table);
+
+            BindingSource bSource = new BindingSource();
+            bSource.DataSource = table;
+
+
+            dgv.DataSource = bSource;
+
             con.Close();
         }
 
+        //pesquisa em tempo real no datagridview
         public void Listar_Dados_Especificos(DataGridView dgv, string razao)
         {
-            con.Open();
-            string query = "SELECT * FROM empresa WHERE razao like'%" + razao + "%';";
-            MySqlDataAdapter MDA = new MySqlDataAdapter(query, con);
-            MDA.Fill(dt);
-            dgv.DataSource = dt;
-            con.Close();
+            DataView dv = dt.DefaultView;
+            dv.RowFilter = string.Format("razao like'%{0}%'", razao);
+            dgv.DataSource = dv.ToTable();
         }
 
 

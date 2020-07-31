@@ -23,5 +23,7 @@ namespace Agenda_OS_Diego
             this.Hide();
             empresa.ShowDialog();
         }
+
+       
     }
 }

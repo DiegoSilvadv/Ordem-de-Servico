@@ -23,13 +23,12 @@ namespace Agenda_OS_Diego
 
         public Empresa()
         {
+
             InitializeComponent();
+            crud.Listar_Dados(dgv_empresa);
+
         }
-        //adicionar uma empresa
-        private void btn_novo_Click(object sender, EventArgs e)
-        {
-            
-        }
+       
         //editar uma empresa
         private void btn_editar_Click(object sender, EventArgs e)
         {
@@ -46,7 +45,7 @@ namespace Agenda_OS_Diego
 
         private void Empresa_Load(object sender, EventArgs e)
         {
-            crud.Listar_Dados(dgv_empresa);
+           
         }
 
         private void btn_excluir_Click(object sender, EventArgs e)
@@ -110,11 +109,13 @@ namespace Agenda_OS_Diego
         {
             if (btn_cadastrar_empresa.Text == "Gravar")
             {
-               
+                dgv_empresa.DataSource = null;
                 CamposDeCadastro();
-                MessageBox.Show("ola"+crud.razao);
-
                 crud.Alterar_Dados();
+               
+                dgv_empresa.Rows.Clear();
+                crud.Listar_Dados(dgv_empresa);
+                
             }
             else if(btn_cadastrar_empresa.Text == "Cadastrar")
             {
@@ -126,9 +127,10 @@ namespace Agenda_OS_Diego
 
         private void txt_pesquisa_TextChanged(object sender, EventArgs e)
         {
-            
+            //pesquisa em tempo real
             string razao = txt_pesquisa.Text;
             crud.Listar_Dados_Especificos(dgv_empresa, razao);
+            
         }
     }
 }
