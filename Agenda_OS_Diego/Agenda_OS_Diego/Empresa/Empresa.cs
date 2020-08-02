@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 using Agenda_OS_Diego.Classes;
 using Agenda_OS_Diego;
 using MySql.Data.MySqlClient;
@@ -90,7 +91,7 @@ namespace Agenda_OS_Diego
             mtb_telefone.Text = crud.telefone;
             mtb_celular.Text = crud.celular;
         }
-
+        //dados que serão passados para efetuar o cadastro das empresas
         public void CamposDeCadastro() {
             crud.id = lbl_id.Text;
             crud.razao = txt_razao.Text;
@@ -128,7 +129,7 @@ namespace Agenda_OS_Diego
         private void txt_pesquisa_TextChanged(object sender, EventArgs e)
         {
             //pesquisa em tempo real
-            string razao = txt_pesquisa.Text;
+            string razao = txt_pesquisa.Text.ToString();
             crud.Listar_Dados_Especificos(dgv_empresa, razao);
             
         }

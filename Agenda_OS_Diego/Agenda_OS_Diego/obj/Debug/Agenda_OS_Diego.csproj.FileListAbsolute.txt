@@ -77,3 +77,4 @@ C:\DevFiles\Ordem-de-Servico\Agenda_OS_Diego\Agenda_OS_Diego\bin\Debug\System.Ru
 C:\DevFiles\Ordem-de-Servico\Agenda_OS_Diego\Agenda_OS_Diego\bin\Debug\System.Numerics.Vectors.dll
 C:\DevFiles\Ordem-de-Servico\Agenda_OS_Diego\Agenda_OS_Diego\bin\Debug\MySql.Data.xml
 C:\DevFiles\Ordem-de-Servico\Agenda_OS_Diego\Agenda_OS_Diego\obj\Debug\Agenda_OS_Diego.csproj.CopyComplete
+C:\DevFiles\Agenda_OS_Diego\Agenda_OS_Diego\obj\Debug\Agenda_OS_Diego.Login.Login.resources

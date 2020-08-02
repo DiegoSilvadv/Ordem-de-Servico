@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
-using System.Data;
 using System.Windows.Forms;
+using System.Data;
 using System.Data.SqlClient;
 using System.Runtime.Serialization;
+
 
 namespace Agenda_OS_Diego.Classes
 {
@@ -27,19 +28,19 @@ namespace Agenda_OS_Diego.Classes
         }
     }
 
-    class CRUD:BD 
+    class CRUD : BD
     {
         public string id { set; get; }
-        public string razao { set; get;}
+        public string razao { set; get; }
         public string fantasia { set; get; }
         public string cnpj { set; get; }
         public string rua { set; get; }
-        public string bairro { set; get;}
+        public string bairro { set; get; }
         public string cidade { set; get; }
         public string numero { set; get; }
-        public string cep { set; get;}
-        public string telefone { set; get;}
-        public string celular { set; get;}
+        public string cep { set; get; }
+        public string telefone { set; get; }
+        public string celular { set; get; }
 
         //Read Properties
         public DataTable dt = new DataTable();
@@ -62,20 +63,19 @@ namespace Agenda_OS_Diego.Classes
             cmd.Parameters.AddWithValue("@cep", cep);
             cmd.Parameters.AddWithValue("@telefone", telefone);
             cmd.Parameters.AddWithValue("@celular", celular);
-           
+
             cmd.ExecuteNonQuery();
             cmd.Parameters.Clear();
             con.Close();
-           
+
         }
 
         //UPDATE alterar dados
-        public void Alterar_Dados() 
+        public void Alterar_Dados()
         {
             con.Open();
             string query = "UPDATE empresa SET razao=@razao, fantasia=@fantasia, cnpj=@cnpj, rua=@rua, bairro=@bairro, cidade=@cidade, numero=@numero, cep=@cep, telefone=@telefone, celular=@celular WHERE id=@id ";
             MySqlCommand cmd = new MySqlCommand(query, con);
-            MessageBox.Show("" + id);
             cmd.Parameters.AddWithValue("@id", id);
             cmd.Parameters.AddWithValue("@razao", razao);
             cmd.Parameters.AddWithValue("@fantasia", fantasia);
@@ -94,9 +94,9 @@ namespace Agenda_OS_Diego.Classes
             cmd.Parameters.Clear();
             con.Close();
         }
-       
+
         //DELETE dados
-        public void Deletar_Dados(string id) 
+        public void Deletar_Dados(string id)
         {
             con.Open();
             string query = "DELETE FROM empresa WHERE id=@id";
@@ -105,7 +105,7 @@ namespace Agenda_OS_Diego.Classes
             cmd.ExecuteNonQuery();
             MessageBox.Show("Deletado com sucesso!");
             cmd.Parameters.Clear();
-            con.Close();  
+            con.Close();
         }
 
         //Listar datagridview
@@ -116,25 +116,27 @@ namespace Agenda_OS_Diego.Classes
             MySqlDataAdapter MyDA = new MySqlDataAdapter();
             string sqlSelectAll = "SELECT * FROM empresa";
             MyDA.SelectCommand = new MySqlCommand(sqlSelectAll, con);
-
             DataTable table = new DataTable();
             MyDA.Fill(table);
-
             BindingSource bSource = new BindingSource();
             bSource.DataSource = table;
-
-
             dgv.DataSource = bSource;
-
             con.Close();
         }
 
         //pesquisa em tempo real no datagridview
-        public void Listar_Dados_Especificos(DataGridView dgv, string razao)
+        public void Listar_Dados_Especificos(DataGridView DGV, string razao)
         {
-            DataView dv = dt.DefaultView;
-            dv.RowFilter = string.Format("razao like'%{0}%'", razao);
-            dgv.DataSource = dv.ToTable();
+            con.Open();
+            MySqlDataAdapter MyDA = new MySqlDataAdapter();
+            string sqlSelectAll = "SELECT * FROM empresa WHERE razao LIKE '%" + razao.ToString() + "%'";
+            MyDA.SelectCommand = new MySqlCommand(sqlSelectAll, con);
+            DataTable table = new DataTable();
+            MyDA.Fill(table);
+            BindingSource bSource = new BindingSource();
+            bSource.DataSource = table;
+            DGV.DataSource = bSource;
+            con.Close();
         }
 
 
