@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,7 +14,7 @@ namespace Agenda_OS_Diego
     public partial class Home : Form
     {
         public Home()
-        {
+        { 
             InitializeComponent();
         }
 
@@ -24,6 +25,16 @@ namespace Agenda_OS_Diego
             empresa.ShowDialog();
         }
 
-       
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Tecnico.Tecnico frmtec = new Tecnico.Tecnico();
+            this.Hide();
+            frmtec.ShowDialog();
+        }
+
+        private void Home_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

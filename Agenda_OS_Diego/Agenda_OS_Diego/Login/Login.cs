@@ -2,14 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
-using System.Data;
 using System.Data.SqlClient;
 using System.Runtime.Serialization;
 
@@ -39,38 +36,7 @@ namespace Agenda_OS_Diego.Login
             public string senha { set; get; }
 
             DataTable dt = new DataTable();
-            public void ListarComboBox(string combo) {
-
-                con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT CourseId,CourseName FROM Courses", conn);
-
-                cmd.CommandType = CommandType.Text;
-
-                conn.Open();
-
-                SqlDataReader dr = cmd.ExecuteReader();
-
-                while (dr.Read())
-                {
-                    this.courseComboBox.DisplayMember = dr[0];
-                    this.courseComboBox.ValueMember = dr[1];
-                    this.courseComboBox.DataSource = dr;
-
-                    dr.Close();
-
-
-                    con.Close();
-            
-            
-            }
-
-
-
-
-
-
-
-
+          
 
         }
         public Login()
@@ -78,6 +44,11 @@ namespace Agenda_OS_Diego.Login
             InitializeComponent();
         }
 
-        
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }
