@@ -24,19 +24,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Empresa));
             this.dgv_empresa = new System.Windows.Forms.DataGridView();
             this.btn_editar = new System.Windows.Forms.Button();
             this.btn_excluir = new System.Windows.Forms.Button();
             this.txt_pesquisa = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_cadastrar_empresa = new System.Windows.Forms.Button();
+            this.img_return = new System.Windows.Forms.PictureBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gb_empresa = new System.Windows.Forms.GroupBox();
             this.lbl_id = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.Label();
+            this.btn_cadastrar_empresa = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.txt_numero = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -44,6 +48,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txt_cidade = new System.Windows.Forms.TextBox();
             this.mtb_celular = new System.Windows.Forms.MaskedTextBox();
+            this.mtb_cnpj = new System.Windows.Forms.MaskedTextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.mtb_telefone = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -53,18 +59,13 @@
             this.txt_rua = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_fantasia = new System.Windows.Forms.TextBox();
-            this.mtb_cnpj = new System.Windows.Forms.MaskedTextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_razao = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_empresa)).BeginInit();
             this.panel1.SuspendLayout();
-            this.gb_empresa.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_return)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.gb_empresa.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgv_empresa
@@ -73,38 +74,51 @@
             this.dgv_empresa.AllowUserToDeleteRows = false;
             this.dgv_empresa.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
             this.dgv_empresa.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgv_empresa.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            this.dgv_empresa.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_empresa.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
-            this.dgv_empresa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_empresa.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_empresa.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_empresa.ColumnHeadersHeight = 35;
+            this.dgv_empresa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv_empresa.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.GrayText;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.WindowFrame;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_empresa.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.WindowFrame;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_empresa.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_empresa.EnableHeadersVisualStyles = false;
             this.dgv_empresa.GridColor = System.Drawing.SystemColors.ButtonShadow;
             this.dgv_empresa.Location = new System.Drawing.Point(0, 150);
+            this.dgv_empresa.MultiSelect = false;
             this.dgv_empresa.Name = "dgv_empresa";
             this.dgv_empresa.ReadOnly = true;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Roboto", 8.25F);
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.White;
-            this.dgv_empresa.RowsDefaultCellStyle = dataGridViewCellStyle18;
+            this.dgv_empresa.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Roboto", 8.25F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_empresa.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv_empresa.RowHeadersWidth = 50;
+            this.dgv_empresa.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Roboto", 8.25F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.dgv_empresa.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_empresa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_empresa.Size = new System.Drawing.Size(813, 440);
+            this.dgv_empresa.Size = new System.Drawing.Size(813, 477);
             this.dgv_empresa.TabIndex = 2;
             // 
             // btn_editar
@@ -146,26 +160,45 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
-            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.img_return);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 626);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1264, 35);
             this.panel1.TabIndex = 7;
             // 
-            // btn_cadastrar_empresa
+            // img_return
             // 
-            this.btn_cadastrar_empresa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
-            this.btn_cadastrar_empresa.FlatAppearance.BorderSize = 0;
-            this.btn_cadastrar_empresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cadastrar_empresa.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_cadastrar_empresa.Location = new System.Drawing.Point(164, 341);
-            this.btn_cadastrar_empresa.Name = "btn_cadastrar_empresa";
-            this.btn_cadastrar_empresa.Size = new System.Drawing.Size(128, 34);
-            this.btn_cadastrar_empresa.TabIndex = 9;
-            this.btn_cadastrar_empresa.Text = "Cadastrar";
-            this.btn_cadastrar_empresa.UseVisualStyleBackColor = false;
-            this.btn_cadastrar_empresa.Click += new System.EventHandler(this.btn_cadastrar_empresa_Click);
+            this.img_return.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.img_return.Image = ((System.Drawing.Image)(resources.GetObject("img_return.Image")));
+            this.img_return.Location = new System.Drawing.Point(8, 6);
+            this.img_return.Name = "img_return";
+            this.img_return.Size = new System.Drawing.Size(27, 24);
+            this.img_return.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.img_return.TabIndex = 0;
+            this.img_return.TabStop = false;
+            this.img_return.Click += new System.EventHandler(this.img_return_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label11.Location = new System.Drawing.Point(80, 24);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(150, 13);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "Pesquise pela razão social...";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(62, 48);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
             // 
             // gb_empresa
             // 
@@ -196,11 +229,10 @@
             this.gb_empresa.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.gb_empresa.Location = new System.Drawing.Point(819, 150);
             this.gb_empresa.Name = "gb_empresa";
-            this.gb_empresa.Size = new System.Drawing.Size(432, 440);
-            this.gb_empresa.TabIndex = 8;
+            this.gb_empresa.Size = new System.Drawing.Size(432, 477);
+            this.gb_empresa.TabIndex = 12;
             this.gb_empresa.TabStop = false;
             this.gb_empresa.Text = "Empresas";
-            this.gb_empresa.Enter += new System.EventHandler(this.gb_empresa_Enter);
             // 
             // lbl_id
             // 
@@ -219,6 +251,20 @@
             this.ID.Size = new System.Drawing.Size(20, 13);
             this.ID.TabIndex = 24;
             this.ID.Text = "ID:";
+            // 
+            // btn_cadastrar_empresa
+            // 
+            this.btn_cadastrar_empresa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
+            this.btn_cadastrar_empresa.FlatAppearance.BorderSize = 0;
+            this.btn_cadastrar_empresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cadastrar_empresa.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_cadastrar_empresa.Location = new System.Drawing.Point(164, 303);
+            this.btn_cadastrar_empresa.Name = "btn_cadastrar_empresa";
+            this.btn_cadastrar_empresa.Size = new System.Drawing.Size(128, 34);
+            this.btn_cadastrar_empresa.TabIndex = 9;
+            this.btn_cadastrar_empresa.Text = "Cadastrar";
+            this.btn_cadastrar_empresa.UseVisualStyleBackColor = false;
+            this.btn_cadastrar_empresa.Click += new System.EventHandler(this.btn_cadastrar_empresa_Click_1);
             // 
             // label10
             // 
@@ -276,6 +322,23 @@
             this.mtb_celular.Size = new System.Drawing.Size(99, 21);
             this.mtb_celular.TabIndex = 17;
             // 
+            // mtb_cnpj
+            // 
+            this.mtb_cnpj.Location = new System.Drawing.Point(28, 254);
+            this.mtb_cnpj.Mask = "99.999.999/9999-99";
+            this.mtb_cnpj.Name = "mtb_cnpj";
+            this.mtb_cnpj.Size = new System.Drawing.Size(110, 21);
+            this.mtb_cnpj.TabIndex = 7;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(25, 238);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "CNPJ:";
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -300,7 +363,7 @@
             this.label6.BackColor = System.Drawing.SystemColors.ControlDark;
             this.label6.Location = new System.Drawing.Point(227, 238);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 13);
+            this.label6.Size = new System.Drawing.Size(54, 13);
             this.label6.TabIndex = 14;
             this.label6.Text = "Telefone:";
             // 
@@ -354,29 +417,12 @@
             this.txt_fantasia.Size = new System.Drawing.Size(381, 21);
             this.txt_fantasia.TabIndex = 8;
             // 
-            // mtb_cnpj
-            // 
-            this.mtb_cnpj.Location = new System.Drawing.Point(28, 254);
-            this.mtb_cnpj.Mask = "99.999.999/9999-99";
-            this.mtb_cnpj.Name = "mtb_cnpj";
-            this.mtb_cnpj.Size = new System.Drawing.Size(110, 21);
-            this.mtb_cnpj.TabIndex = 7;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 238);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "CNPJ:";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(25, 49);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.Size = new System.Drawing.Size(41, 13);
             this.label1.TabIndex = 4;
             this.label1.Text = "Razão:";
             // 
@@ -387,46 +433,15 @@
             this.txt_razao.Size = new System.Drawing.Size(381, 21);
             this.txt_razao.TabIndex = 0;
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label11.Location = new System.Drawing.Point(80, 24);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(149, 13);
-            this.label11.TabIndex = 10;
-            this.label11.Text = "Pesquise pela razão social...";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(62, 48);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(8, 6);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(27, 24);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
             // Empresa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1264, 661);
+            this.Controls.Add(this.gb_empresa);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.gb_empresa);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txt_pesquisa);
             this.Controls.Add(this.btn_excluir);
@@ -435,13 +450,12 @@
             this.Name = "Empresa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Empresa";
-            this.Load += new System.EventHandler(this.Empresa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_empresa)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.img_return)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gb_empresa.ResumeLayout(false);
             this.gb_empresa.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -454,8 +468,13 @@
         private System.Windows.Forms.Button btn_excluir;
         private System.Windows.Forms.TextBox txt_pesquisa;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btn_cadastrar_empresa;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox img_return;
         private System.Windows.Forms.GroupBox gb_empresa;
+        private System.Windows.Forms.Label lbl_id;
+        private System.Windows.Forms.Label ID;
+        private System.Windows.Forms.Button btn_cadastrar_empresa;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txt_numero;
         private System.Windows.Forms.Label label9;
@@ -463,6 +482,8 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txt_cidade;
         private System.Windows.Forms.MaskedTextBox mtb_celular;
+        private System.Windows.Forms.MaskedTextBox mtb_cnpj;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.MaskedTextBox mtb_telefone;
         private System.Windows.Forms.Label label6;
@@ -472,14 +493,7 @@
         private System.Windows.Forms.TextBox txt_rua;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_fantasia;
-        private System.Windows.Forms.MaskedTextBox mtb_cnpj;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_razao;
-        private System.Windows.Forms.Label lbl_id;
-        private System.Windows.Forms.Label ID;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

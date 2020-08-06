@@ -21,20 +21,11 @@ namespace Agenda_OS_Diego.Tecnico
             crudtec.ListarTecnico(dgv_tecnico);
         }
 
-       //Botão de cadastrar Técnico
-        private void btn_cadastrar_tecnico_Click(object sender, EventArgs e)
-        {
-            if (btn_cadastrar_tecnico.Text == "Cadastrar")
-            {
-                PegarCampos();
-                crudtec.CriarDados();
-                crudtec.ListarTecnico(dgv_tecnico);
-            }
-            else if (btn_cadastrar_tecnico.Text == "Gravar") { }
-        }
-
+        //funções da página
         //Pegando valores dos campos e atribuindo nas strings da class CRUD
-        public void PegarCampos() {
+        public void PegarCampos()
+        {
+            crudtec.id = lbl_id.Text;
             crudtec.usuario = txt_usuario.Text;
             crudtec.senha = txt_senha.Text;
             crudtec.nome = txt_nome.Text;
@@ -48,7 +39,8 @@ namespace Agenda_OS_Diego.Tecnico
             crudtec.data_nascimento = mtb_data_nascimento.Text;
         }
         //Função para listar os dados do grid view nos campos
-        public void ListarDados() {
+        public void ListarDados()
+        {
             if (dgv_tecnico.SelectedRows.Count > 0)
             {
                 lbl_id.Text = dgv_tecnico.CurrentRow.Cells["id_tecnico"].Value.ToString();
@@ -69,15 +61,66 @@ namespace Agenda_OS_Diego.Tecnico
                 MessageBox.Show("Selecione um registro");
             }
         }
-        private void Tecnico_Load(object sender, EventArgs e)
+        public void LimparCampos()
         {
+            lbl_id.Text = "0";
+            txt_usuario.Text = "";
+            txt_senha.Text = "";
+            txt_nome.Text = "";
+            mtb_cnh.Text = "";
+            txt_cidade.Text = "";
+            txt_bairro.Text = "";
+            txt_rua.Text = "";
+            txt_numero.Text = "";
+            mtb_cep.Text = "";
+            mtb_celular.Text = "";
+            btn_cadastrar_tecnico.Text = "Cadastrar";
         }
+        
 
 
-
+        //Clicks de botão
         private void btn_editar_Click(object sender, EventArgs e)
         {
             ListarDados();
+        }
+        //Botão de cadastrar Técnico
+        private void btn_cadastrar_tecnico_Click(object sender, EventArgs e)
+        {
+            if (btn_cadastrar_tecnico.Text == "Cadastrar")
+            {
+                PegarCampos();
+                crudtec.CriarDados();
+                crudtec.ListarTecnico(dgv_tecnico);
+                LimparCampos();
+            }
+            else if (btn_cadastrar_tecnico.Text == "Gravar")
+            {
+                PegarCampos();
+                crudtec.Alterar_Dados();
+                crudtec.ListarTecnico(dgv_tecnico);
+                LimparCampos();
+            }
+        }
+        private void btn_excluir_Click(object sender, EventArgs e)
+        {
+            //id passado para fazer a exclusão
+            crudtec.id = dgv_tecnico.CurrentRow.Cells["id_tecnico"].Value.ToString();
+            crudtec.DeletarTecnico();
+            crudtec.ListarTecnico(dgv_tecnico);
+        }
+
+        private void txt_pesquisa_TextChanged(object sender, EventArgs e)
+        {
+            crudtec.nome = txt_pesquisa.Text;
+            crudtec.Listar_Dados_Especificos(dgv_tecnico);
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Home ReturnHome = new Home();
+            this.Hide();
+            ReturnHome.ShowDialog();
         }
     }
 }

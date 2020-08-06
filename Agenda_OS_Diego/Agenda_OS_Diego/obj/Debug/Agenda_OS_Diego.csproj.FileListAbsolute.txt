@@ -79,3 +79,5 @@ C:\DevFiles\Ordem-de-Servico\Agenda_OS_Diego\Agenda_OS_Diego\bin\Debug\MySql.Dat
 C:\DevFiles\Ordem-de-Servico\Agenda_OS_Diego\Agenda_OS_Diego\obj\Debug\Agenda_OS_Diego.csproj.CopyComplete
 C:\DevFiles\Agenda_OS_Diego\Agenda_OS_Diego\obj\Debug\Agenda_OS_Diego.Login.Login.resources
 C:\DevFiles\Agenda_OS_Diego\Agenda_OS_Diego\obj\Debug\Agenda_OS_Diego.Tecnico.Tecnico.resources
+C:\DevFiles\Ordem-de-Servico\Agenda_OS_Diego\Agenda_OS_Diego\obj\Debug\Agenda_OS_Diego.Login.Login.resources
+C:\DevFiles\Ordem-de-Servico\Agenda_OS_Diego\Agenda_OS_Diego\obj\Debug\Agenda_OS_Diego.Tecnico.Tecnico.resources

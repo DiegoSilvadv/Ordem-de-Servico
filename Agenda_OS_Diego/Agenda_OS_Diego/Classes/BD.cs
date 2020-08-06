@@ -20,7 +20,7 @@ namespace Agenda_OS_Diego.Classes
         {
             string host = "localhost";
             string db = "agenda";
-            string port = "3308";
+            string port = "3306";
             string user = "root";
             string pass = " ";
             string constring = "datasource =" + host + "; database=" + db + "; port=" + port + "; username=" + user + "; password=" + pass + "; SslMode=none";
@@ -63,7 +63,7 @@ namespace Agenda_OS_Diego.Classes
             cmd.Parameters.AddWithValue("@cep", cep);
             cmd.Parameters.AddWithValue("@telefone", telefone);
             cmd.Parameters.AddWithValue("@celular", celular);
-
+            MessageBox.Show("Cadastrado com sucesso!");
             cmd.ExecuteNonQuery();
             cmd.Parameters.Clear();
             con.Close();
