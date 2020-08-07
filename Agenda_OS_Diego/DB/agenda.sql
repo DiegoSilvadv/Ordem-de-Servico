@@ -31,6 +31,17 @@ CREATE table tecnico(
   data_nascimento VARCHAR(10)
 ) ENGINE = innodb;
 
+create table ordemservico (
+  id_os int primary key auto_increment,
+  fk_usuario int, 
+  fk_empresa int,
+  razao VARCHAR(300),
+  fantasia VARCHAR(300),
+  cnpj CHAR(18),
+  solicitante VARCHAR(250),
+
+)
+
 insert into empresa VALUES(0, "nike", "nike ltd", "12345678912345",
  "Pulo holtz", "Inocoop", "Tatuí", "123", "18555236", "153053333", "15996286530");
 

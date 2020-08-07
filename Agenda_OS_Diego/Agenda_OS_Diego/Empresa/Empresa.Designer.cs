@@ -447,6 +447,7 @@
             this.Controls.Add(this.btn_excluir);
             this.Controls.Add(this.btn_editar);
             this.Controls.Add(this.dgv_empresa);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Empresa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Empresa";

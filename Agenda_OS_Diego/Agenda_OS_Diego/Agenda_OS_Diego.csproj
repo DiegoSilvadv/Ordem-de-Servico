@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Classes\BD.cs" />
     <Compile Include="Classes\Login.cs" />
+    <Compile Include="Classes\OS.cs" />
     <Compile Include="Classes\Tecnico.cs" />
     <Compile Include="Empresa\Empresa.cs">
       <SubType>Form</SubType>
@@ -68,6 +69,12 @@
     <Compile Include="Login\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="OrdemServico\OrdemServico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrdemServico\OrdemServico.Designer.cs">
+      <DependentUpon>OrdemServico.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tecnico\Tecnico.cs">
@@ -84,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrdemServico\OrdemServico.resx">
+      <DependentUpon>OrdemServico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

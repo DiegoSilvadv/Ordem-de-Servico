@@ -36,5 +36,12 @@ namespace Agenda_OS_Diego
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OrdemServico.OrdemServico os = new OrdemServico.OrdemServico();
+            this.Hide();
+            os.ShowDialog();
+        }
     }
 }
