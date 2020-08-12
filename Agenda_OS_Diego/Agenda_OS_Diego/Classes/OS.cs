@@ -32,29 +32,61 @@ namespace Agenda_OS_Diego.Classes
         class CrudOs : DB
         {
             public string id { set; get; }
-            public string razao { set; get; }
+            public string tecnico { set; get; }
+            public string solicitante { set; get; }
             public string fantasia { set; get; }
             public string cnpj { set; get; }
-            public string rua { set; get; }
-            public string bairro { set; get; }
-            public string cidade { set; get; }
-            public string numero { set; get; }
-            public string cep { set; get; }
             public string telefone { set; get; }
             public string celular { set; get; }
+            public string informação_extra { set; get; }
+            public string assunto { set; get; }
+            public string descricao { set; get; }
+            public string atendimento { set; get; }
+            public string sistema{ set; get; }
+            public string solucao { set; get; }
+            public string abertura { set; get; }
+            public string conclusao { set; get; }
+            public string status { set; get; }
 
-            public void ListarEmpresa() {
-                con.Open();
-                string sSQL = "SELECT * FROM empresa WHERE fantasia LIKE '%'@fantasia'%'";
-                MySqlCommand cmd = new MySqlCommand(sSQL, con);
-                cmd.Parameters.AddWithValue("@fantasia", fantasia );
-                MySqlDataReader dr = cmd.ExecuteReader();
-                MessageBox.Show(fantasia);
-               
-                con.Close();
+        public void Listar_Dados(DataGridView dgv)
+        {
+            con.Open();
 
-            }
-            
+            MySqlDataAdapter MyDA = new MySqlDataAdapter();
+            string sqlSelectAll = "SELECT * FROM ordemservico";
+            MyDA.SelectCommand = new MySqlCommand(sqlSelectAll, con);
+            DataTable table = new DataTable();
+            MyDA.Fill(table);
+            BindingSource bSource = new BindingSource();
+            bSource.DataSource = table;
+            dgv.DataSource = bSource;
+
+            con.Close();
         }
+
+
+        public void ListarEmpresa(string fantasia) {
+               
+
+                    MySqlCommand comm = new MySqlCommand("SELECT * FROM empresa WHERE fantasia like '%" + fantasia.ToString() + "%'", con);
+                    comm.CommandType = CommandType.Text;
+
+
+                    con.Open();
+                    MySqlDataReader dr = comm.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        this.fantasia = dr["fantasia"].ToString();
+                        this.cnpj = dr["cnpj"].ToString();
+                        this.telefone = dr["telefone"].ToString();
+                    }
+
+            con.Close();
+
+
+
+        }
+
+    }
     }
 

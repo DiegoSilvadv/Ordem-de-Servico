@@ -1,0 +1,14 @@
+paletas de cores
+
+background
+#3; 129; 148
+form background
+#2; 73; 84
+botao
+#1; 51; 59
+grid
+#60; 68; 78
+text
+#ControlLightLight
+
+#
