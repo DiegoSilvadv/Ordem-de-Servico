@@ -9,46 +9,39 @@ using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Runtime.Serialization;
+using Agenda_OS_Diego.LoginUsuarios;
 
 namespace Agenda_OS_Diego.Login
 {
     public partial class Login : Form
     {
-        class BD
-        {   //conexão com banco de dados
-            public MySqlConnection con;
-
-            public BD()
-            {
-                string host = "localhost";
-                string db = "agenda";
-                string port = "3308";
-                string user = "root";
-                string pass = " ";
-                string constring = "datasource =" + host + "; database=" + db + "; port=" + port + "; username=" + user + "; password=" + pass + "; SslMode=none";
-                con = new MySqlConnection(constring);
-            }
-        }
-
-        class LOGIN:BD {
-            public string id { set; get; }
-            public string usuario { set; get; }
-            public string senha { set; get; }
-
-            DataTable dt = new DataTable();
-          
-
-        }
+        LoginUsuario loginUsuario = new LoginUsuario();
+        
         public Login()
         {
             InitializeComponent();
+        }
+
+      
+
+        private void txt_usuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        
+
+        private void btn_login_Click_1(object sender, EventArgs e)
+        {
+
+            Home frmHome = new Home();
+            this.Hide();
+            frmHome.ShowDialog();
         }
 
         private void Login_Load(object sender, EventArgs e)
         {
 
         }
-
-
     }
 }

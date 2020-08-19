@@ -85,8 +85,9 @@ namespace Agenda_OS_Diego.Tecnico
         {
             ListarDados();
         }
+
         //Botão de cadastrar Técnico
-        private void btn_cadastrar_tecnico_Click(object sender, EventArgs e)
+        private void btn_cadastrar_tecnico_Click_1(object sender, EventArgs e)
         {
             if (btn_cadastrar_tecnico.Text == "Cadastrar")
             {
@@ -103,6 +104,7 @@ namespace Agenda_OS_Diego.Tecnico
                 LimparCampos();
             }
         }
+
         private void btn_excluir_Click(object sender, EventArgs e)
         {
             //id passado para fazer a exclusão
@@ -123,5 +125,6 @@ namespace Agenda_OS_Diego.Tecnico
             this.Hide();
             ReturnHome.ShowDialog();
         }
+
     }
 }

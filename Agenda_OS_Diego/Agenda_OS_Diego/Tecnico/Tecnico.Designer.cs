@@ -234,18 +234,19 @@
             this.btn_cadastrar_tecnico.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(84)))));
             this.btn_cadastrar_tecnico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cadastrar_tecnico.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_cadastrar_tecnico.Location = new System.Drawing.Point(162, 378);
+            this.btn_cadastrar_tecnico.Location = new System.Drawing.Point(162, 361);
             this.btn_cadastrar_tecnico.Name = "btn_cadastrar_tecnico";
             this.btn_cadastrar_tecnico.Size = new System.Drawing.Size(128, 34);
             this.btn_cadastrar_tecnico.TabIndex = 55;
             this.btn_cadastrar_tecnico.Text = "Cadastrar";
             this.btn_cadastrar_tecnico.UseVisualStyleBackColor = false;
+            this.btn_cadastrar_tecnico.Click += new System.EventHandler(this.btn_cadastrar_tecnico_Click_1);
             // 
             // mtb_data_nascimento
             // 
-            this.mtb_data_nascimento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(84)))));
+            this.mtb_data_nascimento.BackColor = System.Drawing.SystemColors.Control;
             this.mtb_data_nascimento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.mtb_data_nascimento.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.mtb_data_nascimento.ForeColor = System.Drawing.SystemColors.ControlText;
             this.mtb_data_nascimento.Location = new System.Drawing.Point(296, 319);
             this.mtb_data_nascimento.Mask = "99/99/9999";
             this.mtb_data_nascimento.Name = "mtb_data_nascimento";
@@ -274,9 +275,9 @@
             // 
             // txt_rua
             // 
-            this.txt_rua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(84)))));
+            this.txt_rua.BackColor = System.Drawing.SystemColors.Control;
             this.txt_rua.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_rua.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.txt_rua.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txt_rua.Location = new System.Drawing.Point(26, 272);
             this.txt_rua.Name = "txt_rua";
             this.txt_rua.Size = new System.Drawing.Size(264, 20);
@@ -314,9 +315,9 @@
             // 
             // txt_numero
             // 
-            this.txt_numero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(84)))));
+            this.txt_numero.BackColor = System.Drawing.SystemColors.Control;
             this.txt_numero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_numero.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.txt_numero.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txt_numero.Location = new System.Drawing.Point(296, 272);
             this.txt_numero.Name = "txt_numero";
             this.txt_numero.Size = new System.Drawing.Size(111, 20);
@@ -334,9 +335,9 @@
             // 
             // txt_bairro
             // 
-            this.txt_bairro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(84)))));
+            this.txt_bairro.BackColor = System.Drawing.SystemColors.Control;
             this.txt_bairro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_bairro.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.txt_bairro.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txt_bairro.Location = new System.Drawing.Point(218, 227);
             this.txt_bairro.Name = "txt_bairro";
             this.txt_bairro.Size = new System.Drawing.Size(189, 20);
@@ -354,9 +355,9 @@
             // 
             // txt_cidade
             // 
-            this.txt_cidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(84)))));
+            this.txt_cidade.BackColor = System.Drawing.SystemColors.Control;
             this.txt_cidade.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_cidade.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.txt_cidade.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txt_cidade.Location = new System.Drawing.Point(26, 227);
             this.txt_cidade.Name = "txt_cidade";
             this.txt_cidade.Size = new System.Drawing.Size(186, 20);
@@ -364,9 +365,9 @@
             // 
             // mtb_celular
             // 
-            this.mtb_celular.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(84)))));
+            this.mtb_celular.BackColor = System.Drawing.SystemColors.Control;
             this.mtb_celular.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.mtb_celular.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.mtb_celular.ForeColor = System.Drawing.SystemColors.ControlText;
             this.mtb_celular.Location = new System.Drawing.Point(112, 319);
             this.mtb_celular.Mask = "(99) 9 9999-9999";
             this.mtb_celular.Name = "mtb_celular";
@@ -386,9 +387,9 @@
             // 
             // mtb_cep
             // 
-            this.mtb_cep.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(84)))));
+            this.mtb_cep.BackColor = System.Drawing.SystemColors.Control;
             this.mtb_cep.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.mtb_cep.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.mtb_cep.ForeColor = System.Drawing.SystemColors.ControlText;
             this.mtb_cep.Location = new System.Drawing.Point(26, 319);
             this.mtb_cep.Mask = "99.999.999";
             this.mtb_cep.Name = "mtb_cep";
@@ -418,9 +419,9 @@
             // 
             // txt_nome
             // 
-            this.txt_nome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(84)))));
+            this.txt_nome.BackColor = System.Drawing.SystemColors.Control;
             this.txt_nome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_nome.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.txt_nome.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txt_nome.Location = new System.Drawing.Point(26, 183);
             this.txt_nome.Name = "txt_nome";
             this.txt_nome.Size = new System.Drawing.Size(381, 20);
@@ -438,9 +439,9 @@
             // 
             // txt_senha
             // 
-            this.txt_senha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(84)))));
+            this.txt_senha.BackColor = System.Drawing.SystemColors.Control;
             this.txt_senha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_senha.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.txt_senha.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txt_senha.Location = new System.Drawing.Point(26, 138);
             this.txt_senha.Name = "txt_senha";
             this.txt_senha.Size = new System.Drawing.Size(381, 20);
@@ -448,9 +449,9 @@
             // 
             // mtb_cnh
             // 
-            this.mtb_cnh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(84)))));
+            this.mtb_cnh.BackColor = System.Drawing.SystemColors.Control;
             this.mtb_cnh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.mtb_cnh.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.mtb_cnh.ForeColor = System.Drawing.SystemColors.ControlText;
             this.mtb_cnh.Location = new System.Drawing.Point(203, 319);
             this.mtb_cnh.Mask = "99.999.999/9999-99";
             this.mtb_cnh.Name = "mtb_cnh";
@@ -479,9 +480,9 @@
             // 
             // txt_usuario
             // 
-            this.txt_usuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(84)))));
+            this.txt_usuario.BackColor = System.Drawing.SystemColors.Control;
             this.txt_usuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_usuario.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.txt_usuario.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txt_usuario.Location = new System.Drawing.Point(27, 93);
             this.txt_usuario.Name = "txt_usuario";
             this.txt_usuario.Size = new System.Drawing.Size(381, 20);

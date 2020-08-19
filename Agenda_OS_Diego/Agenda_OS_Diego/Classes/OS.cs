@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using Agenda_OS_Diego.Classes;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
@@ -66,20 +65,18 @@ namespace Agenda_OS_Diego.Classes
 
 
         public void ListarEmpresa(string fantasia) {
-               
 
-                    MySqlCommand comm = new MySqlCommand("SELECT * FROM empresa WHERE fantasia like '%" + fantasia.ToString() + "%'", con);
-                    comm.CommandType = CommandType.Text;
+            MySqlCommand comm = new MySqlCommand("SELECT * FROM empresa WHERE fantasia like '%" + fantasia.ToString() + "%'", con);
+            comm.CommandType = CommandType.Text;
 
-
-                    con.Open();
-                    MySqlDataReader dr = comm.ExecuteReader();
-                    while (dr.Read())
-                    {
-                        this.fantasia = dr["fantasia"].ToString();
-                        this.cnpj = dr["cnpj"].ToString();
-                        this.telefone = dr["telefone"].ToString();
-                    }
+            con.Open();
+            MySqlDataReader dr = comm.ExecuteReader();
+            while (dr.Read())
+                {
+                    this.fantasia = dr["fantasia"].ToString();
+                    this.cnpj = dr["cnpj"].ToString();
+                    this.telefone = dr["telefone"].ToString();
+                }
 
             con.Close();
 

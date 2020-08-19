@@ -24,10 +24,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Empresa));
             this.dgv_empresa = new System.Windows.Forms.DataGridView();
             this.btn_editar = new System.Windows.Forms.Button();
@@ -73,25 +73,25 @@
             this.dgv_empresa.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
             this.dgv_empresa.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_empresa.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_empresa.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_empresa.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_empresa.ColumnHeadersHeight = 35;
             this.dgv_empresa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv_empresa.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.GrayText;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.WindowFrame;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_empresa.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.WindowFrame;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_empresa.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_empresa.EnableHeadersVisualStyles = false;
             this.dgv_empresa.GridColor = System.Drawing.SystemColors.ButtonShadow;
             this.dgv_empresa.Location = new System.Drawing.Point(25, 78);
@@ -99,22 +99,22 @@
             this.dgv_empresa.Name = "dgv_empresa";
             this.dgv_empresa.ReadOnly = true;
             this.dgv_empresa.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Roboto", 8.25F);
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_empresa.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Roboto", 8.25F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_empresa.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_empresa.RowHeadersWidth = 50;
             this.dgv_empresa.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Roboto", 8.25F);
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.White;
-            this.dgv_empresa.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Roboto", 8.25F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.dgv_empresa.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_empresa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_empresa.Size = new System.Drawing.Size(784, 318);
             this.dgv_empresa.TabIndex = 2;
@@ -151,7 +151,7 @@
             // 
             // txt_pesquisa
             // 
-            this.txt_pesquisa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(129)))), ((int)(((byte)(148)))));
+            this.txt_pesquisa.BackColor = System.Drawing.SystemColors.Control;
             this.txt_pesquisa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_pesquisa.Location = new System.Drawing.Point(83, 40);
             this.txt_pesquisa.Name = "txt_pesquisa";
@@ -255,9 +255,9 @@
             // 
             // txt_numero
             // 
-            this.txt_numero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(84)))));
+            this.txt_numero.BackColor = System.Drawing.SystemColors.Control;
             this.txt_numero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_numero.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txt_numero.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txt_numero.Location = new System.Drawing.Point(299, 261);
             this.txt_numero.Name = "txt_numero";
             this.txt_numero.Size = new System.Drawing.Size(111, 20);
@@ -275,9 +275,9 @@
             // 
             // txt_bairro
             // 
-            this.txt_bairro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(84)))));
+            this.txt_bairro.BackColor = System.Drawing.SystemColors.Control;
             this.txt_bairro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_bairro.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txt_bairro.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txt_bairro.Location = new System.Drawing.Point(29, 261);
             this.txt_bairro.Name = "txt_bairro";
             this.txt_bairro.Size = new System.Drawing.Size(110, 20);
@@ -295,9 +295,9 @@
             // 
             // txt_cidade
             // 
-            this.txt_cidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(84)))));
+            this.txt_cidade.BackColor = System.Drawing.SystemColors.Control;
             this.txt_cidade.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_cidade.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txt_cidade.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txt_cidade.Location = new System.Drawing.Point(145, 261);
             this.txt_cidade.Name = "txt_cidade";
             this.txt_cidade.Size = new System.Drawing.Size(148, 20);
@@ -305,9 +305,9 @@
             // 
             // mtb_celular
             // 
-            this.mtb_celular.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(84)))));
+            this.mtb_celular.BackColor = System.Drawing.SystemColors.Control;
             this.mtb_celular.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.mtb_celular.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.mtb_celular.ForeColor = System.Drawing.SystemColors.ControlText;
             this.mtb_celular.Location = new System.Drawing.Point(311, 307);
             this.mtb_celular.Mask = "(99) 9 9999-9999";
             this.mtb_celular.Name = "mtb_celular";
@@ -316,9 +316,9 @@
             // 
             // mtb_cnpj
             // 
-            this.mtb_cnpj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(84)))));
+            this.mtb_cnpj.BackColor = System.Drawing.SystemColors.Control;
             this.mtb_cnpj.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.mtb_cnpj.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.mtb_cnpj.ForeColor = System.Drawing.SystemColors.ControlText;
             this.mtb_cnpj.Location = new System.Drawing.Point(29, 307);
             this.mtb_cnpj.Mask = "99.999.999/9999-99";
             this.mtb_cnpj.Name = "mtb_cnpj";
@@ -348,9 +348,9 @@
             // 
             // mtb_telefone
             // 
-            this.mtb_telefone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(84)))));
+            this.mtb_telefone.BackColor = System.Drawing.SystemColors.Control;
             this.mtb_telefone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.mtb_telefone.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.mtb_telefone.ForeColor = System.Drawing.SystemColors.ControlText;
             this.mtb_telefone.Location = new System.Drawing.Point(231, 307);
             this.mtb_telefone.Mask = "(99) 9999-9999";
             this.mtb_telefone.Name = "mtb_telefone";
@@ -370,9 +370,9 @@
             // 
             // mtb_cep
             // 
-            this.mtb_cep.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(84)))));
+            this.mtb_cep.BackColor = System.Drawing.SystemColors.Control;
             this.mtb_cep.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.mtb_cep.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.mtb_cep.ForeColor = System.Drawing.SystemColors.ControlText;
             this.mtb_cep.Location = new System.Drawing.Point(145, 307);
             this.mtb_cep.Mask = "99.999.999";
             this.mtb_cep.Name = "mtb_cep";
@@ -402,9 +402,9 @@
             // 
             // txt_rua
             // 
-            this.txt_rua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(84)))));
+            this.txt_rua.BackColor = System.Drawing.SystemColors.Control;
             this.txt_rua.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_rua.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txt_rua.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txt_rua.Location = new System.Drawing.Point(29, 215);
             this.txt_rua.Name = "txt_rua";
             this.txt_rua.Size = new System.Drawing.Size(381, 20);
@@ -422,9 +422,9 @@
             // 
             // txt_fantasia
             // 
-            this.txt_fantasia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(84)))));
+            this.txt_fantasia.BackColor = System.Drawing.SystemColors.Control;
             this.txt_fantasia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_fantasia.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txt_fantasia.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txt_fantasia.Location = new System.Drawing.Point(29, 166);
             this.txt_fantasia.Name = "txt_fantasia";
             this.txt_fantasia.Size = new System.Drawing.Size(381, 20);
@@ -442,9 +442,9 @@
             // 
             // txt_razao
             // 
-            this.txt_razao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(84)))));
+            this.txt_razao.BackColor = System.Drawing.SystemColors.Control;
             this.txt_razao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_razao.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txt_razao.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txt_razao.Location = new System.Drawing.Point(29, 118);
             this.txt_razao.Name = "txt_razao";
             this.txt_razao.Size = new System.Drawing.Size(381, 20);
@@ -480,6 +480,7 @@
             this.Name = "Empresa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Empresa";
+            this.Load += new System.EventHandler(this.Empresa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_empresa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);

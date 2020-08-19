@@ -48,7 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\BD.cs" />
-    <Compile Include="Classes\Login.cs" />
+    <Compile Include="Classes\LoginUser.cs" />
     <Compile Include="Classes\OS.cs" />
     <Compile Include="Classes\Tecnico.cs" />
     <Compile Include="Empresa\Empresa.cs">

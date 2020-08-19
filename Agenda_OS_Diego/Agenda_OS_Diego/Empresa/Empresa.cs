@@ -150,6 +150,9 @@ namespace Agenda_OS_Diego
 
         }
 
-    
+        private void Empresa_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

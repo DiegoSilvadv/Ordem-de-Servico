@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrdemServico));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txt_pesquisa = new System.Windows.Forms.TextBox();
@@ -41,6 +41,7 @@
             this.dgv_os = new System.Windows.Forms.DataGridView();
             this.btn_novo = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
@@ -74,7 +75,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txt_fantasia = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_os)).BeginInit();
             this.panel1.SuspendLayout();
@@ -144,25 +144,25 @@
             this.dgv_os.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
             this.dgv_os.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_os.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_os.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_os.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_os.ColumnHeadersHeight = 35;
             this.dgv_os.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv_os.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.GrayText;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.WindowFrame;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_os.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.WindowFrame;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_os.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_os.EnableHeadersVisualStyles = false;
             this.dgv_os.GridColor = System.Drawing.SystemColors.ButtonShadow;
             this.dgv_os.Location = new System.Drawing.Point(12, 78);
@@ -170,22 +170,22 @@
             this.dgv_os.Name = "dgv_os";
             this.dgv_os.ReadOnly = true;
             this.dgv_os.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Roboto", 8.25F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_os.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Roboto", 8.25F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_os.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgv_os.RowHeadersWidth = 50;
             this.dgv_os.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Roboto", 8.25F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.dgv_os.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Roboto", 8.25F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            this.dgv_os.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgv_os.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_os.Size = new System.Drawing.Size(814, 436);
             this.dgv_os.TabIndex = 13;
@@ -246,10 +246,27 @@
             this.panel1.Size = new System.Drawing.Size(432, 600);
             this.panel1.TabIndex = 23;
             // 
+            // comboBox4
+            // 
+            this.comboBox4.BackColor = System.Drawing.SystemColors.Control;
+            this.comboBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "Selecione um status",
+            "Concluido",
+            "Pendente",
+            "Agendado",
+            "Cancelado"});
+            this.comboBox4.Location = new System.Drawing.Point(26, 63);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(134, 21);
+            this.comboBox4.TabIndex = 81;
+            // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(29, 150);
+            this.label19.Location = new System.Drawing.Point(29, 176);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(89, 13);
             this.label19.TabIndex = 80;
@@ -257,9 +274,9 @@
             // 
             // textBox3
             // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(84)))));
+            this.textBox3.BackColor = System.Drawing.SystemColors.Control;
             this.textBox3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.textBox3.Location = new System.Drawing.Point(26, 166);
+            this.textBox3.Location = new System.Drawing.Point(26, 192);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(381, 20);
             this.textBox3.TabIndex = 79;
@@ -268,7 +285,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(207, 451);
+            this.label18.Location = new System.Drawing.Point(207, 477);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(40, 13);
             this.label18.TabIndex = 78;
@@ -276,7 +293,7 @@
             // 
             // comboBox3
             // 
-            this.comboBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(84)))));
+            this.comboBox3.BackColor = System.Drawing.SystemColors.Control;
             this.comboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.comboBox3.FormattingEnabled = true;
@@ -286,15 +303,15 @@
             "Pendente",
             "Agendado",
             "Cancelado"});
-            this.comboBox3.Location = new System.Drawing.Point(210, 467);
+            this.comboBox3.Location = new System.Drawing.Point(233, 493);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(197, 21);
+            this.comboBox3.Size = new System.Drawing.Size(174, 21);
             this.comboBox3.TabIndex = 77;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(124, 451);
+            this.label17.Location = new System.Drawing.Point(124, 477);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(73, 13);
             this.label17.TabIndex = 76;
@@ -303,7 +320,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(29, 451);
+            this.label16.Location = new System.Drawing.Point(29, 477);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(50, 13);
             this.label16.TabIndex = 75;
@@ -312,7 +329,7 @@
             // dateTimePicker2
             // 
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(126, 467);
+            this.dateTimePicker2.Location = new System.Drawing.Point(127, 493);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(78, 20);
             this.dateTimePicker2.TabIndex = 74;
@@ -325,7 +342,7 @@
             this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(84)))));
             this.dateTimePicker1.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(84)))));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(26, 467);
+            this.dateTimePicker1.Location = new System.Drawing.Point(26, 493);
             this.dateTimePicker1.MaxDate = new System.DateTime(2050, 12, 31, 0, 0, 0, 0);
             this.dateTimePicker1.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
@@ -336,7 +353,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(29, 346);
+            this.label15.Location = new System.Drawing.Point(29, 372);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(49, 13);
             this.label15.TabIndex = 72;
@@ -344,9 +361,9 @@
             // 
             // textBox2
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(84)))));
+            this.textBox2.BackColor = System.Drawing.SystemColors.Control;
             this.textBox2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.textBox2.Location = new System.Drawing.Point(26, 362);
+            this.textBox2.Location = new System.Drawing.Point(26, 388);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(381, 86);
@@ -355,7 +372,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(230, 306);
+            this.label14.Location = new System.Drawing.Point(230, 332);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(47, 13);
             this.label14.TabIndex = 70;
@@ -363,7 +380,7 @@
             // 
             // comboBox2
             // 
-            this.comboBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(84)))));
+            this.comboBox2.BackColor = System.Drawing.SystemColors.Control;
             this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.comboBox2.FormattingEnabled = true;
@@ -374,7 +391,7 @@
             "VRsystem",
             "TEF Scoop",
             "TEF sitef"});
-            this.comboBox2.Location = new System.Drawing.Point(228, 322);
+            this.comboBox2.Location = new System.Drawing.Point(228, 348);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(179, 21);
             this.comboBox2.TabIndex = 69;
@@ -382,7 +399,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(29, 306);
+            this.label13.Location = new System.Drawing.Point(29, 332);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(69, 13);
             this.label13.TabIndex = 68;
@@ -390,7 +407,7 @@
             // 
             // comboBox1
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(84)))));
+            this.comboBox1.BackColor = System.Drawing.SystemColors.Control;
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.comboBox1.FormattingEnabled = true;
@@ -400,7 +417,7 @@
             "WhatssApp",
             "Presencial",
             "Skype"});
-            this.comboBox1.Location = new System.Drawing.Point(26, 322);
+            this.comboBox1.Location = new System.Drawing.Point(26, 348);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(178, 21);
             this.comboBox1.TabIndex = 67;
@@ -408,7 +425,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 230);
+            this.label1.Location = new System.Drawing.Point(29, 256);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 66;
@@ -416,9 +433,9 @@
             // 
             // textBox1
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(84)))));
+            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
             this.textBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.textBox1.Location = new System.Drawing.Point(26, 246);
+            this.textBox1.Location = new System.Drawing.Point(26, 272);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(381, 57);
@@ -427,7 +444,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(29, 190);
+            this.label12.Location = new System.Drawing.Point(29, 216);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(48, 13);
             this.label12.TabIndex = 64;
@@ -438,7 +455,7 @@
             this.btn_abrir_os.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
             this.btn_abrir_os.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_abrir_os.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_abrir_os.Location = new System.Drawing.Point(163, 508);
+            this.btn_abrir_os.Location = new System.Drawing.Point(168, 552);
             this.btn_abrir_os.Name = "btn_abrir_os";
             this.btn_abrir_os.Size = new System.Drawing.Size(128, 34);
             this.btn_abrir_os.TabIndex = 51;
@@ -447,9 +464,9 @@
             // 
             // txt_assunto
             // 
-            this.txt_assunto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(84)))));
+            this.txt_assunto.BackColor = System.Drawing.SystemColors.Control;
             this.txt_assunto.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txt_assunto.Location = new System.Drawing.Point(26, 206);
+            this.txt_assunto.Location = new System.Drawing.Point(26, 232);
             this.txt_assunto.Name = "txt_assunto";
             this.txt_assunto.Size = new System.Drawing.Size(381, 20);
             this.txt_assunto.TabIndex = 63;
@@ -458,7 +475,7 @@
             // Técnico
             // 
             this.Técnico.AutoSize = true;
-            this.Técnico.Location = new System.Drawing.Point(30, 21);
+            this.Técnico.Location = new System.Drawing.Point(30, 47);
             this.Técnico.Name = "Técnico";
             this.Técnico.Size = new System.Drawing.Size(49, 13);
             this.Técnico.TabIndex = 62;
@@ -467,7 +484,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(165, 17);
+            this.label2.Location = new System.Drawing.Point(165, 43);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 13);
             this.label2.TabIndex = 60;
@@ -475,9 +492,9 @@
             // 
             // txt_solicitante
             // 
-            this.txt_solicitante.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(84)))));
+            this.txt_solicitante.BackColor = System.Drawing.SystemColors.Control;
             this.txt_solicitante.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txt_solicitante.Location = new System.Drawing.Point(168, 38);
+            this.txt_solicitante.Location = new System.Drawing.Point(168, 64);
             this.txt_solicitante.Name = "txt_solicitante";
             this.txt_solicitante.Size = new System.Drawing.Size(239, 20);
             this.txt_solicitante.TabIndex = 59;
@@ -503,9 +520,9 @@
             // 
             // mtb_celular
             // 
-            this.mtb_celular.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(84)))));
+            this.mtb_celular.BackColor = System.Drawing.SystemColors.Control;
             this.mtb_celular.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.mtb_celular.Location = new System.Drawing.Point(308, 126);
+            this.mtb_celular.Location = new System.Drawing.Point(308, 152);
             this.mtb_celular.Mask = "(99) 9 9999-9999";
             this.mtb_celular.Name = "mtb_celular";
             this.mtb_celular.Size = new System.Drawing.Size(99, 20);
@@ -514,9 +531,9 @@
             // 
             // mtb_cnpj
             // 
-            this.mtb_cnpj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(84)))));
+            this.mtb_cnpj.BackColor = System.Drawing.SystemColors.Control;
             this.mtb_cnpj.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.mtb_cnpj.Location = new System.Drawing.Point(26, 126);
+            this.mtb_cnpj.Location = new System.Drawing.Point(26, 152);
             this.mtb_cnpj.Mask = "99.999.999/9999-99";
             this.mtb_cnpj.Name = "mtb_cnpj";
             this.mtb_cnpj.Size = new System.Drawing.Size(110, 20);
@@ -526,7 +543,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(29, 110);
+            this.label3.Location = new System.Drawing.Point(29, 136);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 13);
             this.label3.TabIndex = 48;
@@ -536,7 +553,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(84)))));
-            this.label7.Location = new System.Drawing.Point(305, 110);
+            this.label7.Location = new System.Drawing.Point(305, 136);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(42, 13);
             this.label7.TabIndex = 55;
@@ -544,9 +561,9 @@
             // 
             // mtb_telefone
             // 
-            this.mtb_telefone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(84)))));
+            this.mtb_telefone.BackColor = System.Drawing.SystemColors.Control;
             this.mtb_telefone.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.mtb_telefone.Location = new System.Drawing.Point(187, 126);
+            this.mtb_telefone.Location = new System.Drawing.Point(187, 152);
             this.mtb_telefone.Mask = "(99) 9999-9999";
             this.mtb_telefone.Name = "mtb_telefone";
             this.mtb_telefone.Size = new System.Drawing.Size(74, 20);
@@ -557,7 +574,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(84)))));
-            this.label6.Location = new System.Drawing.Point(184, 110);
+            this.label6.Location = new System.Drawing.Point(184, 136);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 13);
             this.label6.TabIndex = 53;
@@ -566,7 +583,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(28, 70);
+            this.label4.Location = new System.Drawing.Point(28, 96);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(83, 13);
             this.label4.TabIndex = 52;
@@ -574,9 +591,9 @@
             // 
             // txt_fantasia
             // 
-            this.txt_fantasia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(84)))));
+            this.txt_fantasia.BackColor = System.Drawing.SystemColors.Control;
             this.txt_fantasia.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txt_fantasia.Location = new System.Drawing.Point(26, 86);
+            this.txt_fantasia.Location = new System.Drawing.Point(26, 112);
             this.txt_fantasia.Name = "txt_fantasia";
             this.txt_fantasia.Size = new System.Drawing.Size(381, 20);
             this.txt_fantasia.TabIndex = 50;
@@ -592,23 +609,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 24;
             this.pictureBox2.TabStop = false;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(84)))));
-            this.comboBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "Selecione um status",
-            "Concluido",
-            "Pendente",
-            "Agendado",
-            "Cancelado"});
-            this.comboBox4.Location = new System.Drawing.Point(26, 37);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(134, 21);
-            this.comboBox4.TabIndex = 81;
             // 
             // OrdemServico
             // 

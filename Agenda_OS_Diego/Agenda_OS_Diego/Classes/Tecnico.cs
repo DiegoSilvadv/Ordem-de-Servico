@@ -63,6 +63,7 @@ namespace Agenda_OS_Diego
             cmd.Parameters.AddWithValue("@data_nascimento", data_nascimento);
             cmd.ExecuteNonQuery();
             cmd.Parameters.Clear();
+            MessageBox.Show("Cadastrado com sucesso");
             con.Close();
         }
         //listar ténicos
