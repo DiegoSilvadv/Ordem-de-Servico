@@ -3,7 +3,7 @@ create database agenda;
 use agenda;
 
 create table empresa(
-  id int primary key AUTO_INCREMENT,
+  id_empresa int primary key AUTO_INCREMENT,
   razao VARCHAR(300),
   fantasia VARCHAR(300),
   cnpj CHAR(18),
@@ -28,35 +28,42 @@ CREATE table tecnico(
   numero VARCHAR(5),
   cep CHAR(10),
   celular VARCHAR(20),
-  data_nascimento VARCHAR(12)
+  data_nascimento datetime
 ) ENGINE = innodb;
 
 create table ordemservico (
   id_os int primary key auto_increment,
-  usuario VARCHAR(200),
+  fk_empresa int,
+  fk_tecnico int,
   solicitante VARCHAR(200),
-  fantasia VARCHAR(300),
-  cnpj CHAR(18),
-  telefone VARCHAR(20),
-  celular VARCHAR(20),
   info_extra VARCHAR(250),
   assunto VARCHAR(250),
   descricao text,
   atendimento VARCHAR(150),
   sistema VARCHAR(150),
   solucao text,
-  abertura varchar(30),
-  conclusao varchar(30),
+  abertura datetime,
+  conclusao datetime,
   status_os VARCHAR(150)
-);
+) ENGINE = innodb;
 
-insert into ordemservico VALUES(0, "Diego", "Joao", "Nike", "123456789654789654"
-, "12553662525", "15996363232", "Telefone funcionario 132"
-, "Erro pinpad", "Foi conectado ao pc", "Whatssapp", "tef sitef"
-, "foi feito correcao", "25/10/2020 13:52", "25/10/2020 13:52", "pendente"
-);
+ALTER TABLE ordemservico
+ADD CONSTRAINT id_empresa
+FOREIGN KEY (fk_empresa) 
+REFERENCES empresa (id_empresa);
+
+ALTER TABLE ordemservico
+ADD CONSTRAINT id_tecnico
+FOREIGN KEY (fk_tecnico) 
+REFERENCES tecnico (id_tecnico);
+
+insert into ordemservico VALUES(0, 2, 2, "Diego", "outro telefone 123"
+, "pinpad", "pinpad nao funciona", "Telefone", "TEF", "colocou novamento na porta usb", now(), now(), "Finalizado");
 
 insert into empresa VALUES(0, "nike", "nike ltd", "12345678912345",
  "Pulo holtz", "Inocoop", "Tatuí", "123", "18555236", "153053333", "15996286530");
-update empresa set razao = "nike teste" where id = 1;
-DELETE from empresa WHERE id= 1;
+
+ insert into tecnico VALUES (0, "diego", "123", "Diego da Silva", "12345678998745698562"
+, "TAtuí", "Centro", "XV de novembro", "1234", "105831256", "15996989530", now() );
+
+

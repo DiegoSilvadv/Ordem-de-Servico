@@ -22,15 +22,7 @@ namespace Agenda_OS_Diego
         {
             InitializeComponent();
         }
-
-      
-
-        private void txt_usuario_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-      
+  
         private void btn_login_Click_1(object sender, EventArgs e)
         {
             loginUsuario.usuario = txt_usuario.Text;           
@@ -58,15 +50,5 @@ namespace Agenda_OS_Diego
            
         }
 
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

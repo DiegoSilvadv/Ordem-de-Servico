@@ -64,20 +64,21 @@ namespace Agenda_OS_Diego.Classes
         }
 
 
-        public void ListarEmpresa(string fantasia) {
+        public void ListarEmpresa() {
 
-            MySqlCommand comm = new MySqlCommand("SELECT * FROM empresa WHERE fantasia like '%" + fantasia.ToString() + "%'", con);
-            comm.CommandType = CommandType.Text;
+            MySqlCommand cmd = new MySqlCommand("SELECT  fantasia, cnpj, telefone FROM empresa WHERE fantasia like '%'@fantasia'%'", con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.AddWithValue("@fantasia", fantasia);
 
             con.Open();
-            MySqlDataReader dr = comm.ExecuteReader();
+            MySqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
                 {
+                MessageBox.Show("Empresa" + fantasia);
                     this.fantasia = dr["fantasia"].ToString();
                     this.cnpj = dr["cnpj"].ToString();
                     this.telefone = dr["telefone"].ToString();
                 }
-
             con.Close();
 
 
