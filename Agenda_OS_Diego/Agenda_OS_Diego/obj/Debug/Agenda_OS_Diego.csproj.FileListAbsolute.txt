@@ -62,7 +62,6 @@ C:\DevFiles\Ordem-de-Servico\Agenda_OS_Diego\Agenda_OS_Diego\obj\Debug\Agenda_OS
 C:\DevFiles\Ordem-de-Servico\Agenda_OS_Diego\Agenda_OS_Diego\bin\Debug\Agenda_OS_Diego.exe.config
 C:\DevFiles\Ordem-de-Servico\Agenda_OS_Diego\Agenda_OS_Diego\bin\Debug\Agenda_OS_Diego.exe
 C:\DevFiles\Ordem-de-Servico\Agenda_OS_Diego\Agenda_OS_Diego\bin\Debug\Agenda_OS_Diego.pdb
-C:\DevFiles\Ordem-de-Servico\Agenda_OS_Diego\Agenda_OS_Diego\bin\Debug\MySql.Data.dll
 C:\DevFiles\Ordem-de-Servico\Agenda_OS_Diego\Agenda_OS_Diego\bin\Debug\Google.Protobuf.dll
 C:\DevFiles\Ordem-de-Servico\Agenda_OS_Diego\Agenda_OS_Diego\bin\Debug\Zstandard.Net.dll
 C:\DevFiles\Ordem-de-Servico\Agenda_OS_Diego\Agenda_OS_Diego\bin\Debug\K4os.Compression.LZ4.Streams.dll
@@ -79,6 +78,6 @@ C:\DevFiles\Ordem-de-Servico\Agenda_OS_Diego\Agenda_OS_Diego\bin\Debug\MySql.Dat
 C:\DevFiles\Ordem-de-Servico\Agenda_OS_Diego\Agenda_OS_Diego\obj\Debug\Agenda_OS_Diego.csproj.CopyComplete
 C:\DevFiles\Agenda_OS_Diego\Agenda_OS_Diego\obj\Debug\Agenda_OS_Diego.Login.Login.resources
 C:\DevFiles\Agenda_OS_Diego\Agenda_OS_Diego\obj\Debug\Agenda_OS_Diego.Tecnico.Tecnico.resources
-C:\DevFiles\Ordem-de-Servico\Agenda_OS_Diego\Agenda_OS_Diego\obj\Debug\Agenda_OS_Diego.Login.Login.resources
 C:\DevFiles\Ordem-de-Servico\Agenda_OS_Diego\Agenda_OS_Diego\obj\Debug\Agenda_OS_Diego.Tecnico.Tecnico.resources
 C:\DevFiles\Ordem-de-Servico\Agenda_OS_Diego\Agenda_OS_Diego\obj\Debug\Agenda_OS_Diego.OrdemServico.OrdemServico.resources
+C:\DevFiles\Ordem-de-Servico\Agenda_OS_Diego\Agenda_OS_Diego\obj\Debug\Agenda_OS_Diego.Login.resources

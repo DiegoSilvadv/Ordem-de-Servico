@@ -1,4 +1,5 @@
 ﻿
+using Agenda_OS_Diego.LoginUsuarios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +14,12 @@ namespace Agenda_OS_Diego
 {
     public partial class Home : Form
     {
+        LoginUsuario loginUsuario = new LoginUsuario();
         public Home()
         { 
             InitializeComponent();
+            MessageBox.Show("ola" + loginUsuario.usuario);
+            lbl_tecnico.Text = loginUsuario.usuario;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -32,10 +36,6 @@ namespace Agenda_OS_Diego
             frmtec.ShowDialog();
         }
 
-        private void Home_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {

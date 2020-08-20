@@ -10,8 +10,9 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Runtime.Serialization;
 using Agenda_OS_Diego.LoginUsuarios;
+using MySqlX.XDevAPI.Common;
 
-namespace Agenda_OS_Diego.Login
+namespace Agenda_OS_Diego
 {
     public partial class Login : Form
     {
@@ -29,17 +30,41 @@ namespace Agenda_OS_Diego.Login
 
         }
 
-        
-
+      
         private void btn_login_Click_1(object sender, EventArgs e)
         {
+            loginUsuario.usuario = txt_usuario.Text;           
+            loginUsuario.senha = txt_senha.Text;
 
-            Home frmHome = new Home();
-            this.Hide();
-            frmHome.ShowDialog();
+            if (txt_usuario.Text != "" || txt_senha.Text != "")
+            {
+                loginUsuario.ConsultarLogin();
+                if (loginUsuario.logado == "Logado")
+                {
+                    Home frmHome = new Home();
+                    this.Hide();
+                    frmHome.ShowDialog();
+                    MessageBox.Show("Bem vindo " + loginUsuario.usuario);
+                }
+                else {
+                    MessageBox.Show("Usuário ou senha incorretos");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor preencha os campos!");
+            }
+            
+           
         }
 
+
         private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

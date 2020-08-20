@@ -21,14 +21,14 @@ CREATE table tecnico(
   usuario VARCHAR(20),
   senha VARCHAR(20),
   nome VARCHAR(200),
-  cnh CHAR(11),
+  cnh CHAR(20),
   cidade VARCHAR(100),
   bairro VARCHAR(100),
   rua VARCHAR(150),
   numero VARCHAR(5),
   cep CHAR(10),
   celular VARCHAR(20),
-  data_nascimento VARCHAR(10)
+  data_nascimento VARCHAR(12)
 ) ENGINE = innodb;
 
 create table ordemservico (
