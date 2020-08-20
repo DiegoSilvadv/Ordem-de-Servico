@@ -49,7 +49,6 @@ namespace Agenda_OS_Diego.LoginUsuarios
                 {
                     this.logado = "Logado";
                     con.Close();
-                    MessageBox.Show("olaaa" + usuario);
                 }
                 else {
                     this.logado = "Negado";

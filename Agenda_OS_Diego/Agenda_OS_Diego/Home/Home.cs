@@ -14,12 +14,10 @@ namespace Agenda_OS_Diego
 {
     public partial class Home : Form
     {
-        LoginUsuario loginUsuario = new LoginUsuario();
+        
         public Home()
         { 
             InitializeComponent();
-            MessageBox.Show("ola" + loginUsuario.usuario);
-            lbl_tecnico.Text = loginUsuario.usuario;
         }
 
         private void button3_Click(object sender, EventArgs e)
