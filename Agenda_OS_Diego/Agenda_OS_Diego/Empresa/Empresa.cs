@@ -132,10 +132,6 @@ namespace Agenda_OS_Diego
 
         }
 
-        private void Empresa_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void btn_cadastrar_empresa_Click(object sender, EventArgs e)
         {
@@ -154,6 +150,13 @@ namespace Agenda_OS_Diego
                 LimparCampos();
                 crud.Listar_Dados(dgv_empresa);
             }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Home ReturnHome = new Home();
+            this.Hide();
+            ReturnHome.ShowDialog();
         }
     }
 }

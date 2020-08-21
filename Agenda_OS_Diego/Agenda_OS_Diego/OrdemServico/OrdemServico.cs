@@ -11,8 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
-
+using MySqlX.XDevAPI.Relational;
 
 namespace Agenda_OS_Diego.OrdemServico
 {
@@ -38,13 +37,51 @@ namespace Agenda_OS_Diego.OrdemServico
         private void txt_fantasia_TextChanged(object sender, EventArgs e)
         {
             crud_os.fantasia = txt_fantasia.Text;
+
             crud_os.ListarEmpresa();
+            lbl_id_empresa.Text = crud_os.id_empresa.ToString();
             txt_fantasia.Text = crud_os.fantasia;
             mtb_cnpj.Text = crud_os.cnpj;
+            mtb_celular.Text = crud_os.celular;
+            mtb_telefone.Text = crud_os.telefone;
             
         }
 
-      
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Home ReturnHome = new Home();
+            this.Hide();
+            ReturnHome.ShowDialog();
+        }
 
+
+        public void PegarDados() {
+            crud_os.id_empresa = Convert.ToInt32(lbl_id_empresa.Text);
+            crud_os.solicitante = txt_solicitante.Text;
+            crud_os.informação_extra = txt_info_extra.Text;
+            crud_os.assunto = txt_assunto.Text;
+            crud_os.descricao = txt_descricao.Text;
+            crud_os.atendimento = cb_atendimento.Text;
+            crud_os.sistema = cb_sistema.Text;
+            crud_os.solucao = txt_solucao.Text;
+            crud_os.abertura = dtp_abertura.Value;
+            crud_os.conclusao = dtp_conclusao.Value;
+            crud_os.status = cb_status.Text;
+        }
+        private void btn_abrir_os_Click(object sender, EventArgs e)
+        {
+            PegarDados();
+            crud_os.CadastrarOS();
+        }
+
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            crud_os.ListarOSPendente(dgv_os);
+
+            if (cb_pendentes.Checked == false) {
+                crud_os.Listar_Dados(dgv_os);
+            }
+        }
     }
 }

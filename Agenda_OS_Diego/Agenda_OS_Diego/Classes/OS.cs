@@ -30,7 +30,9 @@ namespace Agenda_OS_Diego.Classes
         
         class CrudOs : DB
         {
-            public string id { set; get; }
+            public int id_ordemServico { set; get; }
+            public int id_empresa { set; get; }
+            public int id_tecnico { set; get; }
             public string tecnico { set; get; }
             public string solicitante { set; get; }
             public string fantasia { set; get; }
@@ -43,8 +45,8 @@ namespace Agenda_OS_Diego.Classes
             public string atendimento { set; get; }
             public string sistema{ set; get; }
             public string solucao { set; get; }
-            public string abertura { set; get; }
-            public string conclusao { set; get; }
+            public DateTime abertura { set; get; }
+            public DateTime conclusao { set; get; }
             public string status { set; get; }
 
         public void Listar_Dados(DataGridView dgv)
@@ -63,28 +65,68 @@ namespace Agenda_OS_Diego.Classes
             con.Close();
         }
 
+        public void ListarOSPendente(DataGridView dgv)
+        {
+            con.Open();
 
+            MySqlDataAdapter MyDA = new MySqlDataAdapter();
+            string sqlSelectAll = "SELECT * FROM ordemservico WHERE status_os = 'Pendente'";
+            MyDA.SelectCommand = new MySqlCommand(sqlSelectAll, con);
+            DataTable table = new DataTable();
+            MyDA.Fill(table);
+            BindingSource bSource = new BindingSource();
+            bSource.DataSource = table;
+            dgv.DataSource = bSource;
+
+            con.Close();
+        }
+
+        // função para preencher os campos automaticamente
         public void ListarEmpresa() {
 
-            MySqlCommand cmd = new MySqlCommand("SELECT  fantasia, cnpj, telefone FROM empresa WHERE fantasia like '%'@fantasia'%'", con);
+            MySqlCommand cmd = new MySqlCommand("SELECT id_empresa, fantasia, cnpj, telefone, celular FROM empresa WHERE fantasia LIKE @fantasia", con);
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.AddWithValue("@fantasia", fantasia);
 
             con.Open();
             MySqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
-                {
-                MessageBox.Show("Empresa" + fantasia);
-                    this.fantasia = dr["fantasia"].ToString();
-                    this.cnpj = dr["cnpj"].ToString();
-                    this.telefone = dr["telefone"].ToString();
-                }
+            {
+                this.id_empresa = Convert.ToInt32(dr["id_empresa"].ToString());
+                this.fantasia = dr["fantasia"].ToString();
+                this.cnpj = dr["cnpj"].ToString();
+                this.telefone = dr["telefone"].ToString();
+                this.celular = dr["celular"].ToString();
+            }
             con.Close();
 
 
 
         }
 
-    }
-    }
+        public void CadastrarOS() {
+            string query = "INSERT INTO ordemservico VALUES( 0, @id_empresa, 2, @solicitante, @info_extra, @assunto, @descricao, @atendimento, @sistema, @solucao, @abertura, @conclusao, @status )";
+            MySqlCommand cmd = new MySqlCommand(query, con);
+
+            cmd.Parameters.AddWithValue("@id_empresa", id_empresa);
+            cmd.Parameters.AddWithValue("@solicitante", solicitante);
+            cmd.Parameters.AddWithValue("@info_extra", informação_extra);
+            cmd.Parameters.AddWithValue("@assunto", assunto);
+            cmd.Parameters.AddWithValue("@descricao", descricao);
+            cmd.Parameters.AddWithValue("@atendimento", atendimento);
+            cmd.Parameters.AddWithValue("@sistema", sistema);
+            cmd.Parameters.AddWithValue("@solucao", solucao);
+            cmd.Parameters.AddWithValue("@abertura", abertura);
+            cmd.Parameters.AddWithValue("@conclusao", conclusao);
+            cmd.Parameters.AddWithValue("@status", status);
+            con.Open();
+            MessageBox.Show("Cadastrado com sucesso!");
+            cmd.ExecuteNonQuery();
+            cmd.Parameters.Clear();
+        }
+
+
+
+        }
+}
 
