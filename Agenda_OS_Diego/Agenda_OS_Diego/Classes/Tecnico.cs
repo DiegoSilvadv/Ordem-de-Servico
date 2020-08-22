@@ -41,7 +41,7 @@ namespace Agenda_OS_Diego
         public string cep { set; get; }
         public string celular { set; get; }
         public string cnh { set; get; }
-        public string data_nascimento { set; get; }
+        public DateTime data_nascimento { set; get; }
         
         //criar dados dos tecnicos
         public void CriarDados() {

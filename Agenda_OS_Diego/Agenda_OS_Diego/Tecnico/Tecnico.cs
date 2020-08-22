@@ -37,7 +37,7 @@ namespace Agenda_OS_Diego.Tecnico
             crudtec.numero = txt_numero.Text;
             crudtec.cep = mtb_cep.Text;
             crudtec.celular = mtb_celular.Text;
-            crudtec.data_nascimento = mtb_data_nascimento.Text;
+            crudtec.data_nascimento = dtp_nascimento.Value;
         }
         //Função para listar os dados do grid view nos campos
         public void ListarDados()

@@ -42,7 +42,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_cadastrar_tecnico = new System.Windows.Forms.Button();
-            this.mtb_data_nascimento = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.txt_rua = new System.Windows.Forms.TextBox();
@@ -66,6 +65,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_usuario = new System.Windows.Forms.TextBox();
+            this.dtp_nascimento = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tecnico)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -92,7 +92,7 @@
             this.dgv_tecnico.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.GrayText;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlLight;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.WindowFrame;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -116,7 +116,7 @@
             this.dgv_tecnico.RowHeadersWidth = 50;
             this.dgv_tecnico.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Roboto", 8.25F);
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
@@ -158,7 +158,7 @@
             this.btn_excluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(51)))), ((int)(((byte)(59)))));
             this.btn_excluir.FlatAppearance.BorderSize = 0;
             this.btn_excluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_excluir.Font = new System.Drawing.Font("Roboto Bk", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_excluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_excluir.ForeColor = System.Drawing.SystemColors.Control;
             this.btn_excluir.Location = new System.Drawing.Point(97, 400);
             this.btn_excluir.Name = "btn_excluir";
@@ -173,7 +173,7 @@
             this.btn_editar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(51)))), ((int)(((byte)(59)))));
             this.btn_editar.FlatAppearance.BorderSize = 0;
             this.btn_editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_editar.Font = new System.Drawing.Font("Roboto Bk", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_editar.ForeColor = System.Drawing.SystemColors.Control;
             this.btn_editar.Location = new System.Drawing.Point(11, 400);
             this.btn_editar.Name = "btn_editar";
@@ -198,8 +198,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(84)))));
+            this.panel1.Controls.Add(this.dtp_nascimento);
             this.panel1.Controls.Add(this.btn_cadastrar_tecnico);
-            this.panel1.Controls.Add(this.mtb_data_nascimento);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.txt_rua);
@@ -241,17 +241,6 @@
             this.btn_cadastrar_tecnico.Text = "Cadastrar";
             this.btn_cadastrar_tecnico.UseVisualStyleBackColor = false;
             this.btn_cadastrar_tecnico.Click += new System.EventHandler(this.btn_cadastrar_tecnico_Click_1);
-            // 
-            // mtb_data_nascimento
-            // 
-            this.mtb_data_nascimento.BackColor = System.Drawing.SystemColors.Control;
-            this.mtb_data_nascimento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.mtb_data_nascimento.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.mtb_data_nascimento.Location = new System.Drawing.Point(296, 319);
-            this.mtb_data_nascimento.Mask = "99/99/9999";
-            this.mtb_data_nascimento.Name = "mtb_data_nascimento";
-            this.mtb_data_nascimento.Size = new System.Drawing.Size(111, 20);
-            this.mtb_data_nascimento.TabIndex = 54;
             // 
             // label6
             // 
@@ -488,6 +477,13 @@
             this.txt_usuario.Size = new System.Drawing.Size(381, 20);
             this.txt_usuario.TabIndex = 31;
             // 
+            // dtp_nascimento
+            // 
+            this.dtp_nascimento.Location = new System.Drawing.Point(302, 319);
+            this.dtp_nascimento.Name = "dtp_nascimento";
+            this.dtp_nascimento.Size = new System.Drawing.Size(106, 20);
+            this.dtp_nascimento.TabIndex = 56;
+            // 
             // Tecnico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -529,7 +525,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_cadastrar_tecnico;
-        private System.Windows.Forms.MaskedTextBox mtb_data_nascimento;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txt_rua;
@@ -553,5 +548,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_usuario;
+        private System.Windows.Forms.DateTimePicker dtp_nascimento;
     }
 }

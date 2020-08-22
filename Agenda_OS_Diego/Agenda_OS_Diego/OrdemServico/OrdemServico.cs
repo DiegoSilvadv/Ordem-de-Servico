@@ -25,6 +25,8 @@ namespace Agenda_OS_Diego.OrdemServico
 
             InitializeComponent();
             crud_os.Listar_Dados(dgv_os);
+           
+
         }
 
         private void img_return_Click(object sender, EventArgs e)
@@ -82,6 +84,21 @@ namespace Agenda_OS_Diego.OrdemServico
             if (cb_pendentes.Checked == false) {
                 crud_os.Listar_Dados(dgv_os);
             }
+        }
+
+        private void OrdemServico_Load(object sender, EventArgs e)
+        { 
+            crud_os.ListarProfessor();
+            cb_tecnico.DataSource = crud_os.tecnico;
+            cb_tecnico.DisplayMember = "nome";
+            cb_tecnico.ValueMember = "id_tecnico";
+        }
+
+
+        private void cb_tecnico_SelectedIndexChanged(object sender, EventArgs e)
+        {   
+            //passando o valor do TextBoxpara lbl id
+            lbl_id_tecnico.Text = cb_tecnico.SelectedValue.ToString();
         }
     }
 }

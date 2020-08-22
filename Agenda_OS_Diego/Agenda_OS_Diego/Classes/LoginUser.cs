@@ -30,6 +30,7 @@ namespace Agenda_OS_Diego.LoginUsuarios
 
     class LoginUsuario : BD
     {
+        public DataTable usuarioDT { get; set; }
         public string usuario { get; set; }
         public string senha { get; set; }
         public string logado { get; set; }
@@ -62,11 +63,18 @@ namespace Agenda_OS_Diego.LoginUsuarios
             }
 
 
-            MessageBox.Show("" + usuario);
-
-
         }
-        
 
+        public void ListarUsuario()
+        {
+
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand("SELECT id_tecnico, usuario FROM tecnico ORDER BY usuario", con);
+            MySqlDataReader dr = cmd.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+            this.usuarioDT = dt;
+            con.Close();
+        }
     }
 }

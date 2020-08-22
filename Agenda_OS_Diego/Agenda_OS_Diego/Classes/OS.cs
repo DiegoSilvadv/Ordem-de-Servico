@@ -33,7 +33,7 @@ namespace Agenda_OS_Diego.Classes
             public int id_ordemServico { set; get; }
             public int id_empresa { set; get; }
             public int id_tecnico { set; get; }
-            public string tecnico { set; get; }
+            public DataTable tecnico { set; get; }
             public string solicitante { set; get; }
             public string fantasia { set; get; }
             public string cnpj { set; get; }
@@ -125,7 +125,16 @@ namespace Agenda_OS_Diego.Classes
             cmd.Parameters.Clear();
         }
 
-
+        public void ListarProfessor() {
+            
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand("SELECT id_tecnico, nome FROM tecnico ORDER BY nome", con);
+            MySqlDataReader dr = cmd.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+            this.tecnico = dt;
+            con.Close();
+        }
 
         }
 }

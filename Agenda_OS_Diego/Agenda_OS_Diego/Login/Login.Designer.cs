@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cb_usuario = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txt_senha = new System.Windows.Forms.TextBox();
-            this.txt_usuario = new System.Windows.Forms.TextBox();
             this.btn_login = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
@@ -49,17 +49,26 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox1.Controls.Add(this.cb_usuario);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txt_senha);
-            this.groupBox1.Controls.Add(this.txt_usuario);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.Location = new System.Drawing.Point(76, 138);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(316, 225);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
+            // 
+            // cb_usuario
+            // 
+            this.cb_usuario.BackColor = System.Drawing.SystemColors.Menu;
+            this.cb_usuario.FormattingEnabled = true;
+            this.cb_usuario.Location = new System.Drawing.Point(36, 91);
+            this.cb_usuario.Name = "cb_usuario";
+            this.cb_usuario.Size = new System.Drawing.Size(247, 21);
+            this.cb_usuario.TabIndex = 20;
             // 
             // label3
             // 
@@ -97,20 +106,15 @@
             this.txt_senha.BackColor = System.Drawing.SystemColors.Menu;
             this.txt_senha.Location = new System.Drawing.Point(36, 155);
             this.txt_senha.Name = "txt_senha";
+            this.txt_senha.PasswordChar = '*';
             this.txt_senha.Size = new System.Drawing.Size(247, 20);
             this.txt_senha.TabIndex = 16;
-            // 
-            // txt_usuario
-            // 
-            this.txt_usuario.BackColor = System.Drawing.SystemColors.Menu;
-            this.txt_usuario.Location = new System.Drawing.Point(36, 90);
-            this.txt_usuario.Name = "txt_usuario";
-            this.txt_usuario.Size = new System.Drawing.Size(247, 20);
-            this.txt_usuario.TabIndex = 15;
+            this.txt_senha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_senha_KeyPress);
             // 
             // btn_login
             // 
             this.btn_login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(129)))), ((int)(((byte)(148)))));
+            this.btn_login.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_login.FlatAppearance.BorderSize = 0;
             this.btn_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -118,7 +122,7 @@
             this.btn_login.Location = new System.Drawing.Point(112, 340);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(247, 45);
-            this.btn_login.TabIndex = 14;
+            this.btn_login.TabIndex = 1;
             this.btn_login.Text = "Acessar";
             this.btn_login.UseVisualStyleBackColor = false;
             this.btn_login.Click += new System.EventHandler(this.btn_login_Click_1);
@@ -133,7 +137,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(472, 239);
             this.panel1.TabIndex = 15;
-            
             // 
             // label6
             // 
@@ -191,7 +194,7 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-           
+            this.Load += new System.EventHandler(this.Login_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -207,7 +210,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_senha;
-        private System.Windows.Forms.TextBox txt_usuario;
         private System.Windows.Forms.Button btn_login;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label5;
@@ -215,5 +217,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cb_usuario;
     }
 }

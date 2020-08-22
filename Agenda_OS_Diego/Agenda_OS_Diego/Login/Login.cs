@@ -11,6 +11,7 @@ using System.Data.SqlClient;
 using System.Runtime.Serialization;
 using Agenda_OS_Diego.LoginUsuarios;
 using MySqlX.XDevAPI.Common;
+using System.Drawing;
 
 namespace Agenda_OS_Diego
 {
@@ -22,13 +23,21 @@ namespace Agenda_OS_Diego
         {
             InitializeComponent();
         }
-  
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            loginUsuario.ListarUsuario();
+            cb_usuario.DataSource = loginUsuario.usuarioDT;
+            cb_usuario.DisplayMember = "usuario";
+            cb_usuario.ValueMember = "id_tecnico";
+        }
+
         private void btn_login_Click_1(object sender, EventArgs e)
         {
-            loginUsuario.usuario = txt_usuario.Text;           
+            loginUsuario.usuario = cb_usuario.Text;
             loginUsuario.senha = txt_senha.Text;
 
-            if (txt_usuario.Text != "" || txt_senha.Text != "")
+            if (txt_senha.Text != "")
             {
                 loginUsuario.ConsultarLogin();
                 if (loginUsuario.logado == "Logado")
@@ -36,19 +45,45 @@ namespace Agenda_OS_Diego
                     Home frmHome = new Home();
                     this.Hide();
                     frmHome.ShowDialog();
-                    MessageBox.Show("Bem vindo " + loginUsuario.usuario);
                 }
-                else {
-                    MessageBox.Show("Usuário ou senha incorretos");
+                else
+                {
+                    DialogResult r2 = MessageBox.Show(this, "Senha incorreta!", "Help Caption", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
             {
                 MessageBox.Show("Por favor preencha os campos!");
             }
-            
-           
-        }
 
+        }
+       
+        private void txt_senha_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                loginUsuario.usuario = cb_usuario.Text;
+                loginUsuario.senha = txt_senha.Text;
+
+                if (txt_senha.Text != "")
+                {
+                    loginUsuario.ConsultarLogin();
+                    if (loginUsuario.logado == "Logado")
+                    {
+                        Home frmHome = new Home();
+                        this.Hide();
+                        frmHome.ShowDialog();
+                    }
+                    else
+                    {
+                        DialogResult r2 = MessageBox.Show(this, "Senha incorreta!", "Help Caption", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Por favor preencha os campos!");
+                }
+            }
+        }
     }
 }

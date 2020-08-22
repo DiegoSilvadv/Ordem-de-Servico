@@ -14,7 +14,6 @@ namespace Agenda_OS_Diego
 {
     public partial class Home : Form
     {
-        
         public Home()
         { 
             InitializeComponent();
@@ -34,12 +33,24 @@ namespace Agenda_OS_Diego
             frmtec.ShowDialog();
         }
 
-
         private void button1_Click(object sender, EventArgs e)
         {
             OrdemServico.OrdemServico os = new OrdemServico.OrdemServico();
             this.Hide();
             os.ShowDialog();
+        }
+
+        private void timer_tik_Tick(object sender, EventArgs e)
+        {
+            lbl_data_hora.Text = (DateTime.Now.ToString("HH:mm:ss"));
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show(" Deseja mesmo sair? ", "Mensage do sistema ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }
