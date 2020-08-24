@@ -11,7 +11,6 @@ using System.Runtime.Serialization;
 
 namespace Agenda_OS_Diego.Classes
 {   
-    
         class DB
         {   //conexão com banco de dados
             public MySqlConnection con;
@@ -53,9 +52,10 @@ namespace Agenda_OS_Diego.Classes
         {
             con.Open();
 
+            string query = "select os.id_os, t.nome, e.fantasia, e.cnpj, os.solicitante, os.info_extra, os.assunto, os.descricao, os.atendimento, os.sistema, os.solucao, os.abertura, os.conclusao, os.status_os from tecnico as t inner join empresa as e inner join ordemservico as os where os.fk_tecnico = t.id_tecnico and os.fk_empresa = e.id_empresa";
             MySqlDataAdapter MyDA = new MySqlDataAdapter();
-            string sqlSelectAll = "SELECT * FROM ordemservico";
-            MyDA.SelectCommand = new MySqlCommand(sqlSelectAll, con);
+            MyDA.SelectCommand = new MySqlCommand(query, con);
+            
             DataTable table = new DataTable();
             MyDA.Fill(table);
             BindingSource bSource = new BindingSource();
@@ -105,10 +105,11 @@ namespace Agenda_OS_Diego.Classes
         }
 
         public void CadastrarOS() {
-            string query = "INSERT INTO ordemservico VALUES( 0, @id_empresa, 2, @solicitante, @info_extra, @assunto, @descricao, @atendimento, @sistema, @solucao, @abertura, @conclusao, @status )";
+            string query = "INSERT INTO ordemservico VALUES( 0, @id_empresa, @id_tecnico, @solicitante, @info_extra, @assunto, @descricao, @atendimento, @sistema, @solucao, @abertura, @conclusao, @status )";
             MySqlCommand cmd = new MySqlCommand(query, con);
 
             cmd.Parameters.AddWithValue("@id_empresa", id_empresa);
+            cmd.Parameters.AddWithValue("@id_tecnico", id_tecnico);
             cmd.Parameters.AddWithValue("@solicitante", solicitante);
             cmd.Parameters.AddWithValue("@info_extra", informação_extra);
             cmd.Parameters.AddWithValue("@assunto", assunto);
@@ -125,7 +126,7 @@ namespace Agenda_OS_Diego.Classes
             cmd.Parameters.Clear();
         }
 
-        public void ListarProfessor() {
+        public void ListarTecnico() {
             
             con.Open();
             MySqlCommand cmd = new MySqlCommand("SELECT id_tecnico, nome FROM tecnico ORDER BY nome", con);
@@ -133,6 +134,32 @@ namespace Agenda_OS_Diego.Classes
             DataTable dt = new DataTable();
             dt.Load(dr);
             this.tecnico = dt;
+            con.Close();
+        }
+
+        public void AlterarDados() {
+            con.Open();
+            string query = "UPDATE ordemservico SET fk_empresa=@id_empresa, fk_tecnico=@id_tecnico, solicitante=@solicitante, info_extra=@info_extra, assunto=@assunto, descricao=@descricao, atendimento=@atendimento, sistema=@sistema, solucao=@solucao, abertura=@abertura, conclusao=@conclusao, status_os=@status WHERE id_os=@id_os ";
+            MySqlCommand cmd = new MySqlCommand(query, con);
+
+            cmd.Parameters.AddWithValue("@id_os", id_ordemServico);
+            cmd.Parameters.AddWithValue("@id_empresa", id_empresa);
+            cmd.Parameters.AddWithValue("@id_tecnico", id_tecnico);
+            cmd.Parameters.AddWithValue("@solicitante", solicitante);
+            cmd.Parameters.AddWithValue("@info_extra", informação_extra);
+            cmd.Parameters.AddWithValue("@assunto", assunto);
+            cmd.Parameters.AddWithValue("@descricao", descricao);
+            cmd.Parameters.AddWithValue("@atendimento", atendimento);
+            cmd.Parameters.AddWithValue("@sistema", sistema);
+            cmd.Parameters.AddWithValue("@solucao", solucao);
+            cmd.Parameters.AddWithValue("@abertura", abertura);
+            cmd.Parameters.AddWithValue("@conclusao", conclusao);
+            cmd.Parameters.AddWithValue("@status", status);
+            cmd.ExecuteNonQuery();
+
+            MessageBox.Show("Alterado com sucesso");
+
+            cmd.Parameters.Clear();
             con.Close();
         }
 

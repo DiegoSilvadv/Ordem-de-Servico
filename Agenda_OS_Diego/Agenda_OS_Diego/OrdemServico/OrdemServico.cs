@@ -55,9 +55,10 @@ namespace Agenda_OS_Diego.OrdemServico
             ReturnHome.ShowDialog();
         }
 
-
         public void PegarDados() {
+            crud_os.id_ordemServico = Convert.ToInt32(lbl_id_os.Text);
             crud_os.id_empresa = Convert.ToInt32(lbl_id_empresa.Text);
+            //crud_os.id_tecnico = Convert.ToInt32(lbl_id_tecnico.Text);
             crud_os.solicitante = txt_solicitante.Text;
             crud_os.informação_extra = txt_info_extra.Text;
             crud_os.assunto = txt_assunto.Text;
@@ -69,18 +70,27 @@ namespace Agenda_OS_Diego.OrdemServico
             crud_os.conclusao = dtp_conclusao.Value;
             crud_os.status = cb_status.Text;
         }
+        
         private void btn_abrir_os_Click(object sender, EventArgs e)
         {
-            PegarDados();
-            crud_os.CadastrarOS();
+            if (btn_abrir_os.Text == "Abrir OS")
+            {
+                PegarDados();
+                crud_os.CadastrarOS();
+            }
+            else if (btn_abrir_os.Text == "Gravar") {
+                PegarDados();
+                crud_os.AlterarDados();
+            }
+            
         }
-
+        
         public void ListarDados()
         {
             if (dgv_os.SelectedRows.Count > 0)
             {
-                lbl_id_os.Text = dgv_os.CurrentRow.Cells["id_os"].Value.ToString();
-                cb_tecnico.Text = dgv_os.CurrentRow.Cells["fk_tecnico"].Value.ToString();
+                //lbl_id_os.Text = dgv_os.CurrentRow.Cells["id_os"].Value.ToString();
+                cb_tecnico.Text = dgv_os.CurrentRow.Cells["nome"].Value.ToString();
                 txt_solicitante.Text = dgv_os.CurrentRow.Cells["solicitante"].Value.ToString();
                 //txt_fantasia.Text = dgv_os.CurrentRow.Cells["fantasia"].Value.ToString();
                 //mtb_cnpj.Text = dgv_os.CurrentRow.Cells["cnpj"].Value.ToString();
@@ -102,6 +112,7 @@ namespace Agenda_OS_Diego.OrdemServico
                 MessageBox.Show("Selecione um registro");
             }
         }
+
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             crud_os.ListarOSPendente(dgv_os);
@@ -113,12 +124,11 @@ namespace Agenda_OS_Diego.OrdemServico
 
         private void OrdemServico_Load(object sender, EventArgs e)
         { 
-            crud_os.ListarProfessor();
+            crud_os.ListarTecnico();
             cb_tecnico.DataSource = crud_os.tecnico;
             cb_tecnico.DisplayMember = "nome";
             cb_tecnico.ValueMember = "id_tecnico";
         }
-
 
         private void cb_tecnico_SelectedIndexChanged(object sender, EventArgs e)
         {   
@@ -129,7 +139,6 @@ namespace Agenda_OS_Diego.OrdemServico
         private void btn_editar_Click(object sender, EventArgs e)
         {
             ListarDados();
-
         }
     }
 }

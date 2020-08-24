@@ -66,4 +66,9 @@ insert into empresa VALUES(0, "nike", "nike ltd", "12345678912345",
  insert into tecnico VALUES (0, "diego", "123", "Diego da Silva", "12345678998745698562"
 , "TAtuí", "Centro", "XV de novembro", "1234", "105831256", "15996989530", now() );
 
+select t.nome, e.fantasia, e.cnpj, os.solicitante, os.info_extra, os.assunto, os.descricao, os.atendimento, os.sistema, os.solucao, os.abertura, os.conclusao, os.status_os from tecnico as t inner join empresa as e inner join ordemservico as os where os.fk_tecnico = t.id_tecnico and os.fk_empresa = e.id_empresa;
 
+
+
+
+exec listarordemservico;
