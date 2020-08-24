@@ -76,7 +76,7 @@ namespace Agenda_OS_Diego
         {
             if (dgv_empresa.SelectedRows.Count > 0)
             {
-                lbl_id.Text = dgv_empresa.CurrentRow.Cells["id"].Value.ToString();
+                lbl_id.Text = dgv_empresa.CurrentRow.Cells["id_empresa"].Value.ToString();
                 txt_razao.Text = dgv_empresa.CurrentRow.Cells["razao"].Value.ToString();
                 txt_fantasia.Text = dgv_empresa.CurrentRow.Cells["fantasia"].Value.ToString();
                 mtb_cnpj.Text = dgv_empresa.CurrentRow.Cells["cnpj"].Value.ToString();

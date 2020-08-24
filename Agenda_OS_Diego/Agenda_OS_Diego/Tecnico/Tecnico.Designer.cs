@@ -41,6 +41,7 @@
             this.btn_editar = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dtp_nascimento = new System.Windows.Forms.DateTimePicker();
             this.btn_cadastrar_tecnico = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -65,7 +66,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_usuario = new System.Windows.Forms.TextBox();
-            this.dtp_nascimento = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tecnico)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -100,7 +100,7 @@
             this.dgv_tecnico.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_tecnico.EnableHeadersVisualStyles = false;
             this.dgv_tecnico.GridColor = System.Drawing.SystemColors.ButtonShadow;
-            this.dgv_tecnico.Location = new System.Drawing.Point(12, 76);
+            this.dgv_tecnico.Location = new System.Drawing.Point(16, 66);
             this.dgv_tecnico.MultiSelect = false;
             this.dgv_tecnico.Name = "dgv_tecnico";
             this.dgv_tecnico.ReadOnly = true;
@@ -122,13 +122,13 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
             this.dgv_tecnico.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_tecnico.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_tecnico.Size = new System.Drawing.Size(801, 318);
+            this.dgv_tecnico.Size = new System.Drawing.Size(805, 318);
             this.dgv_tecnico.TabIndex = 3;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 16);
+            this.pictureBox1.Location = new System.Drawing.Point(17, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(62, 48);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -138,8 +138,8 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label11.Location = new System.Drawing.Point(80, 28);
+            this.label11.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.label11.Location = new System.Drawing.Point(85, 24);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(111, 13);
             this.label11.TabIndex = 15;
@@ -147,7 +147,7 @@
             // 
             // txt_pesquisa
             // 
-            this.txt_pesquisa.Location = new System.Drawing.Point(83, 44);
+            this.txt_pesquisa.Location = new System.Drawing.Point(88, 40);
             this.txt_pesquisa.Name = "txt_pesquisa";
             this.txt_pesquisa.Size = new System.Drawing.Size(398, 20);
             this.txt_pesquisa.TabIndex = 14;
@@ -160,7 +160,7 @@
             this.btn_excluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_excluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_excluir.ForeColor = System.Drawing.SystemColors.Control;
-            this.btn_excluir.Location = new System.Drawing.Point(97, 400);
+            this.btn_excluir.Location = new System.Drawing.Point(101, 390);
             this.btn_excluir.Name = "btn_excluir";
             this.btn_excluir.Size = new System.Drawing.Size(81, 22);
             this.btn_excluir.TabIndex = 13;
@@ -175,7 +175,7 @@
             this.btn_editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_editar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btn_editar.Location = new System.Drawing.Point(11, 400);
+            this.btn_editar.Location = new System.Drawing.Point(15, 390);
             this.btn_editar.Name = "btn_editar";
             this.btn_editar.Size = new System.Drawing.Size(80, 22);
             this.btn_editar.TabIndex = 12;
@@ -187,9 +187,9 @@
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(11, 428);
+            this.pictureBox2.Location = new System.Drawing.Point(15, 418);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(40, 37);
+            this.pictureBox2.Size = new System.Drawing.Size(48, 49);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -228,6 +228,13 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(432, 479);
             this.panel1.TabIndex = 17;
+            // 
+            // dtp_nascimento
+            // 
+            this.dtp_nascimento.Location = new System.Drawing.Point(302, 319);
+            this.dtp_nascimento.Name = "dtp_nascimento";
+            this.dtp_nascimento.Size = new System.Drawing.Size(106, 20);
+            this.dtp_nascimento.TabIndex = 56;
             // 
             // btn_cadastrar_tecnico
             // 
@@ -477,18 +484,11 @@
             this.txt_usuario.Size = new System.Drawing.Size(381, 20);
             this.txt_usuario.TabIndex = 31;
             // 
-            // dtp_nascimento
-            // 
-            this.dtp_nascimento.Location = new System.Drawing.Point(302, 319);
-            this.dtp_nascimento.Name = "dtp_nascimento";
-            this.dtp_nascimento.Size = new System.Drawing.Size(106, 20);
-            this.dtp_nascimento.TabIndex = 56;
-            // 
             // Tecnico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(129)))), ((int)(((byte)(148)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(1264, 476);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox2);

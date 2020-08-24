@@ -94,7 +94,7 @@
             this.dgv_empresa.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_empresa.EnableHeadersVisualStyles = false;
             this.dgv_empresa.GridColor = System.Drawing.SystemColors.ButtonShadow;
-            this.dgv_empresa.Location = new System.Drawing.Point(25, 78);
+            this.dgv_empresa.Location = new System.Drawing.Point(25, 69);
             this.dgv_empresa.MultiSelect = false;
             this.dgv_empresa.Name = "dgv_empresa";
             this.dgv_empresa.ReadOnly = true;
@@ -126,7 +126,7 @@
             this.btn_editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_editar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btn_editar.Location = new System.Drawing.Point(25, 402);
+            this.btn_editar.Location = new System.Drawing.Point(25, 392);
             this.btn_editar.Name = "btn_editar";
             this.btn_editar.Size = new System.Drawing.Size(81, 22);
             this.btn_editar.TabIndex = 3;
@@ -141,7 +141,7 @@
             this.btn_excluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_excluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_excluir.ForeColor = System.Drawing.SystemColors.Control;
-            this.btn_excluir.Location = new System.Drawing.Point(112, 402);
+            this.btn_excluir.Location = new System.Drawing.Point(112, 392);
             this.btn_excluir.Name = "btn_excluir";
             this.btn_excluir.Size = new System.Drawing.Size(81, 22);
             this.btn_excluir.TabIndex = 4;
@@ -153,7 +153,7 @@
             // 
             this.txt_pesquisa.BackColor = System.Drawing.SystemColors.Control;
             this.txt_pesquisa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_pesquisa.Location = new System.Drawing.Point(83, 40);
+            this.txt_pesquisa.Location = new System.Drawing.Point(95, 37);
             this.txt_pesquisa.Name = "txt_pesquisa";
             this.txt_pesquisa.Size = new System.Drawing.Size(398, 20);
             this.txt_pesquisa.TabIndex = 6;
@@ -163,8 +163,8 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label11.Location = new System.Drawing.Point(80, 24);
+            this.label11.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.label11.Location = new System.Drawing.Point(92, 21);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(141, 13);
             this.label11.TabIndex = 10;
@@ -173,7 +173,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(24, 8);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(62, 48);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -455,9 +455,9 @@
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(25, 429);
+            this.pictureBox2.Location = new System.Drawing.Point(24, 420);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(40, 37);
+            this.pictureBox2.Size = new System.Drawing.Size(48, 49);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 13;
             this.pictureBox2.TabStop = false;
@@ -467,7 +467,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(129)))), ((int)(((byte)(148)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(1264, 476);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel1);
@@ -482,7 +482,6 @@
             this.Name = "Empresa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Empresa";
-            
             ((System.ComponentModel.ISupportInitialize)(this.dgv_empresa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);

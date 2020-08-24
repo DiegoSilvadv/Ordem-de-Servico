@@ -19,7 +19,6 @@ namespace Agenda_OS_Diego.OrdemServico
     {
         CrudOs crud_os = new CrudOs();
         
-
         public OrdemServico()
         {
 
@@ -76,7 +75,33 @@ namespace Agenda_OS_Diego.OrdemServico
             crud_os.CadastrarOS();
         }
 
-
+        public void ListarDados()
+        {
+            if (dgv_os.SelectedRows.Count > 0)
+            {
+                lbl_id_os.Text = dgv_os.CurrentRow.Cells["id_os"].Value.ToString();
+                cb_tecnico.Text = dgv_os.CurrentRow.Cells["fk_tecnico"].Value.ToString();
+                txt_solicitante.Text = dgv_os.CurrentRow.Cells["solicitante"].Value.ToString();
+                //txt_fantasia.Text = dgv_os.CurrentRow.Cells["fantasia"].Value.ToString();
+                //mtb_cnpj.Text = dgv_os.CurrentRow.Cells["cnpj"].Value.ToString();
+                //mtb_telefone.Text = dgv_os.CurrentRow.Cells["telefone"].Value.ToString();
+               // mtb_celular.Text = dgv_os.CurrentRow.Cells["celular"].Value.ToString();
+                txt_info_extra.Text = dgv_os.CurrentRow.Cells["info_extra"].Value.ToString();
+                txt_assunto.Text = dgv_os.CurrentRow.Cells["assunto"].Value.ToString();
+                txt_descricao.Text = dgv_os.CurrentRow.Cells["descricao"].Value.ToString();
+                cb_atendimento.Text = dgv_os.CurrentRow.Cells["atendimento"].Value.ToString();
+                cb_sistema.Text = dgv_os.CurrentRow.Cells["sistema"].Value.ToString();
+                txt_solucao.Text = dgv_os.CurrentRow.Cells["solucao"].Value.ToString();
+                dtp_abertura.Text = dgv_os.CurrentRow.Cells["abertura"].Value.ToString();
+                dtp_conclusao.Text = dgv_os.CurrentRow.Cells["conclusao"].Value.ToString();
+                //cb_status.Text = dgv_os.CurrentRow.Cells["status"].Value.ToString();
+                btn_abrir_os.Text = "Gravar";
+            }
+            else
+            {
+                MessageBox.Show("Selecione um registro");
+            }
+        }
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             crud_os.ListarOSPendente(dgv_os);
@@ -99,6 +124,12 @@ namespace Agenda_OS_Diego.OrdemServico
         {   
             //passando o valor do TextBoxpara lbl id
             lbl_id_tecnico.Text = cb_tecnico.SelectedValue.ToString();
+        }
+
+        private void btn_editar_Click(object sender, EventArgs e)
+        {
+            ListarDados();
+
         }
     }
 }
