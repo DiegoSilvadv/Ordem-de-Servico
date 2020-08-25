@@ -52,7 +52,7 @@ namespace Agenda_OS_Diego.Classes
         {
             con.Open();
 
-            string query = "select os.id_os, t.nome, e.fantasia, e.cnpj, os.solicitante, os.info_extra, os.assunto, os.descricao, os.atendimento, os.sistema, os.solucao, os.abertura, os.conclusao, os.status_os from tecnico as t inner join empresa as e inner join ordemservico as os where os.fk_tecnico = t.id_tecnico and os.fk_empresa = e.id_empresa";
+            string query = "select e.id_empresa, os.id_os, t.nome, e.fantasia, e.cnpj, os.solicitante, os.info_extra, os.assunto, os.descricao, os.atendimento, os.sistema, os.solucao, os.abertura, os.conclusao, os.status_os from tecnico as t inner join empresa as e inner join ordemservico as os where os.fk_tecnico = t.id_tecnico and os.fk_empresa = e.id_empresa";
             MySqlDataAdapter MyDA = new MySqlDataAdapter();
             MyDA.SelectCommand = new MySqlCommand(query, con);
             

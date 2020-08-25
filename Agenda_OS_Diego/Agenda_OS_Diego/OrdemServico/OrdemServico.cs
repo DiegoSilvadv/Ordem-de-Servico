@@ -21,11 +21,32 @@ namespace Agenda_OS_Diego.OrdemServico
         
         public OrdemServico()
         {
-
             InitializeComponent();
             crud_os.Listar_Dados(dgv_os);
-           
-
+            EsconderColunas();
+        }
+        public void EsconderColunas() 
+        {
+            dgv_os.Columns["id_empresa"].Visible = false;
+        }
+        public void limparCampos() {
+            lbl_id_empresa.Text = "";
+            lbl_id_os.Text = "";
+            lbl_id_tecnico.Text = "";
+            cb_tecnico.SelectedIndex = 0;
+            txt_solicitante.Text = "";
+            txt_fantasia.Text = "";
+            mtb_cnpj.Text = "";
+            mtb_telefone.Text = "";
+            mtb_celular.Text = "";
+            txt_assunto.Text = "";
+            txt_descricao.Text = "";
+            txt_info_extra.Text = "";
+            txt_solucao.Text = "";
+            dtp_abertura.Format = DateTimePickerFormat.Time;
+            dtp_conclusao.Format = DateTimePickerFormat.Time;
+            cb_status.SelectedIndex = 0;
+            cb_sistema.SelectedIndex = 0;
         }
 
         private void img_return_Click(object sender, EventArgs e)
@@ -89,13 +110,14 @@ namespace Agenda_OS_Diego.OrdemServico
         {
             if (dgv_os.SelectedRows.Count > 0)
             {
-                //lbl_id_os.Text = dgv_os.CurrentRow.Cells["id_os"].Value.ToString();
+                lbl_id_empresa.Text = dgv_os.CurrentRow.Cells["id_empresa"].Value.ToString();
+                lbl_id_os.Text = dgv_os.CurrentRow.Cells["id_os"].Value.ToString();
                 cb_tecnico.Text = dgv_os.CurrentRow.Cells["nome"].Value.ToString();
                 txt_solicitante.Text = dgv_os.CurrentRow.Cells["solicitante"].Value.ToString();
-                //txt_fantasia.Text = dgv_os.CurrentRow.Cells["fantasia"].Value.ToString();
-                //mtb_cnpj.Text = dgv_os.CurrentRow.Cells["cnpj"].Value.ToString();
-                //mtb_telefone.Text = dgv_os.CurrentRow.Cells["telefone"].Value.ToString();
-               // mtb_celular.Text = dgv_os.CurrentRow.Cells["celular"].Value.ToString();
+                txt_fantasia.Text = dgv_os.CurrentRow.Cells["fantasia"].Value.ToString();
+                mtb_cnpj.Text = dgv_os.CurrentRow.Cells["cnpj"].Value.ToString();
+                mtb_telefone.Text = dgv_os.CurrentRow.Cells["telefone"].Value.ToString();
+                mtb_celular.Text = dgv_os.CurrentRow.Cells["celular"].Value.ToString();
                 txt_info_extra.Text = dgv_os.CurrentRow.Cells["info_extra"].Value.ToString();
                 txt_assunto.Text = dgv_os.CurrentRow.Cells["assunto"].Value.ToString();
                 txt_descricao.Text = dgv_os.CurrentRow.Cells["descricao"].Value.ToString();
@@ -123,7 +145,15 @@ namespace Agenda_OS_Diego.OrdemServico
         }
 
         private void OrdemServico_Load(object sender, EventArgs e)
-        { 
+        {   
+            //VERIFICA SE ESTÁ COM ALGUMA LINHA SELECIONADA
+            if (dgv_os.SelectedRows.Count > 0)
+            {
+                int index = dgv_os.SelectedRows[0].Index;
+
+                if (index >= 0)
+                    dgv_os.Rows[index].Selected = false;
+            }
             crud_os.ListarTecnico();
             cb_tecnico.DataSource = crud_os.tecnico;
             cb_tecnico.DisplayMember = "nome";
@@ -139,6 +169,11 @@ namespace Agenda_OS_Diego.OrdemServico
         private void btn_editar_Click(object sender, EventArgs e)
         {
             ListarDados();
+        }
+
+        private void btn_novo_Click(object sender, EventArgs e)
+        {
+            limparCampos();
         }
     }
 }
