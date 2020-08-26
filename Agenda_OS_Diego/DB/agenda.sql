@@ -68,7 +68,23 @@ insert into empresa VALUES(0, "nike", "nike ltd", "12345678912345",
 
 select t.nome, e.fantasia, e.cnpj, os.solicitante, os.info_extra, os.assunto, os.descricao, os.atendimento, os.sistema, os.solucao, os.abertura, os.conclusao, os.status_os from tecnico as t inner join empresa as e inner join ordemservico as os where os.fk_tecnico = t.id_tecnico and os.fk_empresa = e.id_empresa;
 
+update ordemservico
+set fk_tecnico = 4
+, fk_empresa = 3
+, solicitante = "teste de update" 
+, info_extra = "olá mundo"
+, assunto = "hotline"
+, descricao = "teste"
+, atendimento = "Telefone"
+, sistema = "Hotline"
+, solucao = "Teste de update"
+, abertura = now()
+, conclusao = now()
+, status_os = "Pendente"
+where id_os = 4;
 
+update ordemservico
+set fk_empresa = 3
+where id_os = 4;
 
-
-exec listarordemservico;
+select os.fk_empresa, os.fk_tecnico, e.celular, e.telefone, os.id_os, t.nome, e.fantasia, e.cnpj, os.solicitante, os.info_extra, os.assunto, os.descricao, os.atendimento, os.sistema, os.solucao, os.abertura, os.conclusao, os.status_os from tecnico as t inner join empresa as e inner join ordemservico as os where os.fk_empresa = e.id_empresa and os.fk_tecnico = t.id_tecnico and os.id_os = os.id_os;

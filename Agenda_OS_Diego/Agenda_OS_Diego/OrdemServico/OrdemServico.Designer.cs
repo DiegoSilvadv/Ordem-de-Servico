@@ -288,7 +288,6 @@
             this.lbl_id_os.Size = new System.Drawing.Size(13, 13);
             this.lbl_id_os.TabIndex = 85;
             this.lbl_id_os.Text = "0";
-            this.lbl_id_os.Visible = false;
             // 
             // lbl2
             // 
@@ -298,7 +297,6 @@
             this.lbl2.Size = new System.Drawing.Size(61, 13);
             this.lbl2.TabIndex = 84;
             this.lbl2.Text = "id empresa:";
-            this.lbl2.Visible = false;
             // 
             // lbl1
             // 
@@ -308,7 +306,6 @@
             this.lbl1.Size = new System.Drawing.Size(56, 13);
             this.lbl1.TabIndex = 83;
             this.lbl1.Text = "id tecnico:";
-            this.lbl1.Visible = false;
             // 
             // lbl0
             // 
@@ -318,7 +315,6 @@
             this.lbl0.Size = new System.Drawing.Size(36, 13);
             this.lbl0.TabIndex = 82;
             this.lbl0.Text = "id OS:";
-            this.lbl0.Visible = false;
             // 
             // cb_tecnico
             // 

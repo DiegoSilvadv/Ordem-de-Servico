@@ -27,7 +27,8 @@ namespace Agenda_OS_Diego.OrdemServico
         }
         public void EsconderColunas() 
         {
-            dgv_os.Columns["id_empresa"].Visible = false;
+            dgv_os.Columns["fk_empresa"].Visible = false;
+            dgv_os.Columns["fk_tecnico"].Visible = false;
         }
         public void limparCampos() {
             lbl_id_empresa.Text = "";
@@ -79,7 +80,7 @@ namespace Agenda_OS_Diego.OrdemServico
         public void PegarDados() {
             crud_os.id_ordemServico = Convert.ToInt32(lbl_id_os.Text);
             crud_os.id_empresa = Convert.ToInt32(lbl_id_empresa.Text);
-            //crud_os.id_tecnico = Convert.ToInt32(lbl_id_tecnico.Text);
+            crud_os.id_tecnico = Convert.ToInt32(lbl_id_tecnico.Text);
             crud_os.solicitante = txt_solicitante.Text;
             crud_os.informação_extra = txt_info_extra.Text;
             crud_os.assunto = txt_assunto.Text;
@@ -111,6 +112,8 @@ namespace Agenda_OS_Diego.OrdemServico
             if (dgv_os.SelectedRows.Count > 0)
             {
                 lbl_id_os.Text = dgv_os.CurrentRow.Cells["id_os"].Value.ToString();
+                lbl_id_empresa.Text = dgv_os.CurrentRow.Cells["fk_empresa"].Value.ToString();
+                lbl_id_tecnico.Text = dgv_os.CurrentRow.Cells["fk_tecnico"].Value.ToString();
                 cb_tecnico.Text = dgv_os.CurrentRow.Cells["nome"].Value.ToString();
                 txt_solicitante.Text = dgv_os.CurrentRow.Cells["solicitante"].Value.ToString();
                 txt_fantasia.Text = dgv_os.CurrentRow.Cells["fantasia"].Value.ToString();
