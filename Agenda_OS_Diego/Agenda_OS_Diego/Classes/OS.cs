@@ -52,7 +52,7 @@ namespace Agenda_OS_Diego.Classes
         {
             con.Open();
 
-            string query = "select e.id_empresa, os.id_os, t.nome, e.fantasia, e.cnpj, os.solicitante, os.info_extra, os.assunto, os.descricao, os.atendimento, os.sistema, os.solucao, os.abertura, os.conclusao, os.status_os from tecnico as t inner join empresa as e inner join ordemservico as os where os.fk_tecnico = t.id_tecnico and os.fk_empresa = e.id_empresa";
+            string query = "select e.id_empresa, e.celular, e.telefone, os.id_os, t.nome, e.fantasia, e.cnpj, os.solicitante, os.info_extra, os.assunto, os.descricao, os.atendimento, os.sistema, os.solucao, os.abertura, os.conclusao, os.status_os from tecnico as t inner join empresa as e inner join ordemservico as os where os.fk_tecnico = t.id_tecnico and os.fk_empresa = e.id_empresa";
             MySqlDataAdapter MyDA = new MySqlDataAdapter();
             MyDA.SelectCommand = new MySqlCommand(query, con);
             
@@ -139,12 +139,12 @@ namespace Agenda_OS_Diego.Classes
 
         public void AlterarDados() {
             con.Open();
-            string query = "UPDATE ordemservico SET fk_empresa=@id_empresa, fk_tecnico=@id_tecnico, solicitante=@solicitante, info_extra=@info_extra, assunto=@assunto, descricao=@descricao, atendimento=@atendimento, sistema=@sistema, solucao=@solucao, abertura=@abertura, conclusao=@conclusao, status_os=@status WHERE id_os=@id_os ";
+            string query = "UPDATE ordemservico SET solicitante=@solicitante, info_extra=@info_extra, assunto=@assunto, descricao=@descricao, atendimento=@atendimento, sistema=@sistema, solucao=@solucao, abertura=@abertura, conclusao=@conclusao, status_os=@status WHERE id_os=@id_os";
             MySqlCommand cmd = new MySqlCommand(query, con);
 
             cmd.Parameters.AddWithValue("@id_os", id_ordemServico);
-            cmd.Parameters.AddWithValue("@id_empresa", id_empresa);
-            cmd.Parameters.AddWithValue("@id_tecnico", id_tecnico);
+            //cmd.Parameters.AddWithValue("@id_empresa", id_empresa);
+            //cmd.Parameters.AddWithValue("@id_tecnico", id_tecnico);
             cmd.Parameters.AddWithValue("@solicitante", solicitante);
             cmd.Parameters.AddWithValue("@info_extra", informação_extra);
             cmd.Parameters.AddWithValue("@assunto", assunto);

@@ -110,7 +110,6 @@ namespace Agenda_OS_Diego.OrdemServico
         {
             if (dgv_os.SelectedRows.Count > 0)
             {
-                lbl_id_empresa.Text = dgv_os.CurrentRow.Cells["id_empresa"].Value.ToString();
                 lbl_id_os.Text = dgv_os.CurrentRow.Cells["id_os"].Value.ToString();
                 cb_tecnico.Text = dgv_os.CurrentRow.Cells["nome"].Value.ToString();
                 txt_solicitante.Text = dgv_os.CurrentRow.Cells["solicitante"].Value.ToString();
@@ -126,7 +125,7 @@ namespace Agenda_OS_Diego.OrdemServico
                 txt_solucao.Text = dgv_os.CurrentRow.Cells["solucao"].Value.ToString();
                 dtp_abertura.Text = dgv_os.CurrentRow.Cells["abertura"].Value.ToString();
                 dtp_conclusao.Text = dgv_os.CurrentRow.Cells["conclusao"].Value.ToString();
-                //cb_status.Text = dgv_os.CurrentRow.Cells["status"].Value.ToString();
+                cb_status.Text = dgv_os.CurrentRow.Cells["status_os"].Value.ToString();
                 btn_abrir_os.Text = "Gravar";
             }
             else
