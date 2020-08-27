@@ -114,7 +114,7 @@ namespace Agenda_OS_Diego.OrdemServico
                 lbl_id_os.Text = dgv_os.CurrentRow.Cells["id_os"].Value.ToString();
                 lbl_id_empresa.Text = dgv_os.CurrentRow.Cells["fk_empresa"].Value.ToString();
                 lbl_id_tecnico.Text = dgv_os.CurrentRow.Cells["fk_tecnico"].Value.ToString();
-                cb_tecnico.Text = dgv_os.CurrentRow.Cells["nome"].Value.ToString();
+                cb_tecnico.Text = dgv_os.CurrentRow.Cells["nome_tecnico"].Value.ToString();
                 txt_solicitante.Text = dgv_os.CurrentRow.Cells["solicitante"].Value.ToString();
                 txt_fantasia.Text = dgv_os.CurrentRow.Cells["fantasia"].Value.ToString();
                 mtb_cnpj.Text = dgv_os.CurrentRow.Cells["cnpj"].Value.ToString();
@@ -158,7 +158,7 @@ namespace Agenda_OS_Diego.OrdemServico
             }
             crud_os.ListarTecnico();
             cb_tecnico.DataSource = crud_os.tecnico;
-            cb_tecnico.DisplayMember = "nome";
+            cb_tecnico.DisplayMember = "nome_tecnico";
             cb_tecnico.ValueMember = "id_tecnico";
         }
 
@@ -176,6 +176,19 @@ namespace Agenda_OS_Diego.OrdemServico
         private void btn_novo_Click(object sender, EventArgs e)
         {
             limparCampos();
+        }
+
+        private void mtb_cnpj_TextChanged(object sender, EventArgs e)
+        {
+            mtb_cnpj.Mask = "";
+            crud_os.cnpj = mtb_cnpj.Text;
+
+            crud_os.ListarEmpresa();
+            lbl_id_empresa.Text = crud_os.id_empresa.ToString();
+            txt_fantasia.Text = crud_os.fantasia;
+            mtb_cnpj.Text = crud_os.cnpj;
+            mtb_celular.Text = crud_os.celular;
+            mtb_telefone.Text = crud_os.telefone;
         }
     }
 }

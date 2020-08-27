@@ -52,7 +52,7 @@ namespace Agenda_OS_Diego.Classes
         {
             con.Open();
 
-            string query = "select os.fk_empresa, os.fk_tecnico, e.celular, e.telefone, os.id_os, t.nome, e.fantasia, e.cnpj, os.solicitante, os.info_extra, os.assunto, os.descricao, os.atendimento, os.sistema, os.solucao, os.abertura, os.conclusao, os.status_os from tecnico as t inner join empresa as e inner join ordemservico as os where os.fk_empresa = e.id_empresa and os.fk_tecnico = t.id_tecnico and os.id_os = os.id_os";
+            string query = "select os.fk_empresa, os.fk_tecnico, e.celular, e.telefone, os.id_os, t.nome_tecnico, e.fantasia, e.cnpj, os.solicitante, os.info_extra, os.assunto, os.descricao, os.atendimento, os.sistema, os.solucao, os.abertura, os.conclusao, os.status_os from tecnico as t inner join empresa as e inner join ordemservico as os where os.fk_empresa = e.id_empresa and os.fk_tecnico = t.id_tecnico and os.id_os = os.id_os";
             MySqlDataAdapter MyDA = new MySqlDataAdapter();
             MyDA.SelectCommand = new MySqlCommand(query, con);
             
@@ -84,14 +84,17 @@ namespace Agenda_OS_Diego.Classes
         // função para preencher os campos automaticamente
         public void ListarEmpresa() {
 
-            MySqlCommand cmd = new MySqlCommand("SELECT id_empresa, fantasia, cnpj, telefone, celular FROM empresa WHERE fantasia LIKE @fantasia", con);
+            MySqlCommand cmd = new MySqlCommand("SELECT id_empresa, fantasia, cnpj, telefone, celular FROM empresa WHERE cnpj like @cnpj and fantasia like @fantasia", con);
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.AddWithValue("@fantasia", fantasia);
+            cmd.Parameters.AddWithValue("@cnpj", cnpj);
 
             con.Open();
             MySqlDataReader dr = cmd.ExecuteReader();
+            
             while (dr.Read())
             {
+                MessageBox.Show("" + cnpj);
                 this.id_empresa = Convert.ToInt32(dr["id_empresa"].ToString());
                 this.fantasia = dr["fantasia"].ToString();
                 this.cnpj = dr["cnpj"].ToString();
@@ -103,7 +106,7 @@ namespace Agenda_OS_Diego.Classes
         }
 
         public void CadastrarOS() {
-            string query = "INSERT INTO ordemservico VALUES( 0, @id_empresa, @id_tecnico, @solicitante, @info_extra, @assunto, @descricao, @atendimento, @sistema, @solucao, @abertura, @conclusao, @status )";
+            string query = "INSERT INTO ordemservico VALUES( 0, @id_empresa, @id_tecnico, @solicitante, @info_extra, @assunto, @descricao, @atendimento, @sistema, @solucao, @abertura, @conclusao, @status, 0 )";
             MySqlCommand cmd = new MySqlCommand(query, con);
 
             cmd.Parameters.AddWithValue("@id_empresa", id_empresa);
@@ -127,7 +130,7 @@ namespace Agenda_OS_Diego.Classes
         public void ListarTecnico() {
             
             con.Open();
-            MySqlCommand cmd = new MySqlCommand("SELECT id_tecnico, nome FROM tecnico ORDER BY nome", con);
+            MySqlCommand cmd = new MySqlCommand("SELECT id_tecnico, nome_tecnico FROM tecnico ORDER BY nome_tecnico", con);
             MySqlDataReader dr = cmd.ExecuteReader();
             DataTable dt = new DataTable();
             dt.Load(dr);
@@ -148,8 +151,8 @@ namespace Agenda_OS_Diego.Classes
                     ",solucao = @solucao" +
                     ",abertura = @abertura" +
                     ",conclusao = @conclusao" +
-                    ",status_os = @status" +
-                    "where id_os = @id_ordemServico";
+                    ",status_os = @status " +
+                    "where id_os = @id_os";
 
             MySqlCommand cmd = new MySqlCommand(query, con);
 

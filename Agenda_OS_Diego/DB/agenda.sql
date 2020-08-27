@@ -13,14 +13,15 @@ create table empresa(
   numero VARCHAR(5),
   cep CHAR(10),
   telefone VARCHAR(20),
-  celular VARCHAR(20)
+  celular VARCHAR(20),
+  inativado bool
 ) ENGINE = innodb;
 
 CREATE table tecnico(
   id_tecnico int primary key auto_increment,
   usuario VARCHAR(20),
   senha VARCHAR(20),
-  nome VARCHAR(200),
+  nome_tecnico VARCHAR(200),
   cnh CHAR(20),
   cidade VARCHAR(100),
   bairro VARCHAR(100),
@@ -28,7 +29,8 @@ CREATE table tecnico(
   numero VARCHAR(5),
   cep CHAR(10),
   celular VARCHAR(20),
-  data_nascimento datetime
+  data_nascimento datetime,
+  inativado bool
 ) ENGINE = innodb;
 
 create table ordemservico (
@@ -44,7 +46,8 @@ create table ordemservico (
   solucao text,
   abertura datetime,
   conclusao datetime,
-  status_os VARCHAR(150)
+  status_os VARCHAR(150),
+  inativado bool
 ) ENGINE = innodb;
 
 ALTER TABLE ordemservico
@@ -57,14 +60,14 @@ ADD CONSTRAINT id_tecnico
 FOREIGN KEY (fk_tecnico) 
 REFERENCES tecnico (id_tecnico);
 
-insert into ordemservico VALUES(0, 2, 2, "Diego", "outro telefone 123"
-, "pinpad", "pinpad nao funciona", "Telefone", "TEF", "colocou novamento na porta usb", now(), now(), "Finalizado");
-
 insert into empresa VALUES(0, "nike", "nike ltd", "12345678912345",
- "Pulo holtz", "Inocoop", "Tatuí", "123", "18555236", "153053333", "15996286530");
+ "Pulo holtz", "Inocoop", "Tatuí", "123", "18555236", "153053333", "15996286530", 0);
 
  insert into tecnico VALUES (0, "diego", "123", "Diego da Silva", "12345678998745698562"
-, "TAtuí", "Centro", "XV de novembro", "1234", "105831256", "15996989530", now() );
+, "TAtuí", "Centro", "XV de novembro", "1234", "105831256", "15996989530", now(), 0 );
+
+insert into ordemservico VALUES(0, 0, 0, "Diego", "outro telefone 123"
+, "pinpad", "pinpad nao funciona", "Telefone", "TEF", "colocou novamento na porta usb", now(), now(), "Pendente", 0);
 
 select t.nome, e.fantasia, e.cnpj, os.solicitante, os.info_extra, os.assunto, os.descricao, os.atendimento, os.sistema, os.solucao, os.abertura, os.conclusao, os.status_os from tecnico as t inner join empresa as e inner join ordemservico as os where os.fk_tecnico = t.id_tecnico and os.fk_empresa = e.id_empresa;
 

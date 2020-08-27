@@ -47,12 +47,12 @@ namespace Agenda_OS_Diego
         public void CriarDados() {
 
             con.Open();
-            string CommandText = "INSERT INTO tecnico VALUES (0, @usuario, @senha, @nome, @cnh, @cidade, @bairro, @rua, @numero, @cep, @celular, @data_nascimento)";
+            string CommandText = "INSERT INTO tecnico VALUES (0, @usuario, @senha, @nome_tecnico, @cnh, @cidade, @bairro, @rua, @numero, @cep, @celular, @data_nascimento, 0)";
             MySqlCommand cmd = new MySqlCommand(CommandText, con);
 
             cmd.Parameters.AddWithValue("@usuario", usuario);
             cmd.Parameters.AddWithValue("@senha", senha);
-            cmd.Parameters.AddWithValue("@nome", nome);
+            cmd.Parameters.AddWithValue("@nome_tecnico", nome);
             cmd.Parameters.AddWithValue("@cnh", cnh);
             cmd.Parameters.AddWithValue("@cidade", cidade);
             cmd.Parameters.AddWithValue("@bairro", bairro);
@@ -84,7 +84,7 @@ namespace Agenda_OS_Diego
         public void Alterar_Dados()
         {
             con.Open();
-            string query = "UPDATE tecnico SET usuario=@usuario, senha=@senha, nome=@nome, rua=@rua, bairro=@bairro, cidade=@cidade, numero=@numero, cep=@cep, celular=@celular, cnh=@cnh, data_nascimento=@data_nascimento WHERE id_tecnico=@id ";
+            string query = "UPDATE tecnico SET usuario=@usuario, senha=@senha, nome_tecnico=@nome, rua=@rua, bairro=@bairro, cidade=@cidade, numero=@numero, cep=@cep, celular=@celular, cnh=@cnh, data_nascimento=@data_nascimento WHERE id_tecnico=@id ";
             MySqlCommand cmd = new MySqlCommand(query, con);
             cmd.Parameters.AddWithValue("@id", id);
             cmd.Parameters.AddWithValue("@usuario", usuario);

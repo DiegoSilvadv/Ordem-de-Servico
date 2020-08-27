@@ -47,7 +47,7 @@ namespace Agenda_OS_Diego.Tecnico
                 lbl_id.Text = dgv_tecnico.CurrentRow.Cells["id_tecnico"].Value.ToString();
                 txt_usuario.Text = dgv_tecnico.CurrentRow.Cells["usuario"].Value.ToString();
                 txt_senha.Text = dgv_tecnico.CurrentRow.Cells["senha"].Value.ToString();
-                txt_nome.Text = dgv_tecnico.CurrentRow.Cells["nome"].Value.ToString();
+                txt_nome.Text = dgv_tecnico.CurrentRow.Cells["nome_tecnico"].Value.ToString();
                 mtb_cnh.Text = dgv_tecnico.CurrentRow.Cells["cnh"].Value.ToString();
                 txt_cidade.Text = dgv_tecnico.CurrentRow.Cells["cidade"].Value.ToString();
                 txt_bairro.Text = dgv_tecnico.CurrentRow.Cells["bairro"].Value.ToString();
