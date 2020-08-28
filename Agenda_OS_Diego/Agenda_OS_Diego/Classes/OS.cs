@@ -84,7 +84,7 @@ namespace Agenda_OS_Diego.Classes
         // função para preencher os campos automaticamente
         public void ListarEmpresa() {
 
-            MySqlCommand cmd = new MySqlCommand("SELECT id_empresa, fantasia, cnpj, telefone, celular FROM empresa WHERE cnpj like @cnpj and fantasia like @fantasia", con);
+            MySqlCommand cmd = new MySqlCommand("SELECT id_empresa, fantasia, cnpj, telefone, celular FROM empresa WHERE cnpj like @cnpj or fantasia like @fantasia", con);
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.AddWithValue("@fantasia", fantasia);
             cmd.Parameters.AddWithValue("@cnpj", cnpj);
@@ -94,7 +94,6 @@ namespace Agenda_OS_Diego.Classes
             
             while (dr.Read())
             {
-                MessageBox.Show("" + cnpj);
                 this.id_empresa = Convert.ToInt32(dr["id_empresa"].ToString());
                 this.fantasia = dr["fantasia"].ToString();
                 this.cnpj = dr["cnpj"].ToString();

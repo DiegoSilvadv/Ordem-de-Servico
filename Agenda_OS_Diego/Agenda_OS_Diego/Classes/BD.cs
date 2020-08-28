@@ -50,7 +50,7 @@ namespace Agenda_OS_Diego.Classes
         public void Criar_Dados()
         {
             con.Open();
-            string CommandText = "INSERT INTO empresa VALUES (0, @razao, @fantasia, @cnpj, @rua, @bairro, @cidade, @numero, @cep, @telefone, @celular) ";
+            string CommandText = "INSERT INTO empresa VALUES (0, @razao, @fantasia, @cnpj, @rua, @bairro, @cidade, @numero, @cep, @telefone, @celular, 0) ";
             MySqlCommand cmd = new MySqlCommand(CommandText, con);
 
             cmd.Parameters.AddWithValue("@razao", razao);

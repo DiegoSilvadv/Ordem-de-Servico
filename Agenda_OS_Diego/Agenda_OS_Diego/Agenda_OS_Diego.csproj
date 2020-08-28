@@ -69,6 +69,18 @@
     <Compile Include="Login\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="OrdemServico\FRM-Add-OS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrdemServico\FRM-Add-OS.Designer.cs">
+      <DependentUpon>FRM-Add-OS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrdemServico\Frm-listar-empresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrdemServico\Frm-listar-empresa.Designer.cs">
+      <DependentUpon>Frm-listar-empresa.cs</DependentUpon>
+    </Compile>
     <Compile Include="OrdemServico\OrdemServico.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +103,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrdemServico\FRM-Add-OS.resx">
+      <DependentUpon>FRM-Add-OS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrdemServico\Frm-listar-empresa.resx">
+      <DependentUpon>Frm-listar-empresa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OrdemServico\OrdemServico.resx">
       <DependentUpon>OrdemServico.cs</DependentUpon>
