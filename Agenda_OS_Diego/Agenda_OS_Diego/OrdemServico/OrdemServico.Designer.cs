@@ -57,7 +57,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label11
             // 
@@ -69,7 +68,6 @@
             this.label11.Size = new System.Drawing.Size(141, 13);
             this.label11.TabIndex = 18;
             this.label11.Text = "Pesquise pela razão social...";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // txt_pesquisa
             // 
@@ -106,7 +104,7 @@
             this.dgv_os.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_os.EnableHeadersVisualStyles = false;
             this.dgv_os.GridColor = System.Drawing.SystemColors.ButtonShadow;
-            this.dgv_os.Location = new System.Drawing.Point(0, 102);
+            this.dgv_os.Location = new System.Drawing.Point(0, 111);
             this.dgv_os.MultiSelect = false;
             this.dgv_os.Name = "dgv_os";
             this.dgv_os.ReadOnly = true;
@@ -128,7 +126,7 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
             this.dgv_os.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_os.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_os.Size = new System.Drawing.Size(1270, 436);
+            this.dgv_os.Size = new System.Drawing.Size(1270, 446);
             this.dgv_os.TabIndex = 13;
             // 
             // pictureBox2
@@ -177,10 +175,11 @@
             this.btn_novo.ForeColor = System.Drawing.SystemColors.Control;
             this.btn_novo.Location = new System.Drawing.Point(198, 74);
             this.btn_novo.Name = "btn_novo";
-            this.btn_novo.Size = new System.Drawing.Size(81, 22);
+            this.btn_novo.Size = new System.Drawing.Size(81, 32);
             this.btn_novo.TabIndex = 29;
             this.btn_novo.Text = "Novo";
             this.btn_novo.UseVisualStyleBackColor = false;
+            this.btn_novo.Click += new System.EventHandler(this.btn_novo_Click);
             // 
             // btn_excluir
             // 
@@ -191,7 +190,7 @@
             this.btn_excluir.ForeColor = System.Drawing.SystemColors.Control;
             this.btn_excluir.Location = new System.Drawing.Point(111, 74);
             this.btn_excluir.Name = "btn_excluir";
-            this.btn_excluir.Size = new System.Drawing.Size(81, 22);
+            this.btn_excluir.Size = new System.Drawing.Size(81, 32);
             this.btn_excluir.TabIndex = 28;
             this.btn_excluir.Text = "Excluir";
             this.btn_excluir.UseVisualStyleBackColor = false;
@@ -205,10 +204,11 @@
             this.btn_editar.ForeColor = System.Drawing.SystemColors.Control;
             this.btn_editar.Location = new System.Drawing.Point(24, 74);
             this.btn_editar.Name = "btn_editar";
-            this.btn_editar.Size = new System.Drawing.Size(81, 22);
+            this.btn_editar.Size = new System.Drawing.Size(81, 32);
             this.btn_editar.TabIndex = 27;
             this.btn_editar.Text = "Editar";
             this.btn_editar.UseVisualStyleBackColor = false;
+            this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click);
             // 
             // OrdemServico
             // 

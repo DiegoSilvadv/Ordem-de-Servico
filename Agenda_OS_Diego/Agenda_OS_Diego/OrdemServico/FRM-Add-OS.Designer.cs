@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRM_Add_OS));
-            this.img_pesquisar = new System.Windows.Forms.PictureBox();
             this.lbl_id_empresa = new System.Windows.Forms.Label();
             this.lbl_id_tecnico = new System.Windows.Forms.Label();
             this.lbl_id_os = new System.Windows.Forms.Label();
@@ -37,7 +35,6 @@
             this.lbl1 = new System.Windows.Forms.Label();
             this.lbl0 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.cb_status = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.dtp_conclusao = new System.Windows.Forms.DateTimePicker();
@@ -45,43 +42,32 @@
             this.label15 = new System.Windows.Forms.Label();
             this.txt_solucao = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.cb_sistema = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.cb_atendimento = new System.Windows.Forms.ComboBox();
             this.btn_abrir_os = new System.Windows.Forms.Button();
             this.mtb_celular = new System.Windows.Forms.MaskedTextBox();
             this.mtb_cnpj = new System.Windows.Forms.MaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.mtb_telefone = new System.Windows.Forms.MaskedTextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txt_fantasia = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.Técnico = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txt_solicitante = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_descricao = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txt_assunto = new System.Windows.Forms.TextBox();
             this.cb_tecnico = new System.Windows.Forms.ComboBox();
-            this.Técnico = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txt_solicitante = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.img_pesquisar)).BeginInit();
+            this.cb_atendimento = new System.Windows.Forms.ComboBox();
+            this.cb_sistema = new System.Windows.Forms.ComboBox();
+            this.cb_status = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // img_pesquisar
-            // 
-            this.img_pesquisar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.img_pesquisar.Image = ((System.Drawing.Image)(resources.GetObject("img_pesquisar.Image")));
-            this.img_pesquisar.Location = new System.Drawing.Point(387, 19);
-            this.img_pesquisar.Name = "img_pesquisar";
-            this.img_pesquisar.Size = new System.Drawing.Size(39, 43);
-            this.img_pesquisar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.img_pesquisar.TabIndex = 88;
-            this.img_pesquisar.TabStop = false;
             // 
             // lbl_id_empresa
             // 
@@ -115,7 +101,7 @@
             this.lbl2.AutoSize = true;
             this.lbl2.Location = new System.Drawing.Point(208, 20);
             this.lbl2.Name = "lbl2";
-            this.lbl2.Size = new System.Drawing.Size(61, 13);
+            this.lbl2.Size = new System.Drawing.Size(66, 13);
             this.lbl2.TabIndex = 122;
             this.lbl2.Text = "id empresa:";
             // 
@@ -124,7 +110,7 @@
             this.lbl1.AutoSize = true;
             this.lbl1.Location = new System.Drawing.Point(392, 20);
             this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(56, 13);
+            this.lbl1.Size = new System.Drawing.Size(59, 13);
             this.lbl1.TabIndex = 121;
             this.lbl1.Text = "id tecnico:";
             // 
@@ -133,7 +119,7 @@
             this.lbl0.AutoSize = true;
             this.lbl0.Location = new System.Drawing.Point(47, 20);
             this.lbl0.Name = "lbl0";
-            this.lbl0.Size = new System.Drawing.Size(36, 13);
+            this.lbl0.Size = new System.Drawing.Size(37, 13);
             this.lbl0.TabIndex = 120;
             this.lbl0.Text = "id OS:";
             // 
@@ -142,33 +128,16 @@
             this.label18.AutoSize = true;
             this.label18.Location = new System.Drawing.Point(337, 391);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(40, 13);
+            this.label18.Size = new System.Drawing.Size(43, 13);
             this.label18.TabIndex = 116;
             this.label18.Text = "Status:";
-            // 
-            // cb_status
-            // 
-            this.cb_status.BackColor = System.Drawing.SystemColors.Control;
-            this.cb_status.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cb_status.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.cb_status.FormattingEnabled = true;
-            this.cb_status.Items.AddRange(new object[] {
-            "Selecione um status",
-            "Concluido",
-            "Pendente",
-            "Agendado",
-            "Cancelado"});
-            this.cb_status.Location = new System.Drawing.Point(340, 407);
-            this.cb_status.Name = "cb_status";
-            this.cb_status.Size = new System.Drawing.Size(131, 21);
-            this.cb_status.TabIndex = 115;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(188, 392);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(73, 13);
+            this.label17.Size = new System.Drawing.Size(75, 13);
             this.label17.TabIndex = 114;
             this.label17.Text = "Dt conclusão:";
             // 
@@ -177,7 +146,7 @@
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(48, 392);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(50, 13);
+            this.label16.Size = new System.Drawing.Size(53, 13);
             this.label16.TabIndex = 113;
             this.label16.Text = "Abertura:";
             // 
@@ -186,7 +155,7 @@
             this.dtp_conclusao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_conclusao.Location = new System.Drawing.Point(191, 408);
             this.dtp_conclusao.Name = "dtp_conclusao";
-            this.dtp_conclusao.Size = new System.Drawing.Size(144, 20);
+            this.dtp_conclusao.Size = new System.Drawing.Size(144, 21);
             this.dtp_conclusao.TabIndex = 112;
             // 
             // dtp_abertura
@@ -201,7 +170,7 @@
             this.dtp_abertura.MaxDate = new System.DateTime(2050, 12, 31, 0, 0, 0, 0);
             this.dtp_abertura.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.dtp_abertura.Name = "dtp_abertura";
-            this.dtp_abertura.Size = new System.Drawing.Size(143, 20);
+            this.dtp_abertura.Size = new System.Drawing.Size(143, 21);
             this.dtp_abertura.TabIndex = 111;
             this.dtp_abertura.Value = new System.DateTime(2020, 8, 12, 17, 32, 54, 0);
             // 
@@ -210,7 +179,7 @@
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(48, 301);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(49, 13);
+            this.label15.Size = new System.Drawing.Size(50, 13);
             this.label15.TabIndex = 110;
             this.label15.Text = "Solução:";
             // 
@@ -229,60 +198,25 @@
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(249, 244);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(47, 13);
+            this.label14.Size = new System.Drawing.Size(52, 13);
             this.label14.TabIndex = 108;
             this.label14.Text = "Sistema:";
-            // 
-            // cb_sistema
-            // 
-            this.cb_sistema.BackColor = System.Drawing.SystemColors.Control;
-            this.cb_sistema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cb_sistema.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.cb_sistema.FormattingEnabled = true;
-            this.cb_sistema.Items.AddRange(new object[] {
-            "Selecione um sistema",
-            "Hotline",
-            "Siscom",
-            "VRsystem",
-            "TEF Scoop",
-            "TEF sitef"});
-            this.cb_sistema.Location = new System.Drawing.Point(252, 260);
-            this.cb_sistema.Name = "cb_sistema";
-            this.cb_sistema.Size = new System.Drawing.Size(219, 21);
-            this.cb_sistema.TabIndex = 107;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(48, 244);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(69, 13);
+            this.label13.Size = new System.Drawing.Size(74, 13);
             this.label13.TabIndex = 106;
             this.label13.Text = "Atendimento:";
-            // 
-            // cb_atendimento
-            // 
-            this.cb_atendimento.BackColor = System.Drawing.SystemColors.Control;
-            this.cb_atendimento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cb_atendimento.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.cb_atendimento.FormattingEnabled = true;
-            this.cb_atendimento.Items.AddRange(new object[] {
-            "Selecione um atendimento",
-            "Telefone",
-            "WhatssApp",
-            "Presencial",
-            "Skype"});
-            this.cb_atendimento.Location = new System.Drawing.Point(45, 260);
-            this.cb_atendimento.Name = "cb_atendimento";
-            this.cb_atendimento.Size = new System.Drawing.Size(196, 21);
-            this.cb_atendimento.TabIndex = 105;
             // 
             // btn_abrir_os
             // 
             this.btn_abrir_os.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
             this.btn_abrir_os.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_abrir_os.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_abrir_os.Location = new System.Drawing.Point(227, 612);
+            this.btn_abrir_os.Location = new System.Drawing.Point(220, 649);
             this.btn_abrir_os.Name = "btn_abrir_os";
             this.btn_abrir_os.Size = new System.Drawing.Size(128, 34);
             this.btn_abrir_os.TabIndex = 92;
@@ -294,10 +228,10 @@
             // 
             this.mtb_celular.BackColor = System.Drawing.SystemColors.Control;
             this.mtb_celular.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.mtb_celular.Location = new System.Drawing.Point(327, 75);
+            this.mtb_celular.Location = new System.Drawing.Point(371, 75);
             this.mtb_celular.Mask = "(99) 9 9999-9999";
             this.mtb_celular.Name = "mtb_celular";
-            this.mtb_celular.Size = new System.Drawing.Size(99, 20);
+            this.mtb_celular.Size = new System.Drawing.Size(99, 21);
             this.mtb_celular.TabIndex = 97;
             // 
             // mtb_cnpj
@@ -307,7 +241,7 @@
             this.mtb_cnpj.Location = new System.Drawing.Point(45, 75);
             this.mtb_cnpj.Mask = "99.999.999/9999-99";
             this.mtb_cnpj.Name = "mtb_cnpj";
-            this.mtb_cnpj.Size = new System.Drawing.Size(110, 20);
+            this.mtb_cnpj.Size = new System.Drawing.Size(110, 21);
             this.mtb_cnpj.TabIndex = 90;
             // 
             // label3
@@ -319,16 +253,6 @@
             this.label3.TabIndex = 89;
             this.label3.Text = "CNPJ:";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.SystemColors.Control;
-            this.label7.Location = new System.Drawing.Point(324, 59);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(42, 13);
-            this.label7.TabIndex = 96;
-            this.label7.Text = "Celular:";
-            // 
             // mtb_telefone
             // 
             this.mtb_telefone.BackColor = System.Drawing.SystemColors.Control;
@@ -336,25 +260,15 @@
             this.mtb_telefone.Location = new System.Drawing.Point(206, 75);
             this.mtb_telefone.Mask = "(99) 9999-9999";
             this.mtb_telefone.Name = "mtb_telefone";
-            this.mtb_telefone.Size = new System.Drawing.Size(74, 20);
+            this.mtb_telefone.Size = new System.Drawing.Size(74, 21);
             this.mtb_telefone.TabIndex = 95;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.SystemColors.Control;
-            this.label6.Location = new System.Drawing.Point(203, 59);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 13);
-            this.label6.TabIndex = 94;
-            this.label6.Text = "Telefone:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(47, 19);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 13);
+            this.label4.Size = new System.Drawing.Size(88, 13);
             this.label4.TabIndex = 93;
             this.label4.Text = "Nome/Fantasia:";
             // 
@@ -364,21 +278,23 @@
             this.txt_fantasia.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txt_fantasia.Location = new System.Drawing.Point(45, 35);
             this.txt_fantasia.Name = "txt_fantasia";
-            this.txt_fantasia.Size = new System.Drawing.Size(321, 20);
+            this.txt_fantasia.Size = new System.Drawing.Size(425, 21);
             this.txt_fantasia.TabIndex = 91;
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.txt_fantasia);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.img_pesquisar);
-            this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.mtb_telefone);
-            this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.mtb_cnpj);
             this.groupBox2.Controls.Add(this.mtb_celular);
-            this.groupBox2.Location = new System.Drawing.Point(27, 19);
+            this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox2.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(29, 56);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(510, 115);
             this.groupBox2.TabIndex = 127;
@@ -387,6 +303,10 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox3.Controls.Add(this.cb_status);
+            this.groupBox3.Controls.Add(this.cb_sistema);
+            this.groupBox3.Controls.Add(this.cb_atendimento);
             this.groupBox3.Controls.Add(this.cb_tecnico);
             this.groupBox3.Controls.Add(this.Técnico);
             this.groupBox3.Controls.Add(this.lbl_id_tecnico);
@@ -401,10 +321,7 @@
             this.groupBox3.Controls.Add(this.lbl0);
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.txt_assunto);
-            this.groupBox3.Controls.Add(this.cb_sistema);
             this.groupBox3.Controls.Add(this.label18);
-            this.groupBox3.Controls.Add(this.cb_atendimento);
-            this.groupBox3.Controls.Add(this.cb_status);
             this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Controls.Add(this.txt_solucao);
@@ -413,19 +330,48 @@
             this.groupBox3.Controls.Add(this.label16);
             this.groupBox3.Controls.Add(this.label17);
             this.groupBox3.Controls.Add(this.dtp_conclusao);
-            this.groupBox3.Location = new System.Drawing.Point(27, 140);
+            this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox3.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(29, 177);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(512, 455);
             this.groupBox3.TabIndex = 127;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Informações sobre Ordem de Serviço";
             // 
+            // Técnico
+            // 
+            this.Técnico.AutoSize = true;
+            this.Técnico.Location = new System.Drawing.Point(49, 49);
+            this.Técnico.Name = "Técnico";
+            this.Técnico.Size = new System.Drawing.Size(49, 13);
+            this.Técnico.TabIndex = 125;
+            this.Técnico.Text = "Técnico:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(197, 48);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 13);
+            this.label2.TabIndex = 124;
+            this.label2.Text = "Solicitante:";
+            // 
+            // txt_solicitante
+            // 
+            this.txt_solicitante.BackColor = System.Drawing.SystemColors.Control;
+            this.txt_solicitante.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.txt_solicitante.Location = new System.Drawing.Point(200, 69);
+            this.txt_solicitante.Name = "txt_solicitante";
+            this.txt_solicitante.Size = new System.Drawing.Size(271, 21);
+            this.txt_solicitante.TabIndex = 123;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(48, 151);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 122;
             this.label1.Text = "Descrição:";
             // 
@@ -444,7 +390,7 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(48, 99);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(48, 13);
+            this.label12.Size = new System.Drawing.Size(51, 13);
             this.label12.TabIndex = 120;
             this.label12.Text = "Assunto:";
             // 
@@ -454,60 +400,76 @@
             this.txt_assunto.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txt_assunto.Location = new System.Drawing.Point(45, 115);
             this.txt_assunto.Name = "txt_assunto";
-            this.txt_assunto.Size = new System.Drawing.Size(426, 20);
+            this.txt_assunto.Size = new System.Drawing.Size(426, 21);
             this.txt_assunto.TabIndex = 119;
             // 
             // cb_tecnico
             // 
             this.cb_tecnico.BackColor = System.Drawing.SystemColors.Control;
-            this.cb_tecnico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cb_tecnico.ForeColor = System.Drawing.SystemColors.ControlText;
             this.cb_tecnico.FormattingEnabled = true;
-            this.cb_tecnico.Location = new System.Drawing.Point(45, 69);
+            this.cb_tecnico.Location = new System.Drawing.Point(45, 68);
             this.cb_tecnico.Name = "cb_tecnico";
-            this.cb_tecnico.Size = new System.Drawing.Size(134, 21);
+            this.cb_tecnico.Size = new System.Drawing.Size(143, 21);
             this.cb_tecnico.TabIndex = 126;
-            this.cb_tecnico.SelectedIndexChanged += new System.EventHandler(this.cb_tecnico_SelectedIndexChanged);
             // 
-            // Técnico
+            // cb_atendimento
             // 
-            this.Técnico.AutoSize = true;
-            this.Técnico.Location = new System.Drawing.Point(49, 49);
-            this.Técnico.Name = "Técnico";
-            this.Técnico.Size = new System.Drawing.Size(49, 13);
-            this.Técnico.TabIndex = 125;
-            this.Técnico.Text = "Técnico:";
+            this.cb_atendimento.BackColor = System.Drawing.SystemColors.Control;
+            this.cb_atendimento.FormattingEnabled = true;
+            this.cb_atendimento.Location = new System.Drawing.Point(45, 260);
+            this.cb_atendimento.Name = "cb_atendimento";
+            this.cb_atendimento.Size = new System.Drawing.Size(196, 21);
+            this.cb_atendimento.TabIndex = 127;
             // 
-            // label2
+            // cb_sistema
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(197, 48);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 13);
-            this.label2.TabIndex = 124;
-            this.label2.Text = "Solicitante:";
+            this.cb_sistema.BackColor = System.Drawing.SystemColors.Control;
+            this.cb_sistema.FormattingEnabled = true;
+            this.cb_sistema.Location = new System.Drawing.Point(252, 260);
+            this.cb_sistema.Name = "cb_sistema";
+            this.cb_sistema.Size = new System.Drawing.Size(218, 21);
+            this.cb_sistema.TabIndex = 128;
             // 
-            // txt_solicitante
+            // cb_status
             // 
-            this.txt_solicitante.BackColor = System.Drawing.SystemColors.Control;
-            this.txt_solicitante.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txt_solicitante.Location = new System.Drawing.Point(200, 69);
-            this.txt_solicitante.Name = "txt_solicitante";
-            this.txt_solicitante.Size = new System.Drawing.Size(271, 20);
-            this.txt_solicitante.TabIndex = 123;
+            this.cb_status.BackColor = System.Drawing.SystemColors.Control;
+            this.cb_status.FormattingEnabled = true;
+            this.cb_status.Location = new System.Drawing.Point(340, 408);
+            this.cb_status.Name = "cb_status";
+            this.cb_status.Size = new System.Drawing.Size(130, 21);
+            this.cb_status.TabIndex = 129;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(204, 59);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 13);
+            this.label5.TabIndex = 98;
+            this.label5.Text = "Telefone:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(368, 59);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(45, 13);
+            this.label6.TabIndex = 99;
+            this.label6.Text = "Celular:";
             // 
             // FRM_Add_OS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(580, 658);
+            this.ClientSize = new System.Drawing.Size(580, 736);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btn_abrir_os);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FRM_Add_OS";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FRM_Add_OS";
             this.Load += new System.EventHandler(this.FRM_Add_OS_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.img_pesquisar)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -517,8 +479,6 @@
         }
 
         #endregion
-
-        public System.Windows.Forms.PictureBox img_pesquisar;
         public System.Windows.Forms.Label lbl_id_empresa;
         private System.Windows.Forms.Label lbl2;
         private System.Windows.Forms.Label lbl1;
@@ -532,9 +492,7 @@
         public System.Windows.Forms.MaskedTextBox mtb_celular;
         public System.Windows.Forms.MaskedTextBox mtb_cnpj;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label7;
         public System.Windows.Forms.MaskedTextBox mtb_telefone;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.TextBox txt_fantasia;
         private System.Windows.Forms.Label Técnico;
@@ -545,16 +503,18 @@
         public System.Windows.Forms.GroupBox groupBox3;
         public System.Windows.Forms.Label lbl_id_tecnico;
         public System.Windows.Forms.Label lbl_id_os;
-        public System.Windows.Forms.ComboBox cb_status;
         public System.Windows.Forms.DateTimePicker dtp_conclusao;
         public System.Windows.Forms.DateTimePicker dtp_abertura;
         public System.Windows.Forms.TextBox txt_solucao;
-        public System.Windows.Forms.ComboBox cb_sistema;
-        public System.Windows.Forms.ComboBox cb_atendimento;
-        public System.Windows.Forms.ComboBox cb_tecnico;
         public System.Windows.Forms.TextBox txt_solicitante;
         public System.Windows.Forms.TextBox txt_descricao;
         public System.Windows.Forms.TextBox txt_assunto;
         public System.Windows.Forms.Button btn_abrir_os;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        public System.Windows.Forms.ComboBox cb_status;
+        public System.Windows.Forms.ComboBox cb_sistema;
+        public System.Windows.Forms.ComboBox cb_atendimento;
+        public System.Windows.Forms.ComboBox cb_tecnico;
     }
 }

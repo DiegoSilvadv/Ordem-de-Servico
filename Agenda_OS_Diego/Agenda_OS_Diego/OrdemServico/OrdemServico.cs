@@ -34,7 +34,6 @@ namespace Agenda_OS_Diego.OrdemServico
             dgv_os.Columns["fk_tecnico"].Visible = false;
         }
         
-
         private void img_return_Click(object sender, EventArgs e)
         {
             Home return_home = new Home();
@@ -60,22 +59,6 @@ namespace Agenda_OS_Diego.OrdemServico
             Home ReturnHome = new Home();
             this.Hide();
             ReturnHome.ShowDialog();
-        }
-
-        
-        
-        private void btn_abrir_os_Click(object sender, EventArgs e)
-        {
-            if (btn_abrir_os.Text == "Abrir OS")
-            {
-                PegarDados();
-                crud_os.CadastrarOS();
-            }
-            else if (btn_abrir_os.Text == "Gravar") {
-                PegarDados();
-                crud_os.AlterarDados();
-            }
-            
         }
         
         public void ListarDados()
@@ -119,36 +102,25 @@ namespace Agenda_OS_Diego.OrdemServico
 
         private void OrdemServico_Load(object sender, EventArgs e)
         {
-            
-            
-        }
 
-        
-        private void btn_editar_Click(object sender, EventArgs e)
-        {
-            ListarDados();
+            //VERIFICA SE ESTÁ COM ALGUMA LINHA SELECIONADA
+            if (dgv_os.SelectedRows.Count > 0)
+            {
+                int index = dgv_os.SelectedRows[0].Index;
+
+                if (index >= 0)
+                    dgv_os.Rows[index].Selected = false;
+            }
         }
 
         private void btn_novo_Click(object sender, EventArgs e)
         {
-            limparCampos();
+            Frm_listar_empresa frmListar = new Frm_listar_empresa();
+            this.Hide();
+            frmListar.ShowDialog();
         }
 
-        
-
-        private void img_pesquisar_Click(object sender, EventArgs e)
-        {
-            Frm_listar_empresa frmListarEmpresa = new Frm_listar_empresa();
-            frmListarEmpresa.Show();
-        }
-
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void btn_editar_Click(object sender, EventArgs e)
         {
 
         }

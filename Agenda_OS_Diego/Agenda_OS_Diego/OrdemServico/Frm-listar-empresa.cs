@@ -54,10 +54,9 @@ namespace Agenda_OS_Diego.OrdemServico
             FRM.mtb_cnpj.Text = this.dgv_Empresa_os.CurrentRow.Cells[2].Value.ToString();
             FRM.mtb_celular.Text = this.dgv_Empresa_os.CurrentRow.Cells[8].Value.ToString();
             FRM.mtb_telefone.Text = this.dgv_Empresa_os.CurrentRow.Cells[9].Value.ToString();
-
-            FRM.ShowDialog();
             this.Hide();
-
+            FRM.ShowDialog();
+            
         }
 
         private void txt_pesquisa_TextChanged(object sender, EventArgs e)

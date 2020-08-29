@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Agenda_OS_Diego.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,7 +23,16 @@ namespace Agenda_OS_Diego.OrdemServico
 
         private void btn_abrir_os_Click(object sender, EventArgs e)
         {
-
+            if (btn_abrir_os.Text == "Abrir OS")
+            {
+                PegarDados();
+                crud_os.CadastrarOS();
+            }
+            else if (btn_abrir_os.Text == "Gravar")
+            {
+                PegarDados();
+                crud_os.AlterarDados();
+            }
         }
 
 
@@ -46,7 +56,7 @@ namespace Agenda_OS_Diego.OrdemServico
             crud_os.id_empresa = Convert.ToInt32(lbl_id_empresa.Text);
             crud_os.id_tecnico = Convert.ToInt32(lbl_id_tecnico.Text);
             crud_os.solicitante = txt_solicitante.Text;
-            crud_os.informação_extra = txt_info_extra.Text;
+            //crud_os.informação_extra = txt_info_extra.Text;
             crud_os.assunto = txt_assunto.Text;
             crud_os.descricao = txt_descricao.Text;
             crud_os.atendimento = cb_atendimento.Text;
@@ -95,16 +105,8 @@ namespace Agenda_OS_Diego.OrdemServico
 
         private void FRM_Add_OS_Load(object sender, EventArgs e)
         {
-
-            //VERIFICA SE ESTÁ COM ALGUMA LINHA SELECIONADA
-            if (dgv_os.SelectedRows.Count > 0)
-            {
-                int index = dgv_os.SelectedRows[0].Index;
-
-                if (index >= 0)
-                    dgv_os.Rows[index].Selected = false;
-            }
             crud_os.ListarTecnico();
+
             cb_tecnico.DataSource = crud_os.tecnico;
             cb_tecnico.DisplayMember = "nome_tecnico";
             cb_tecnico.ValueMember = "id_tecnico";
@@ -112,5 +114,13 @@ namespace Agenda_OS_Diego.OrdemServico
             dtp_abertura.Format = DateTimePickerFormat.Custom;
             dtp_abertura.CustomFormat = "dd MM yyyy H m s";
         }
+
+        private void img_pesquisar_Click(object sender, EventArgs e)
+        {
+            Frm_listar_empresa frmListarEmpresa = new Frm_listar_empresa();
+            frmListarEmpresa.Show();
+        }
+
+       
     }
 }
