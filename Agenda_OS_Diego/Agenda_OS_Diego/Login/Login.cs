@@ -18,7 +18,8 @@ namespace Agenda_OS_Diego
     public partial class Login : Form
     {
         LoginUsuario loginUsuario = new LoginUsuario();
-        
+        Home frmHome = new Home();
+
         public Login()
         {
             InitializeComponent();
@@ -31,9 +32,7 @@ namespace Agenda_OS_Diego
             cb_usuario.DisplayMember = "usuario";
             cb_usuario.ValueMember = "id_tecnico";
         }
-
-        private void btn_login_Click_1(object sender, EventArgs e)
-        {
+        public void ValidarLogin() {
             loginUsuario.usuario = cb_usuario.Text;
             loginUsuario.senha = txt_senha.Text;
 
@@ -42,9 +41,10 @@ namespace Agenda_OS_Diego
                 loginUsuario.ConsultarLogin();
                 if (loginUsuario.logado == "Logado")
                 {
-                    Home frmHome = new Home();
+                    frmHome.nome_tecnico.Text = loginUsuario.usuario.ToString(); ;
                     this.Hide();
                     frmHome.ShowDialog();
+
                 }
                 else
                 {
@@ -55,6 +55,10 @@ namespace Agenda_OS_Diego
             {
                 MessageBox.Show("Por favor preencha os campos!");
             }
+        }
+        private void btn_login_Click_1(object sender, EventArgs e)
+        {
+            ValidarLogin();
 
         }
        
@@ -62,27 +66,7 @@ namespace Agenda_OS_Diego
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                loginUsuario.usuario = cb_usuario.Text;
-                loginUsuario.senha = txt_senha.Text;
-
-                if (txt_senha.Text != "")
-                {
-                    loginUsuario.ConsultarLogin();
-                    if (loginUsuario.logado == "Logado")
-                    {
-                        Home frmHome = new Home();
-                        this.Hide();
-                        frmHome.ShowDialog();
-                    }
-                    else
-                    {
-                        DialogResult r2 = MessageBox.Show(this, "Senha incorreta!", "Help Caption", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Por favor preencha os campos!");
-                }
+                ValidarLogin();
             }
         }
     }

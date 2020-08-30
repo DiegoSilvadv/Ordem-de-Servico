@@ -17,8 +17,10 @@ namespace Agenda_OS_Diego
         public Home()
         { 
             InitializeComponent();
+
         }
 
+        //Botões laterais
         private void button3_Click(object sender, EventArgs e)
         {
             Empresa empresa = new Empresa();
@@ -45,12 +47,21 @@ namespace Agenda_OS_Diego
             lbl_data_hora.Text = (DateTime.Now.ToString("HH:mm:ss"));
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            Login frmLogin = new Login();
+            this.Hide();
+            frmLogin.Show();
+        }
+
+        private void sair_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show(" Deseja mesmo sair? ", "Mensage do sistema ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 Application.Exit();
             }
         }
+
+       
     }
 }

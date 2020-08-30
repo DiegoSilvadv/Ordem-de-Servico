@@ -9,7 +9,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Runtime.Serialization;
 
-namespace Agenda_OS_Diego.Classes
+namespace Agenda_OS_Diego
 {   
         class DB
         {   //conexão com banco de dados

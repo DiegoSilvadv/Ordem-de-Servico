@@ -1,7 +1,6 @@
 ﻿
 
 using Agenda_OS_Diego.OrdemServico;
-using Agenda_OS_Diego.Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

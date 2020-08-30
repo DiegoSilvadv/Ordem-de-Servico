@@ -51,7 +51,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txt_fantasia = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cb_status = new System.Windows.Forms.ComboBox();
+            this.cb_sistema = new System.Windows.Forms.ComboBox();
+            this.cb_atendimento = new System.Windows.Forms.ComboBox();
+            this.cb_tecnico = new System.Windows.Forms.ComboBox();
             this.Técnico = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_solicitante = new System.Windows.Forms.TextBox();
@@ -59,14 +65,12 @@
             this.txt_descricao = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txt_assunto = new System.Windows.Forms.TextBox();
-            this.cb_tecnico = new System.Windows.Forms.ComboBox();
-            this.cb_atendimento = new System.Windows.Forms.ComboBox();
-            this.cb_sistema = new System.Windows.Forms.ComboBox();
-            this.cb_status = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbl_id_empresa
@@ -126,7 +130,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(337, 391);
+            this.label18.Location = new System.Drawing.Point(337, 326);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(43, 13);
             this.label18.TabIndex = 116;
@@ -135,7 +139,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(188, 392);
+            this.label17.Location = new System.Drawing.Point(188, 327);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(75, 13);
             this.label17.TabIndex = 114;
@@ -144,7 +148,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(48, 392);
+            this.label16.Location = new System.Drawing.Point(48, 327);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(53, 13);
             this.label16.TabIndex = 113;
@@ -153,7 +157,7 @@
             // dtp_conclusao
             // 
             this.dtp_conclusao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_conclusao.Location = new System.Drawing.Point(191, 408);
+            this.dtp_conclusao.Location = new System.Drawing.Point(191, 343);
             this.dtp_conclusao.Name = "dtp_conclusao";
             this.dtp_conclusao.Size = new System.Drawing.Size(144, 21);
             this.dtp_conclusao.TabIndex = 112;
@@ -166,7 +170,7 @@
             this.dtp_abertura.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(84)))));
             this.dtp_abertura.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(73)))), ((int)(((byte)(84)))));
             this.dtp_abertura.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_abertura.Location = new System.Drawing.Point(45, 408);
+            this.dtp_abertura.Location = new System.Drawing.Point(45, 343);
             this.dtp_abertura.MaxDate = new System.DateTime(2050, 12, 31, 0, 0, 0, 0);
             this.dtp_abertura.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.dtp_abertura.Name = "dtp_abertura";
@@ -177,7 +181,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(48, 301);
+            this.label15.Location = new System.Drawing.Point(48, 248);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(50, 13);
             this.label15.TabIndex = 110;
@@ -187,7 +191,7 @@
             // 
             this.txt_solucao.BackColor = System.Drawing.SystemColors.Control;
             this.txt_solucao.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txt_solucao.Location = new System.Drawing.Point(45, 317);
+            this.txt_solucao.Location = new System.Drawing.Point(45, 264);
             this.txt_solucao.Multiline = true;
             this.txt_solucao.Name = "txt_solucao";
             this.txt_solucao.Size = new System.Drawing.Size(426, 60);
@@ -196,7 +200,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(249, 244);
+            this.label14.Location = new System.Drawing.Point(249, 208);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(52, 13);
             this.label14.TabIndex = 108;
@@ -205,7 +209,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(48, 244);
+            this.label13.Location = new System.Drawing.Point(48, 208);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(74, 13);
             this.label13.TabIndex = 106;
@@ -216,7 +220,7 @@
             this.btn_abrir_os.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
             this.btn_abrir_os.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_abrir_os.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_abrir_os.Location = new System.Drawing.Point(220, 649);
+            this.btn_abrir_os.Location = new System.Drawing.Point(225, 556);
             this.btn_abrir_os.Name = "btn_abrir_os";
             this.btn_abrir_os.Size = new System.Drawing.Size(128, 34);
             this.btn_abrir_os.TabIndex = 92;
@@ -294,12 +298,30 @@
             this.groupBox2.Controls.Add(this.mtb_celular);
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox2.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(29, 56);
+            this.groupBox2.Location = new System.Drawing.Point(34, 48);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(510, 115);
             this.groupBox2.TabIndex = 127;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Empresa";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(368, 59);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(45, 13);
+            this.label6.TabIndex = 99;
+            this.label6.Text = "Celular:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(204, 59);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 13);
+            this.label5.TabIndex = 98;
+            this.label5.Text = "Telefone:";
             // 
             // groupBox3
             // 
@@ -332,12 +354,48 @@
             this.groupBox3.Controls.Add(this.dtp_conclusao);
             this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox3.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(29, 177);
+            this.groupBox3.Location = new System.Drawing.Point(34, 169);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(512, 455);
+            this.groupBox3.Size = new System.Drawing.Size(512, 401);
             this.groupBox3.TabIndex = 127;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Informações sobre Ordem de Serviço";
+            // 
+            // cb_status
+            // 
+            this.cb_status.BackColor = System.Drawing.SystemColors.Control;
+            this.cb_status.FormattingEnabled = true;
+            this.cb_status.Location = new System.Drawing.Point(340, 343);
+            this.cb_status.Name = "cb_status";
+            this.cb_status.Size = new System.Drawing.Size(130, 21);
+            this.cb_status.TabIndex = 129;
+            // 
+            // cb_sistema
+            // 
+            this.cb_sistema.BackColor = System.Drawing.SystemColors.Control;
+            this.cb_sistema.FormattingEnabled = true;
+            this.cb_sistema.Location = new System.Drawing.Point(252, 224);
+            this.cb_sistema.Name = "cb_sistema";
+            this.cb_sistema.Size = new System.Drawing.Size(218, 21);
+            this.cb_sistema.TabIndex = 128;
+            // 
+            // cb_atendimento
+            // 
+            this.cb_atendimento.BackColor = System.Drawing.SystemColors.Control;
+            this.cb_atendimento.FormattingEnabled = true;
+            this.cb_atendimento.Location = new System.Drawing.Point(45, 224);
+            this.cb_atendimento.Name = "cb_atendimento";
+            this.cb_atendimento.Size = new System.Drawing.Size(196, 21);
+            this.cb_atendimento.TabIndex = 127;
+            // 
+            // cb_tecnico
+            // 
+            this.cb_tecnico.BackColor = System.Drawing.SystemColors.Control;
+            this.cb_tecnico.FormattingEnabled = true;
+            this.cb_tecnico.Location = new System.Drawing.Point(45, 68);
+            this.cb_tecnico.Name = "cb_tecnico";
+            this.cb_tecnico.Size = new System.Drawing.Size(143, 21);
+            this.cb_tecnico.TabIndex = 126;
             // 
             // Técnico
             // 
@@ -369,7 +427,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(48, 151);
+            this.label1.Location = new System.Drawing.Point(48, 132);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 122;
@@ -379,7 +437,7 @@
             // 
             this.txt_descricao.BackColor = System.Drawing.SystemColors.Control;
             this.txt_descricao.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txt_descricao.Location = new System.Drawing.Point(45, 167);
+            this.txt_descricao.Location = new System.Drawing.Point(45, 148);
             this.txt_descricao.Multiline = true;
             this.txt_descricao.Name = "txt_descricao";
             this.txt_descricao.Size = new System.Drawing.Size(426, 57);
@@ -388,7 +446,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(48, 99);
+            this.label12.Location = new System.Drawing.Point(48, 92);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(51, 13);
             this.label12.TabIndex = 120;
@@ -398,73 +456,53 @@
             // 
             this.txt_assunto.BackColor = System.Drawing.SystemColors.Control;
             this.txt_assunto.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txt_assunto.Location = new System.Drawing.Point(45, 115);
+            this.txt_assunto.Location = new System.Drawing.Point(45, 108);
             this.txt_assunto.Name = "txt_assunto";
             this.txt_assunto.Size = new System.Drawing.Size(426, 21);
             this.txt_assunto.TabIndex = 119;
             // 
-            // cb_tecnico
+            // panel1
             // 
-            this.cb_tecnico.BackColor = System.Drawing.SystemColors.Control;
-            this.cb_tecnico.FormattingEnabled = true;
-            this.cb_tecnico.Location = new System.Drawing.Point(45, 68);
-            this.cb_tecnico.Name = "cb_tecnico";
-            this.cb_tecnico.Size = new System.Drawing.Size(143, 21);
-            this.cb_tecnico.TabIndex = 126;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
+            this.panel1.Location = new System.Drawing.Point(0, 606);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(580, 35);
+            this.panel1.TabIndex = 128;
             // 
-            // cb_atendimento
+            // panel2
             // 
-            this.cb_atendimento.BackColor = System.Drawing.SystemColors.Control;
-            this.cb_atendimento.FormattingEnabled = true;
-            this.cb_atendimento.Location = new System.Drawing.Point(45, 260);
-            this.cb_atendimento.Name = "cb_atendimento";
-            this.cb_atendimento.Size = new System.Drawing.Size(196, 21);
-            this.cb_atendimento.TabIndex = 127;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(580, 35);
+            this.panel2.TabIndex = 129;
             // 
-            // cb_sistema
+            // label7
             // 
-            this.cb_sistema.BackColor = System.Drawing.SystemColors.Control;
-            this.cb_sistema.FormattingEnabled = true;
-            this.cb_sistema.Location = new System.Drawing.Point(252, 260);
-            this.cb_sistema.Name = "cb_sistema";
-            this.cb_sistema.Size = new System.Drawing.Size(218, 21);
-            this.cb_sistema.TabIndex = 128;
-            // 
-            // cb_status
-            // 
-            this.cb_status.BackColor = System.Drawing.SystemColors.Control;
-            this.cb_status.FormattingEnabled = true;
-            this.cb_status.Location = new System.Drawing.Point(340, 408);
-            this.cb_status.Name = "cb_status";
-            this.cb_status.Size = new System.Drawing.Size(130, 21);
-            this.cb_status.TabIndex = 129;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(204, 59);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 13);
-            this.label5.TabIndex = 98;
-            this.label5.Text = "Telefone:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(368, 59);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(45, 13);
-            this.label6.TabIndex = 99;
-            this.label6.Text = "Celular:";
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label7.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label7.Location = new System.Drawing.Point(238, 9);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(110, 15);
+            this.label7.TabIndex = 94;
+            this.label7.Text = "Ordem de Serviço";
             // 
             // FRM_Add_OS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(580, 736);
+            this.ClientSize = new System.Drawing.Size(580, 641);
+            this.Controls.Add(this.btn_abrir_os);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.btn_abrir_os);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FRM_Add_OS";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -474,6 +512,8 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -516,5 +556,8 @@
         public System.Windows.Forms.ComboBox cb_sistema;
         public System.Windows.Forms.ComboBox cb_atendimento;
         public System.Windows.Forms.ComboBox cb_tecnico;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label7;
     }
 }

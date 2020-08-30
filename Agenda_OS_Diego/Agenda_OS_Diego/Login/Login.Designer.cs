@@ -217,6 +217,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox cb_usuario;
+        public System.Windows.Forms.ComboBox cb_usuario;
     }
 }
