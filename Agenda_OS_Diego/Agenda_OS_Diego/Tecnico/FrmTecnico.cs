@@ -68,6 +68,11 @@ namespace Agenda_OS_Diego.Tecnico
             }
         }
 
-       
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Tecnico frmTecnico = new Tecnico();
+            this.Hide();
+            frmTecnico.Show();
+        }
     }
 }

@@ -65,5 +65,12 @@ namespace Agenda_OS_Diego.OrdemServico
             string razao = txt_pesquisa.Text.ToString();
             crudEmpresa.Listar_Dados_Especificos(dgv_Empresa_os, razao);
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Empresa frmEmpresa = new Empresa();
+            this.Hide();
+            frmEmpresa.Show();
+        }
     }
 }

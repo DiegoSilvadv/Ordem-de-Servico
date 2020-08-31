@@ -97,22 +97,23 @@ namespace Agenda_OS_Diego.OrdemServico
             cb_status.SelectedIndex = 0;
             cb_sistema.SelectedIndex = 0;
         }
-
-        private void cb_tecnico_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            lbl_id_tecnico.Text = cb_tecnico.SelectedValue.ToString();
-        }
-
-        private void FRM_Add_OS_Load(object sender, EventArgs e)
-        {
+        public void ListarTecnico() {
             crud_os.ListarTecnico();
-
             cb_tecnico.DataSource = crud_os.tecnico;
             cb_tecnico.DisplayMember = "nome_tecnico";
             cb_tecnico.ValueMember = "id_tecnico";
+        }
 
+        public void MaskaraDateTime() {
             dtp_abertura.Format = DateTimePickerFormat.Custom;
-            dtp_abertura.CustomFormat = "dd MM yyyy H m s";
+            dtp_abertura.CustomFormat = "dd MM yyyy H m";
+            dtp_conclusao.Format = DateTimePickerFormat.Custom;
+            dtp_conclusao.CustomFormat = "dd MM yyyy H m";
+        }
+        private void FRM_Add_OS_Load(object sender, EventArgs e)
+        {
+            ListarTecnico();
+            MaskaraDateTime();
         }
 
         private void img_pesquisar_Click(object sender, EventArgs e)
@@ -121,6 +122,16 @@ namespace Agenda_OS_Diego.OrdemServico
             frmListarEmpresa.Show();
         }
 
-       
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            OrdemServico frmOrdemServico = new OrdemServico();
+            this.Hide();
+            frmOrdemServico.Show();
+        }
+
+        private void cb_tecnico_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            lbl_id_tecnico.Text = cb_tecnico.SelectedValue.ToString();
+        }
     }
 }

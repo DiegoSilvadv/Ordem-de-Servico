@@ -85,3 +85,4 @@ C:\DevFiles\Ordem-de-Servico\Agenda_OS_Diego\Agenda_OS_Diego\obj\Debug\Agenda_OS
 C:\DevFiles\Ordem-de-Servico\Agenda_OS_Diego\Agenda_OS_Diego\obj\Debug\Agenda_OS_Diego.OrdemServico.FRM_Add_OS.resources
 C:\DevFiles\Ordem-de-Servico\Agenda_OS_Diego\Agenda_OS_Diego\obj\Debug\Agenda_OS_Diego.FrmEmpresa.resources
 C:\DevFiles\Ordem-de-Servico\Agenda_OS_Diego\Agenda_OS_Diego\obj\Debug\Agenda_OS_Diego.Tecnico.FrmTecnico.resources
+C:\DevFiles\Ordem-de-Servico\Agenda_OS_Diego\Agenda_OS_Diego\bin\Debug\MySql.Data.dll

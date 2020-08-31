@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRM_Add_OS));
             this.lbl_id_empresa = new System.Windows.Forms.Label();
             this.lbl_id_tecnico = new System.Windows.Forms.Label();
             this.lbl_id_os = new System.Windows.Forms.Label();
@@ -67,10 +68,12 @@
             this.txt_assunto = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_id_empresa
@@ -123,7 +126,7 @@
             this.lbl0.AutoSize = true;
             this.lbl0.Location = new System.Drawing.Point(47, 20);
             this.lbl0.Name = "lbl0";
-            this.lbl0.Size = new System.Drawing.Size(37, 13);
+            this.lbl0.Size = new System.Drawing.Size(36, 13);
             this.lbl0.TabIndex = 120;
             this.lbl0.Text = "id OS:";
             // 
@@ -253,7 +256,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(48, 59);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 13);
+            this.label3.Size = new System.Drawing.Size(38, 13);
             this.label3.TabIndex = 89;
             this.label3.Text = "CNPJ:";
             // 
@@ -319,7 +322,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(204, 59);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 13);
+            this.label5.Size = new System.Drawing.Size(54, 13);
             this.label5.TabIndex = 98;
             this.label5.Text = "Telefone:";
             // 
@@ -396,13 +399,14 @@
             this.cb_tecnico.Name = "cb_tecnico";
             this.cb_tecnico.Size = new System.Drawing.Size(143, 21);
             this.cb_tecnico.TabIndex = 126;
+            this.cb_tecnico.SelectedIndexChanged += new System.EventHandler(this.cb_tecnico_SelectedIndexChanged_1);
             // 
             // Técnico
             // 
             this.Técnico.AutoSize = true;
             this.Técnico.Location = new System.Drawing.Point(49, 49);
             this.Técnico.Name = "Técnico";
-            this.Técnico.Size = new System.Drawing.Size(49, 13);
+            this.Técnico.Size = new System.Drawing.Size(50, 13);
             this.Técnico.TabIndex = 125;
             this.Técnico.Text = "Técnico:";
             // 
@@ -474,12 +478,25 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
+            this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(580, 35);
             this.panel2.TabIndex = 129;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(542, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 130;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // label7
             // 
@@ -514,6 +531,7 @@
             this.groupBox3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -559,5 +577,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

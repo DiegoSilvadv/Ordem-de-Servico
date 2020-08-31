@@ -78,5 +78,12 @@ namespace Agenda_OS_Diego
                 LimparCampos();
             }
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Empresa frmEmpresa = new Empresa();
+            this.Hide();
+            frmEmpresa.Show();
+        }
     }
 }

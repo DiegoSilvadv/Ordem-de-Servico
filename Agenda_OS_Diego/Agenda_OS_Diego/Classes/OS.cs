@@ -8,27 +8,29 @@ using MySql.Data.MySqlClient;
 using System.Data;
 using System.Data.SqlClient;
 using System.Runtime.Serialization;
+using Agenda_OS_Diego.Tecnico;
+using Agenda_OS_Diego.Database;
 
 namespace Agenda_OS_Diego
-{   
-        class DB
-        {   //conexão com banco de dados
-            public MySqlConnection con;
+{
+    class DB
+    {   //conexão com banco de dados
+        public MySqlConnection con;
 
-            public DB()
-            {
-                string host = "localhost";
-                string db = "agenda";
-                string port = "3306";
-                string user = "root";
-                string pass = " ";
-                string constring = "datasource =" + host + "; database=" + db + "; port=" + port + "; username=" + user + "; password=" + pass + "; SslMode=none";
-                con = new MySqlConnection(constring);
-            }
-        }
-        
-        class CrudOs : DB
+        public DB()
         {
+            string host = "localhost";
+            string db = "agen";
+            string port = "3306";
+            string user = "root";
+            string pass = "dsds ";
+            string constring = "datasource =" + host + "; database=" + db + "; port=" + port + "; username=" + user + "; password=" + pass + "; SslMode=none";
+            con = new MySqlConnection(constring);
+        }
+    }
+    class CrudOs : DB
+        {
+
             public int id_ordemServico { set; get; }
             public int id_empresa { set; get; }
             public int id_tecnico { set; get; }
@@ -50,19 +52,27 @@ namespace Agenda_OS_Diego
 
         public void Listar_Dados(DataGridView dgv)
         {
-            con.Open();
-
-            string query = "select os.fk_empresa, os.fk_tecnico, e.celular, e.telefone, os.id_os, t.nome_tecnico, e.fantasia, e.cnpj, os.solicitante, os.info_extra, os.assunto, os.descricao, os.atendimento, os.sistema, os.solucao, os.abertura, os.conclusao, os.status_os from tecnico as t inner join empresa as e inner join ordemservico as os where os.fk_empresa = e.id_empresa and os.fk_tecnico = t.id_tecnico and os.id_os = os.id_os";
-            MySqlDataAdapter MyDA = new MySqlDataAdapter();
-            MyDA.SelectCommand = new MySqlCommand(query, con);
             
-            DataTable table = new DataTable();
-            MyDA.Fill(table);
-            BindingSource bSource = new BindingSource();
-            bSource.DataSource = table;
-            dgv.DataSource = bSource;
+            try
+            {
+                con.Open();
+                string query = "select os.fk_empresa, os.fk_tecnico, e.celular, e.telefone, os.id_os, t.nome_tecnico, e.fantasia, e.cnpj, os.solicitante, os.info_extra, os.assunto, os.descricao, os.atendimento, os.sistema, os.solucao, os.abertura, os.conclusao, os.status_os from tecnico as t inner join empresa as e inner join ordemservico as os where os.fk_empresa = e.id_empresa and os.fk_tecnico = t.id_tecnico and os.id_os = os.id_os";
+                MySqlDataAdapter MyDA = new MySqlDataAdapter();
+                MyDA.SelectCommand = new MySqlCommand(query, con);
 
-            con.Close();
+                DataTable table = new DataTable();
+                MyDA.Fill(table);
+                BindingSource bSource = new BindingSource();
+                bSource.DataSource = table;
+                dgv.DataSource = bSource;
+                con.Close();
+            }
+            catch (Exception error) {
+                MessageBox.Show(error.ToString());
+            }
+            
+
+            
         }
 
         public void ListarOSPendente(DataGridView dgv)

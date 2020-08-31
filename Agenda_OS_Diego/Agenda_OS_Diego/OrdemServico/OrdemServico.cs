@@ -19,47 +19,20 @@ namespace Agenda_OS_Diego.OrdemServico
         CrudOs crud_os = new CrudOs();
         FRM_Add_OS FRM = new FRM_Add_OS();
 
-
         public OrdemServico()
         {
             InitializeComponent();
             crud_os.Listar_Dados(dgv_os);
             EsconderColunas();
+            ColunanaoSelecionada();
         }
-
+       
+        // funções
         public void EsconderColunas() 
         {
             dgv_os.Columns["fk_empresa"].Visible = false;
             dgv_os.Columns["fk_tecnico"].Visible = false;
         }
-        
-        private void img_return_Click(object sender, EventArgs e)
-        {
-            Home return_home = new Home();
-            this.Hide();
-            return_home.ShowDialog();
-        }
-
-        private void txt_fantasia_TextChanged(object sender, EventArgs e)
-        {   
-            crud_os.fantasia = FRM.txt_fantasia.Text;
-
-            crud_os.ListarEmpresa();
-            FRM.lbl_id_empresa.Text = crud_os.id_empresa.ToString();
-            FRM.txt_fantasia.Text = crud_os.fantasia;
-            FRM.mtb_cnpj.Text = crud_os.cnpj;
-            FRM.mtb_celular.Text = crud_os.celular;
-            FRM.mtb_telefone.Text = crud_os.telefone;
-            
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            Home ReturnHome = new Home();
-            this.Hide();
-            ReturnHome.ShowDialog();
-        }
-        
         public void ListarDados()
         {
             if (dgv_os.SelectedRows.Count > 0)
@@ -89,19 +62,7 @@ namespace Agenda_OS_Diego.OrdemServico
                 MessageBox.Show("Selecione um registro");
             }
         }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            crud_os.ListarOSPendente(dgv_os);
-
-            if (cb_pendentes.Checked == false) {
-                crud_os.Listar_Dados(dgv_os);
-            }
-        }
-
-        private void OrdemServico_Load(object sender, EventArgs e)
-        {
-
+        public void ColunanaoSelecionada() {
             //VERIFICA SE ESTÁ COM ALGUMA LINHA SELECIONADA
             if (dgv_os.SelectedRows.Count > 0)
             {
@@ -112,16 +73,64 @@ namespace Agenda_OS_Diego.OrdemServico
             }
         }
 
+        
+        //Clicks dos botoes
+        private void img_return_Click(object sender, EventArgs e)
+        {
+            Home return_home = new Home();
+            this.Hide();
+            return_home.ShowDialog();
+        }
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Home ReturnHome = new Home();
+            this.Hide();
+            ReturnHome.ShowDialog();
+        }
         private void btn_novo_Click(object sender, EventArgs e)
         {
             Frm_listar_empresa frmListar = new Frm_listar_empresa();
             this.Hide();
             frmListar.ShowDialog();
         }
-
         private void btn_editar_Click(object sender, EventArgs e)
         {
+            if (dgv_os.SelectedRows.Count > 0)
+            {
+                ListarDados();
+                FRM.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Selecione um registro");
+            }
 
+
+        }
+
+
+        //pesquisas
+        private void txt_fantasia_TextChanged(object sender, EventArgs e)
+        {
+            crud_os.fantasia = FRM.txt_fantasia.Text;
+
+            crud_os.ListarEmpresa();
+            FRM.lbl_id_empresa.Text = crud_os.id_empresa.ToString();
+            FRM.txt_fantasia.Text = crud_os.fantasia;
+            FRM.mtb_cnpj.Text = crud_os.cnpj;
+            FRM.mtb_celular.Text = crud_os.celular;
+            FRM.mtb_telefone.Text = crud_os.telefone;
+
+        }
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            crud_os.ListarOSPendente(dgv_os);
+
+            if (cb_pendentes.Checked == false)
+            {
+                crud_os.Listar_Dados(dgv_os);
+            }
         }
     }
 }
