@@ -47,7 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\BD.cs" />
+    <Compile Include="Classes\Empresa.cs" />
     <Compile Include="Classes\DataBase.cs" />
     <Compile Include="Classes\LoginUser.cs" />
     <Compile Include="Classes\OS.cs" />

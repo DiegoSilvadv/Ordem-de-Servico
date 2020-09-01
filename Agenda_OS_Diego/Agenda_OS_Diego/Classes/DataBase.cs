@@ -9,11 +9,11 @@ using System.Data;
 
 namespace Agenda_OS_Diego.Database
 {
-    abstract class DataBase
+    public class DataBase
     {
-        public static MySqlConnection con;
+        public MySqlConnection con;
 
-        public static void Banco()
+        public void Banco()
         {
             string host = "localhost";
             string db = "agenda";
@@ -22,7 +22,16 @@ namespace Agenda_OS_Diego.Database
             string pass = " ";
             string constring = "datasource =" + host + "; database=" + db + "; port=" + port + "; username=" + user + "; password=" + pass + "; SslMode=none";
             con = new MySqlConnection(constring);
-            
+        }
+
+        public void AbrirConexao()
+        {
+            Banco();
+            con.Open();
+        }
+
+        public void FecharConexao() {
+            con.Close();
         }
     }
 }

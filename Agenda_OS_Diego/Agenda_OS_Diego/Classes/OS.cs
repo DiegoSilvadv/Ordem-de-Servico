@@ -13,23 +13,10 @@ using Agenda_OS_Diego.Database;
 
 namespace Agenda_OS_Diego
 {
-    class DB
-    {   //conexão com banco de dados
-        public MySqlConnection con;
-
-        public DB()
+   
+    class CrudOs : DataBase
         {
-            string host = "localhost";
-            string db = "agen";
-            string port = "3306";
-            string user = "root";
-            string pass = "dsds ";
-            string constring = "datasource =" + host + "; database=" + db + "; port=" + port + "; username=" + user + "; password=" + pass + "; SslMode=none";
-            con = new MySqlConnection(constring);
-        }
-    }
-    class CrudOs : DB
-        {
+            DataBase DB = new DataBase();
 
             public int id_ordemServico { set; get; }
             public int id_empresa { set; get; }
@@ -49,108 +36,134 @@ namespace Agenda_OS_Diego
             public DateTime abertura { set; get; }
             public DateTime conclusao { set; get; }
             public string status { set; get; }
+            
 
+
+        //Listagem de Ordem de Serviço
         public void Listar_Dados(DataGridView dgv)
         {
-            
             try
             {
-                con.Open();
+                DB.AbrirConexao();
                 string query = "select os.fk_empresa, os.fk_tecnico, e.celular, e.telefone, os.id_os, t.nome_tecnico, e.fantasia, e.cnpj, os.solicitante, os.info_extra, os.assunto, os.descricao, os.atendimento, os.sistema, os.solucao, os.abertura, os.conclusao, os.status_os from tecnico as t inner join empresa as e inner join ordemservico as os where os.fk_empresa = e.id_empresa and os.fk_tecnico = t.id_tecnico and os.id_os = os.id_os";
                 MySqlDataAdapter MyDA = new MySqlDataAdapter();
-                MyDA.SelectCommand = new MySqlCommand(query, con);
+                MyDA.SelectCommand = new MySqlCommand(query, DB.con);
 
                 DataTable table = new DataTable();
                 MyDA.Fill(table);
                 BindingSource bSource = new BindingSource();
                 bSource.DataSource = table;
                 dgv.DataSource = bSource;
-                con.Close();
+                DB.FecharConexao();
             }
             catch (Exception error) {
                 MessageBox.Show(error.ToString());
-            }
-            
-
-            
+            }    
         }
 
+        //Filtro para listar Ordem de Serviço pendente
         public void ListarOSPendente(DataGridView dgv)
         {
-            con.Open();
+            try
+            {
+                DB.AbrirConexao();
+                MySqlDataAdapter MyDA = new MySqlDataAdapter();
+                string sqlSelectAll = "SELECT * FROM ordemservico WHERE status_os = 'Pendente'";
+                MyDA.SelectCommand = new MySqlCommand(sqlSelectAll, DB.con);
+                DataTable table = new DataTable();
+                MyDA.Fill(table);
+                BindingSource bSource = new BindingSource();
+                bSource.DataSource = table;
+                dgv.DataSource = bSource;
+                DB.FecharConexao();
 
-            MySqlDataAdapter MyDA = new MySqlDataAdapter();
-            string sqlSelectAll = "SELECT * FROM ordemservico WHERE status_os = 'Pendente'";
-            MyDA.SelectCommand = new MySqlCommand(sqlSelectAll, con);
-            DataTable table = new DataTable();
-            MyDA.Fill(table);
-            BindingSource bSource = new BindingSource();
-            bSource.DataSource = table;
-            dgv.DataSource = bSource;
-
-            con.Close();
+            } catch (Exception error) {
+                MessageBox.Show(error.ToString());
+            }
         }
 
         // função para preencher os campos automaticamente
         public void ListarEmpresa() {
-
-            MySqlCommand cmd = new MySqlCommand("SELECT id_empresa, fantasia, cnpj, telefone, celular FROM empresa WHERE cnpj like @cnpj or fantasia like @fantasia", con);
-            cmd.CommandType = CommandType.Text;
-            cmd.Parameters.AddWithValue("@fantasia", fantasia);
-            cmd.Parameters.AddWithValue("@cnpj", cnpj);
-
-            con.Open();
-            MySqlDataReader dr = cmd.ExecuteReader();
-            
-            while (dr.Read())
+            try
             {
-                this.id_empresa = Convert.ToInt32(dr["id_empresa"].ToString());
-                this.fantasia = dr["fantasia"].ToString();
-                this.cnpj = dr["cnpj"].ToString();
-                this.telefone = dr["telefone"].ToString();
-                this.celular = dr["celular"].ToString();
+                MySqlCommand cmd = new MySqlCommand("SELECT id_empresa, fantasia, cnpj, telefone, celular FROM empresa WHERE cnpj like @cnpj or fantasia like @fantasia", DB.con);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@fantasia", fantasia);
+                cmd.Parameters.AddWithValue("@cnpj", cnpj);
+
+                DB.AbrirConexao();
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    this.id_empresa = Convert.ToInt32(dr["id_empresa"].ToString());
+                    this.fantasia = dr["fantasia"].ToString();
+                    this.cnpj = dr["cnpj"].ToString();
+                    this.telefone = dr["telefone"].ToString();
+                    this.celular = dr["celular"].ToString();
+                }
+                DB.FecharConexao();
             }
-            con.Close();
-
+            catch (Exception error) {
+                MessageBox.Show(error.ToString());
+            }
         }
-
+        
+        //Cadastrar Ordem de Serviço
         public void CadastrarOS() {
-            string query = "INSERT INTO ordemservico VALUES( 0, @id_empresa, @id_tecnico, @solicitante, @info_extra, @assunto, @descricao, @atendimento, @sistema, @solucao, @abertura, @conclusao, @status, 0 )";
-            MySqlCommand cmd = new MySqlCommand(query, con);
+            try
+            {
+                string query = "INSERT INTO ordemservico VALUES( 0, @id_empresa, @id_tecnico, @solicitante, @info_extra, @assunto, @descricao, @atendimento, @sistema, @solucao, @abertura, @conclusao, @status, 0 )";
+                MySqlCommand cmd = new MySqlCommand(query, DB.con);
 
-            cmd.Parameters.AddWithValue("@id_empresa", id_empresa);
-            cmd.Parameters.AddWithValue("@id_tecnico", id_tecnico);
-            cmd.Parameters.AddWithValue("@solicitante", solicitante);
-            cmd.Parameters.AddWithValue("@info_extra", informação_extra);
-            cmd.Parameters.AddWithValue("@assunto", assunto);
-            cmd.Parameters.AddWithValue("@descricao", descricao);
-            cmd.Parameters.AddWithValue("@atendimento", atendimento);
-            cmd.Parameters.AddWithValue("@sistema", sistema);
-            cmd.Parameters.AddWithValue("@solucao", solucao);
-            cmd.Parameters.AddWithValue("@abertura", abertura);
-            cmd.Parameters.AddWithValue("@conclusao", conclusao);
-            cmd.Parameters.AddWithValue("@status", status);
-            con.Open();
-            MessageBox.Show("Cadastrado com sucesso!");
-            cmd.ExecuteNonQuery();
-            cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@id_empresa", id_empresa);
+                cmd.Parameters.AddWithValue("@id_tecnico", id_tecnico);
+                cmd.Parameters.AddWithValue("@solicitante", solicitante);
+                cmd.Parameters.AddWithValue("@info_extra", informação_extra);
+                cmd.Parameters.AddWithValue("@assunto", assunto);
+                cmd.Parameters.AddWithValue("@descricao", descricao);
+                cmd.Parameters.AddWithValue("@atendimento", atendimento);
+                cmd.Parameters.AddWithValue("@sistema", sistema);
+                cmd.Parameters.AddWithValue("@solucao", solucao);
+                cmd.Parameters.AddWithValue("@abertura", abertura);
+                cmd.Parameters.AddWithValue("@conclusao", conclusao);
+                cmd.Parameters.AddWithValue("@status", status);
+                DB.AbrirConexao();
+                MessageBox.Show("Cadastrado com sucesso!");
+                cmd.ExecuteNonQuery();
+                cmd.Parameters.Clear();
+                DB.FecharConexao();
+            }
+            catch (Exception error) {
+                MessageBox.Show(error.ToString());
+            }
         }
-
+        
+        //listagem dos técnicos
         public void ListarTecnico() {
-            
-            con.Open();
-            MySqlCommand cmd = new MySqlCommand("SELECT id_tecnico, nome_tecnico FROM tecnico ORDER BY nome_tecnico", con);
-            MySqlDataReader dr = cmd.ExecuteReader();
-            DataTable dt = new DataTable();
-            dt.Load(dr);
-            this.tecnico = dt;
-            con.Close();
+
+            try
+            {
+                DB.AbrirConexao();
+                MySqlCommand cmd = new MySqlCommand("SELECT id_tecnico, nome_tecnico FROM tecnico ORDER BY nome_tecnico", DB.con);
+                MySqlDataReader dr = cmd.ExecuteReader();
+                DataTable dt = new DataTable();
+                dt.Load(dr);
+                this.tecnico = dt;
+                DB.FecharConexao();
+            }
+            catch (Exception error) {
+                MessageBox.Show(error.ToString());
+            }
+
         }
-
+        
+        //alterar dados
         public void AlterarDados() {
-            con.Open();
-
-            string query = "update ordemservico set fk_tecnico = @id_tecnico , fk_empresa = @id_empresa" +
+            try
+            {
+                DB.AbrirConexao();
+                string query = "update ordemservico set fk_tecnico = @id_tecnico , fk_empresa = @id_empresa" +
                     ",solicitante = @solicitante" +
                     ",info_extra = @informacao_extra" +
                     ",assunto = @assunto" +
@@ -163,27 +176,32 @@ namespace Agenda_OS_Diego
                     ",status_os = @status " +
                     "where id_os = @id_os";
 
-            MySqlCommand cmd = new MySqlCommand(query, con);
+                MySqlCommand cmd = new MySqlCommand(query, DB.con);
 
-            cmd.Parameters.AddWithValue("@id_os", id_ordemServico);
-            cmd.Parameters.AddWithValue("@id_empresa", id_empresa);
-            cmd.Parameters.AddWithValue("@id_tecnico", id_tecnico);
-            cmd.Parameters.AddWithValue("@solicitante", solicitante);
-            cmd.Parameters.AddWithValue("@informacao_extra", informação_extra);
-            cmd.Parameters.AddWithValue("@assunto", assunto);
-            cmd.Parameters.AddWithValue("@descricao", descricao);
-            cmd.Parameters.AddWithValue("@atendimento", atendimento);
-            cmd.Parameters.AddWithValue("@sistema", sistema);
-            cmd.Parameters.AddWithValue("@solucao", solucao);
-            cmd.Parameters.AddWithValue("@abertura", abertura);
-            cmd.Parameters.AddWithValue("@conclusao", conclusao);
-            cmd.Parameters.AddWithValue("@status", status);
-            cmd.ExecuteNonQuery();
+                cmd.Parameters.AddWithValue("@id_os", id_ordemServico);
+                cmd.Parameters.AddWithValue("@id_empresa", id_empresa);
+                cmd.Parameters.AddWithValue("@id_tecnico", id_tecnico);
+                cmd.Parameters.AddWithValue("@solicitante", solicitante);
+                cmd.Parameters.AddWithValue("@informacao_extra", informação_extra);
+                cmd.Parameters.AddWithValue("@assunto", assunto);
+                cmd.Parameters.AddWithValue("@descricao", descricao);
+                cmd.Parameters.AddWithValue("@atendimento", atendimento);
+                cmd.Parameters.AddWithValue("@sistema", sistema);
+                cmd.Parameters.AddWithValue("@solucao", solucao);
+                cmd.Parameters.AddWithValue("@abertura", abertura);
+                cmd.Parameters.AddWithValue("@conclusao", conclusao);
+                cmd.Parameters.AddWithValue("@status", status);
+                cmd.ExecuteNonQuery();
 
-            MessageBox.Show("Alterado com sucesso");
+                MessageBox.Show("Alterado com sucesso");
 
-            cmd.Parameters.Clear();
-            con.Close();
+                cmd.Parameters.Clear();
+                DB.FecharConexao();
+            }
+            catch (Exception error) { 
+                MessageBox.Show(error.ToString());
+            }
+
         }
 
         }
