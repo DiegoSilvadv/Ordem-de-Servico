@@ -41,6 +41,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.txt_usuario = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cb_inativar = new System.Windows.Forms.CheckBox();
             this.label11 = new System.Windows.Forms.Label();
             this.dtp_nascimento = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
@@ -52,8 +53,8 @@
             this.btn_cadastrar_tecnico = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txt_complemento = new System.Windows.Forms.TextBox();
+            this.cb_uf = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.txt_rua = new System.Windows.Forms.TextBox();
@@ -99,9 +100,9 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Location = new System.Drawing.Point(364, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 15);
+            this.label1.Size = new System.Drawing.Size(52, 15);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Empresa";
+            this.label1.Text = "Técnico";
             // 
             // groupBox1
             // 
@@ -194,6 +195,7 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox2.Controls.Add(this.cb_inativar);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.dtp_nascimento);
             this.groupBox2.Controls.Add(this.label6);
@@ -210,6 +212,16 @@
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Informações";
+            // 
+            // cb_inativar
+            // 
+            this.cb_inativar.AutoSize = true;
+            this.cb_inativar.Location = new System.Drawing.Point(537, 80);
+            this.cb_inativar.Name = "cb_inativar";
+            this.cb_inativar.Size = new System.Drawing.Size(63, 17);
+            this.cb_inativar.TabIndex = 57;
+            this.cb_inativar.Text = "Inativar";
+            this.cb_inativar.UseVisualStyleBackColor = true;
             // 
             // label11
             // 
@@ -312,8 +324,8 @@
             // 
             this.groupBox3.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.textBox1);
-            this.groupBox3.Controls.Add(this.comboBox1);
+            this.groupBox3.Controls.Add(this.txt_complemento);
+            this.groupBox3.Controls.Add(this.cb_uf);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.txt_rua);
@@ -343,24 +355,28 @@
             this.label3.TabIndex = 66;
             this.label3.Text = "Complemento:";
             // 
-            // textBox1
+            // txt_complemento
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.textBox1.Location = new System.Drawing.Point(403, 79);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(195, 21);
-            this.textBox1.TabIndex = 65;
+            this.txt_complemento.BackColor = System.Drawing.SystemColors.Control;
+            this.txt_complemento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_complemento.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txt_complemento.Location = new System.Drawing.Point(403, 79);
+            this.txt_complemento.Name = "txt_complemento";
+            this.txt_complemento.Size = new System.Drawing.Size(195, 21);
+            this.txt_complemento.TabIndex = 65;
             // 
-            // comboBox1
+            // cb_uf
             // 
-            this.comboBox1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(300, 79);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(97, 21);
-            this.comboBox1.TabIndex = 64;
+            this.cb_uf.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.cb_uf.FormattingEnabled = true;
+            this.cb_uf.Items.AddRange(new object[] {
+            "Selecione um estado",
+            "SP",
+            "RJ"});
+            this.cb_uf.Location = new System.Drawing.Point(300, 79);
+            this.cb_uf.Name = "cb_uf";
+            this.cb_uf.Size = new System.Drawing.Size(97, 21);
+            this.cb_uf.TabIndex = 64;
             // 
             // label2
             // 
@@ -484,8 +500,9 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(128, 34);
             this.button1.TabIndex = 57;
-            this.button1.Text = "Editar";
+            this.button1.Text = "Novo";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pictureBox2
             // 
@@ -555,8 +572,8 @@
         private System.Windows.Forms.Label label15;
         public System.Windows.Forms.Label lbl_id;
         public System.Windows.Forms.Button btn_cadastrar_tecnico;
-        public System.Windows.Forms.TextBox textBox1;
-        public System.Windows.Forms.ComboBox comboBox1;
+        public System.Windows.Forms.TextBox txt_complemento;
+        public System.Windows.Forms.ComboBox cb_uf;
         public System.Windows.Forms.TextBox txt_rua;
         public System.Windows.Forms.TextBox txt_numero;
         public System.Windows.Forms.TextBox txt_bairro;
@@ -570,5 +587,6 @@
         public System.Windows.Forms.TextBox txt_usuario;
         public System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        public System.Windows.Forms.CheckBox cb_inativar;
     }
 }

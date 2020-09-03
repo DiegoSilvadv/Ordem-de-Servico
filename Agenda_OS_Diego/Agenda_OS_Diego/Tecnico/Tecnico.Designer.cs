@@ -43,6 +43,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.cb_listar_inativados = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tecnico)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -170,6 +171,7 @@
             this.btn_editar.TabIndex = 17;
             this.btn_editar.Text = "Editar";
             this.btn_editar.UseVisualStyleBackColor = false;
+            this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click_1);
             // 
             // panel1
             // 
@@ -202,12 +204,25 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1264, 35);
             this.flowLayoutPanel1.TabIndex = 20;
             // 
+            // cb_listar_inativados
+            // 
+            this.cb_listar_inativados.AutoSize = true;
+            this.cb_listar_inativados.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.cb_listar_inativados.Location = new System.Drawing.Point(598, 95);
+            this.cb_listar_inativados.Name = "cb_listar_inativados";
+            this.cb_listar_inativados.Size = new System.Drawing.Size(102, 17);
+            this.cb_listar_inativados.TabIndex = 21;
+            this.cb_listar_inativados.Text = "Listar inativados";
+            this.cb_listar_inativados.UseVisualStyleBackColor = true;
+            this.cb_listar_inativados.CheckedChanged += new System.EventHandler(this.cb_listar_inativados_CheckedChanged);
+            // 
             // Tecnico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(1264, 559);
+            this.Controls.Add(this.cb_listar_inativados);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_add);
@@ -244,5 +259,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.CheckBox cb_listar_inativados;
     }
 }

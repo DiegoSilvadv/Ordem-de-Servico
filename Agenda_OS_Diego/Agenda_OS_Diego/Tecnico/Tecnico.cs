@@ -41,6 +41,8 @@ namespace Agenda_OS_Diego.Tecnico
                 frmTecnico.txt_numero.Text = dgv_tecnico.CurrentRow.Cells["numero"].Value.ToString();
                 frmTecnico.mtb_cep.Text = dgv_tecnico.CurrentRow.Cells["cep"].Value.ToString();
                 frmTecnico.mtb_celular.Text = dgv_tecnico.CurrentRow.Cells["celular"].Value.ToString();
+                frmTecnico.cb_uf.SelectedItem = dgv_tecnico.CurrentRow.Cells["uf"].Value.ToString();
+                frmTecnico.cb_inativar.Checked = Convert.ToBoolean(dgv_tecnico.CurrentRow.Cells["inativado"].Value);
                 frmTecnico.btn_cadastrar_tecnico.Text = "Gravar";
             }
             else
@@ -50,18 +52,18 @@ namespace Agenda_OS_Diego.Tecnico
         }
        
         //Clicks de botão
-        private void btn_editar_Click(object sender, EventArgs e)
-        {   
-            ListarDados();
-            frmTecnico.Show();
-            this.Hide();
-        }
-
-
+        
         private void txt_pesquisa_TextChanged(object sender, EventArgs e)
-        {
-            crudtec.nome = txt_pesquisa.Text;
-            crudtec.Listar_Dados_Especificos(dgv_tecnico);
+        {   if (cb_listar_inativados.Checked == true)
+            {
+                crudtec.nome = txt_pesquisa.Text;
+                crudtec.Listar_Dados_EspecificosInativados(dgv_tecnico);
+            }
+            else {
+                crudtec.nome = txt_pesquisa.Text;
+                crudtec.Listar_Dados_Especificos(dgv_tecnico);
+            }
+            
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -76,6 +78,21 @@ namespace Agenda_OS_Diego.Tecnico
         {
             frmTecnico.Show();
             this.Hide();
+        }
+
+        private void btn_editar_Click_1(object sender, EventArgs e)
+        {
+            ListarDados();
+            frmTecnico.Show();
+            this.Hide();
+        }
+
+        private void cb_listar_inativados_CheckedChanged(object sender, EventArgs e)
+        {   
+            if(cb_listar_inativados.Checked == true)
+                crudtec.ListarInativados(dgv_tecnico);
+            else
+                crudtec.ListarTecnico(dgv_tecnico);
         }
     }
 }

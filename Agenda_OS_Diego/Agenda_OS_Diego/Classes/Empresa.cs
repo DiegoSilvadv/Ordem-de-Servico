@@ -20,13 +20,19 @@ namespace Agenda_OS_Diego
         public string razao { set; get; }
         public string fantasia { set; get; }
         public string cnpj { set; get; }
+        public string inscricao_estadual { set; get; }
         public string rua { set; get; }
         public string bairro { set; get; }
         public string cidade { set; get; }
         public string numero { set; get; }
         public string cep { set; get; }
+        public string uf { set; get; }
         public string telefone { set; get; }
         public string celular { set; get; }
+        public string email_contador { set; get; }
+        public string email { set; get; }
+        public bool inativado { set; get; }
+
 
         //Read Properties
         public DataTable dt = new DataTable();
@@ -38,19 +44,24 @@ namespace Agenda_OS_Diego
             try
             {
                 DB.AbrirConexao();
-                string CommandText = "INSERT INTO empresa VALUES (0, @razao, @fantasia, @cnpj, @rua, @bairro, @cidade, @numero, @cep, @telefone, @celular, 0) ";
+                string CommandText = "INSERT INTO empresa VALUES (0, @razao, @fantasia, @cnpj, @inscricao_estadual, @rua, @bairro, @cidade, @numero, @cep, @uf, @telefone, @celular, @email_contador, @email, @inativado) ";
                 MySqlCommand cmd = new MySqlCommand(CommandText, DB.con);
 
                 cmd.Parameters.AddWithValue("@razao", razao);
                 cmd.Parameters.AddWithValue("@fantasia", fantasia);
                 cmd.Parameters.AddWithValue("@cnpj", cnpj);
+                cmd.Parameters.AddWithValue("@inscricao_estadual", inscricao_estadual);
                 cmd.Parameters.AddWithValue("@rua", rua);
                 cmd.Parameters.AddWithValue("@bairro", bairro);
                 cmd.Parameters.AddWithValue("@cidade", cidade);
                 cmd.Parameters.AddWithValue("@numero", numero);
                 cmd.Parameters.AddWithValue("@cep", cep);
+                cmd.Parameters.AddWithValue("@uf", uf);
                 cmd.Parameters.AddWithValue("@telefone", telefone);
                 cmd.Parameters.AddWithValue("@celular", celular);
+                cmd.Parameters.AddWithValue("@email_contador", email_contador);
+                cmd.Parameters.AddWithValue("@email", email);
+                cmd.Parameters.AddWithValue("@inativado", inativado);
                 MessageBox.Show("Cadastrado com sucesso!");
                 cmd.ExecuteNonQuery();
                 cmd.Parameters.Clear();

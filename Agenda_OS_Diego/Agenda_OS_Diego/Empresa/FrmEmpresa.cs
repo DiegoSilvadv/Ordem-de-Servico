@@ -13,6 +13,7 @@ namespace Agenda_OS_Diego
     public partial class FrmEmpresa : Form
     {
         CRUD crud = new CRUD();
+        string validar = "";
         public FrmEmpresa()
         {
             InitializeComponent();
@@ -21,17 +22,7 @@ namespace Agenda_OS_Diego
         //funções
         public void LimparCampos()
         {
-            lbl_id.Text = "0";
-            txt_razao.Text = "";
-            txt_fantasia.Text = "";
-            mtb_cnpj.Text = "";
-            txt_rua.Text = "";
-            txt_bairro.Text = "";
-            txt_cidade.Text = "";
-            txt_numero.Text = "";
-            mtb_cep.Text = "";
-            mtb_telefone.Text = "";
-            mtb_celular.Text = "";
+            
             btn_cadastrar_empresa.Text = "Cadastrar";
         }
         public void CamposDeCadastro()
@@ -47,6 +38,11 @@ namespace Agenda_OS_Diego
             crud.cep = mtb_cep.Text;
             crud.telefone = mtb_telefone.Text;
             crud.celular = mtb_telefone.Text;
+            crud.inscricao_estadual = mtb_IE.Text;
+            crud.email = txt_email_empresa.Text;
+            crud.email_contador = txt_email_escritorio.Text;
+            crud.uf = cb_estado.Text;
+            crud.inativado = cb_inativar.Checked;
         }
         public void PuxarCampos()
         {
@@ -63,6 +59,19 @@ namespace Agenda_OS_Diego
             mtb_celular.Text = crud.celular;
         }
 
+        public void ValidarCampos() {
+            if (cb_estado.SelectedItem == null || txt_razao.Text == "" || txt_fantasia.Text == "" ||
+            mtb_cnpj.Text == "" || mtb_cep.Text == "" || mtb_telefone.Text == "" || mtb_celular.Text == "")
+            {
+                MessageBox.Show("Preencha todos os campos por favor!");
+                validar = "Negado";
+            }
+            else {
+                validar = "Cadastrar";
+            }
+            
+        }
+
         private void btn_cadastrar_empresa_Click(object sender, EventArgs e)
         {
             if (btn_cadastrar_empresa.Text == "Gravar")
@@ -73,9 +82,14 @@ namespace Agenda_OS_Diego
             }
             else if (btn_cadastrar_empresa.Text == "Cadastrar")
             {
-                CamposDeCadastro();
-                crud.Criar_Dados();
-                LimparCampos();
+                ValidarCampos();
+                if(validar == "Cadastrar"){
+                    //pegando valores para inserir no banco de dados
+                    CamposDeCadastro();
+                    crud.Criar_Dados();
+                    LimparCampos();
+                }
+                    
             }
         }
 
