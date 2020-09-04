@@ -51,7 +51,7 @@ namespace Agenda_OS_Diego.OrdemServico
 
             FRM.lbl_id_empresa.Text = this.dgv_Empresa_os.CurrentRow.Cells["id_empresa"].Value.ToString();
             FRM.txt_fantasia.Text = this.dgv_Empresa_os.CurrentRow.Cells["fantasia"].Value.ToString();
-            FRM.mtb_cnpj.Text = this.dgv_Empresa_os.CurrentRow.Cells[2].Value.ToString();
+            FRM.mtb_cnpj.Text = this.dgv_Empresa_os.CurrentRow.Cells["cnpj"].Value.ToString();
             FRM.mtb_celular.Text = this.dgv_Empresa_os.CurrentRow.Cells[8].Value.ToString();
             FRM.mtb_telefone.Text = this.dgv_Empresa_os.CurrentRow.Cells[9].Value.ToString();
             this.Hide();

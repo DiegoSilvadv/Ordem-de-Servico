@@ -28,8 +28,6 @@ namespace Agenda_OS_Diego
         //funções
         
         //dados que serão passados para efetuar o cadastro das empresas
-        
-        
         public void PuxarDadosEmpresa()
         {
             if (dgv_empresa.SelectedRows.Count > 0)
@@ -43,8 +41,12 @@ namespace Agenda_OS_Diego
                 frmempresa.txt_cidade.Text = dgv_empresa.CurrentRow.Cells["cidade"].Value.ToString();
                 frmempresa.txt_numero.Text = dgv_empresa.CurrentRow.Cells["numero"].Value.ToString();
                 frmempresa.mtb_cep.Text = dgv_empresa.CurrentRow.Cells["cep"].Value.ToString();
+                frmempresa.cb_estado.SelectedItem = dgv_empresa.CurrentRow.Cells["uf"].Value.ToString();
                 frmempresa.mtb_telefone.Text = dgv_empresa.CurrentRow.Cells["telefone"].Value.ToString();
                 frmempresa.mtb_celular.Text = dgv_empresa.CurrentRow.Cells["celular"].Value.ToString();
+                frmempresa.txt_email_escritorio.Text = dgv_empresa.CurrentRow.Cells["email_contador"].Value.ToString();
+                frmempresa.txt_email_empresa.Text = dgv_empresa.CurrentRow.Cells["email"].Value.ToString();
+                frmempresa.cb_inativar.Checked = Convert.ToBoolean(dgv_empresa.CurrentRow.Cells["inativado"].Value);
                 frmempresa.btn_cadastrar_empresa.Text = "Gravar";
             }
             else
@@ -59,26 +61,22 @@ namespace Agenda_OS_Diego
             crud.Listar_Dados(dgv_empresa);
             dgv_empresa.DataSource = crud.dt;
         }
+        
 
 
-        //clicks de botão
-        //editar uma empresa
+        //botões
         private void btn_editar_Click(object sender, EventArgs e)
         {   
             PuxarDadosEmpresa();
             frmempresa.Show();
             this.Hide();
         }
-    
-       
-
         //campo de pesquisa
         private void txt_pesquisa_TextChanged(object sender, EventArgs e)
         {
             //pesquisa em tempo real
             string razao = txt_pesquisa.Text.ToString();
             crud.Listar_Dados_Especificos(dgv_empresa, razao);
-
         }
 
         private void btn_novo_Click(object sender, EventArgs e)

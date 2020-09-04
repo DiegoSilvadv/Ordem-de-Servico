@@ -22,7 +22,22 @@ namespace Agenda_OS_Diego
         //funções
         public void LimparCampos()
         {
-            
+            lbl_id.Text = "0";
+            txt_razao.Text = "";
+            txt_fantasia.Text = "";
+            mtb_cnpj.Text = default;
+            txt_rua.Text = "";
+            txt_bairro.Text = "";
+            txt_cidade.Text = "";
+            txt_numero.Text = "";
+            mtb_cep.Text = default;
+            mtb_telefone.Text = default;
+            mtb_telefone.Text = default;
+            mtb_IE.Text = default;
+            txt_email_empresa.Text = "";
+            txt_email_escritorio.Text = "";
+            cb_estado.SelectedIndex = 0;
+            cb_inativar.Checked = false;
             btn_cadastrar_empresa.Text = "Cadastrar";
         }
         public void CamposDeCadastro()
@@ -98,6 +113,11 @@ namespace Agenda_OS_Diego
             Empresa frmEmpresa = new Empresa();
             this.Hide();
             frmEmpresa.Show();
+        }
+
+        private void btn_nova_empresa_Click(object sender, EventArgs e)
+        {
+            LimparCampos();
         }
     }
 }

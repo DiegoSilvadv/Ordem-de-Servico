@@ -79,21 +79,25 @@ namespace Agenda_OS_Diego
             try
             {
                 DB.AbrirConexao();
-                string query = "UPDATE empresa SET razao=@razao, fantasia=@fantasia, cnpj=@cnpj, rua=@rua, bairro=@bairro, cidade=@cidade, numero=@numero, cep=@cep, telefone=@telefone, celular=@celular WHERE id=@id ";
+                string query = "UPDATE empresa SET razao=@razao, fantasia=@fantasia, cnpj=@cnpj, inscricao_estadual=@inscricao_estadual, rua=@rua, bairro=@bairro, cidade=@cidade, numero=@numero, cep=@cep, uf=@uf, telefone=@telefone, celular=@celular, email_contador=@email_contador, email=@email, inativado=@inativado WHERE id_empresa=@id ";
                 MySqlCommand cmd = new MySqlCommand(query, DB.con);
                 cmd.Parameters.AddWithValue("@id", id);
                 cmd.Parameters.AddWithValue("@razao", razao);
                 cmd.Parameters.AddWithValue("@fantasia", fantasia);
                 cmd.Parameters.AddWithValue("@cnpj", cnpj);
+                cmd.Parameters.AddWithValue("@inscricao_estadual", inscricao_estadual);
                 cmd.Parameters.AddWithValue("@rua", rua);
                 cmd.Parameters.AddWithValue("@bairro", bairro);
                 cmd.Parameters.AddWithValue("@cidade", cidade);
                 cmd.Parameters.AddWithValue("@numero", numero);
                 cmd.Parameters.AddWithValue("@cep", cep);
+                cmd.Parameters.AddWithValue("@uf", uf);
                 cmd.Parameters.AddWithValue("@telefone", telefone);
                 cmd.Parameters.AddWithValue("@celular", celular);
+                cmd.Parameters.AddWithValue("@email_contador", email_contador);
+                cmd.Parameters.AddWithValue("@email", email);
+                cmd.Parameters.AddWithValue("@inativado", inativado);
                 cmd.ExecuteNonQuery();
-
                 MessageBox.Show("Alterado com sucesso");
 
                 cmd.Parameters.Clear();

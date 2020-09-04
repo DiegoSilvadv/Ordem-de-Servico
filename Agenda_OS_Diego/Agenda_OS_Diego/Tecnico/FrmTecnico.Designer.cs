@@ -107,6 +107,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox1.Controls.Add(this.cb_inativar);
             this.groupBox1.Controls.Add(this.lbl_id);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.ID);
@@ -195,7 +196,6 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.groupBox2.Controls.Add(this.cb_inativar);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.dtp_nascimento);
             this.groupBox2.Controls.Add(this.label6);
@@ -216,7 +216,7 @@
             // cb_inativar
             // 
             this.cb_inativar.AutoSize = true;
-            this.cb_inativar.Location = new System.Drawing.Point(537, 80);
+            this.cb_inativar.Location = new System.Drawing.Point(552, 36);
             this.cb_inativar.Name = "cb_inativar";
             this.cb_inativar.Size = new System.Drawing.Size(63, 17);
             this.cb_inativar.TabIndex = 57;

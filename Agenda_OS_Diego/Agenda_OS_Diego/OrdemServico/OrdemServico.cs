@@ -32,6 +32,7 @@ namespace Agenda_OS_Diego.OrdemServico
         {
             dgv_os.Columns["fk_empresa"].Visible = false;
             dgv_os.Columns["fk_tecnico"].Visible = false;
+            dgv_os.Columns["Inativado"].Visible = false;
         }
         public void ListarDados()
         {
@@ -55,6 +56,7 @@ namespace Agenda_OS_Diego.OrdemServico
                 FRM.dtp_abertura.Text = dgv_os.CurrentRow.Cells["abertura"].Value.ToString();
                 FRM.dtp_conclusao.Text = dgv_os.CurrentRow.Cells["conclusao"].Value.ToString();
                 FRM.cb_status.Text = dgv_os.CurrentRow.Cells["status_os"].Value.ToString();
+                FRM.cb_inativar_OS.Checked = Convert.ToBoolean(dgv_os.CurrentRow.Cells["inativado"].Value);
                 FRM.btn_abrir_os.Text = "Gravar";
             }
             else
@@ -111,18 +113,7 @@ namespace Agenda_OS_Diego.OrdemServico
 
 
         //pesquisas
-        private void txt_fantasia_TextChanged(object sender, EventArgs e)
-        {
-            crud_os.fantasia = FRM.txt_fantasia.Text;
 
-            crud_os.ListarEmpresa();
-            FRM.lbl_id_empresa.Text = crud_os.id_empresa.ToString();
-            FRM.txt_fantasia.Text = crud_os.fantasia;
-            FRM.mtb_cnpj.Text = crud_os.cnpj;
-            FRM.mtb_celular.Text = crud_os.celular;
-            FRM.mtb_telefone.Text = crud_os.telefone;
-
-        }
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             crud_os.ListarOSPendente(dgv_os);
@@ -131,6 +122,19 @@ namespace Agenda_OS_Diego.OrdemServico
             {
                 crud_os.Listar_Dados(dgv_os);
             }
+        }
+
+        private void OS_inativada_CheckedChanged(object sender, EventArgs e)
+        {
+            if (OS_inativada.Checked == true)
+                crud_os.ListarOSInativada(dgv_os);
+            else
+                crud_os.Listar_Dados(dgv_os);
+        }
+
+        private void txt_pesquisa_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

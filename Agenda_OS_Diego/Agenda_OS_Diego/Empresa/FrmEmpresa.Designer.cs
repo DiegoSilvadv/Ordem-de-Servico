@@ -34,6 +34,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txt_email_empresa = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txt_email_escritorio = new System.Windows.Forms.TextBox();
             this.cb_inativar = new System.Windows.Forms.CheckBox();
             this.mtb_IE = new System.Windows.Forms.MaskedTextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -64,10 +68,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.btn_cadastrar_empresa = new System.Windows.Forms.Button();
             this.btn_nova_empresa = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txt_email_escritorio = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.txt_email_empresa = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -146,6 +146,46 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informações gerais";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label15.Location = new System.Drawing.Point(47, 187);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(88, 13);
+            this.label15.TabIndex = 78;
+            this.label15.Text = "E-mail empresa:";
+            // 
+            // txt_email_empresa
+            // 
+            this.txt_email_empresa.BackColor = System.Drawing.SystemColors.Control;
+            this.txt_email_empresa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_email_empresa.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.txt_email_empresa.Location = new System.Drawing.Point(50, 203);
+            this.txt_email_empresa.Name = "txt_email_empresa";
+            this.txt_email_empresa.Size = new System.Drawing.Size(381, 21);
+            this.txt_email_empresa.TabIndex = 77;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label14.Location = new System.Drawing.Point(47, 149);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(92, 13);
+            this.label14.TabIndex = 76;
+            this.label14.Text = "E-mail escritório:";
+            // 
+            // txt_email_escritorio
+            // 
+            this.txt_email_escritorio.BackColor = System.Drawing.SystemColors.Control;
+            this.txt_email_escritorio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_email_escritorio.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.txt_email_escritorio.Location = new System.Drawing.Point(50, 165);
+            this.txt_email_escritorio.Name = "txt_email_escritorio";
+            this.txt_email_escritorio.Size = new System.Drawing.Size(381, 21);
+            this.txt_email_escritorio.TabIndex = 75;
             // 
             // cb_inativar
             // 
@@ -331,18 +371,43 @@
             this.cb_estado.BackColor = System.Drawing.SystemColors.Control;
             this.cb_estado.FormattingEnabled = true;
             this.cb_estado.Items.AddRange(new object[] {
-            "sp",
-            "rj"});
-            this.cb_estado.Location = new System.Drawing.Point(213, 85);
+            "AC",
+            "AL",
+            "AP",
+            "AM",
+            "BA",
+            "CE",
+            "DF",
+            "ES",
+            "GO",
+            "MA",
+            "MT",
+            "MS",
+            "MG",
+            "PA",
+            "PB",
+            "PR",
+            "PE",
+            "PI",
+            "RJ",
+            "RN",
+            "RS",
+            "RO",
+            "RR",
+            "SC",
+            "SP",
+            "SE",
+            "TO"});
+            this.cb_estado.Location = new System.Drawing.Point(50, 83);
             this.cb_estado.Name = "cb_estado";
-            this.cb_estado.Size = new System.Drawing.Size(77, 21);
+            this.cb_estado.Size = new System.Drawing.Size(85, 21);
             this.cb_estado.TabIndex = 81;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label13.Location = new System.Drawing.Point(210, 69);
+            this.label13.Location = new System.Drawing.Point(47, 67);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(44, 13);
             this.label13.TabIndex = 80;
@@ -352,7 +417,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label10.Location = new System.Drawing.Point(446, 69);
+            this.label10.Location = new System.Drawing.Point(296, 68);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(50, 13);
             this.label10.TabIndex = 78;
@@ -363,7 +428,7 @@
             this.mtb_cep.BackColor = System.Drawing.SystemColors.Control;
             this.mtb_cep.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.mtb_cep.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.mtb_cep.Location = new System.Drawing.Point(581, 85);
+            this.mtb_cep.Location = new System.Drawing.Point(416, 84);
             this.mtb_cep.Mask = "99.999.999";
             this.mtb_cep.Name = "mtb_cep";
             this.mtb_cep.Size = new System.Drawing.Size(80, 21);
@@ -374,7 +439,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.SystemColors.ControlLight;
             this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label5.Location = new System.Drawing.Point(578, 69);
+            this.label5.Location = new System.Drawing.Point(413, 68);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(30, 13);
             this.label5.TabIndex = 71;
@@ -385,7 +450,7 @@
             this.txt_numero.BackColor = System.Drawing.SystemColors.Control;
             this.txt_numero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_numero.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txt_numero.Location = new System.Drawing.Point(449, 85);
+            this.txt_numero.Location = new System.Drawing.Point(299, 84);
             this.txt_numero.Name = "txt_numero";
             this.txt_numero.Size = new System.Drawing.Size(111, 21);
             this.txt_numero.TabIndex = 77;
@@ -404,7 +469,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label9.Location = new System.Drawing.Point(318, 69);
+            this.label9.Location = new System.Drawing.Point(147, 68);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(40, 13);
             this.label9.TabIndex = 76;
@@ -425,7 +490,7 @@
             this.txt_cidade.BackColor = System.Drawing.SystemColors.Control;
             this.txt_cidade.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_cidade.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txt_cidade.Location = new System.Drawing.Point(50, 85);
+            this.txt_cidade.Location = new System.Drawing.Point(439, 42);
             this.txt_cidade.Name = "txt_cidade";
             this.txt_cidade.Size = new System.Drawing.Size(148, 21);
             this.txt_cidade.TabIndex = 73;
@@ -435,16 +500,16 @@
             this.txt_bairro.BackColor = System.Drawing.SystemColors.Control;
             this.txt_bairro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_bairro.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txt_bairro.Location = new System.Drawing.Point(321, 85);
+            this.txt_bairro.Location = new System.Drawing.Point(150, 84);
             this.txt_bairro.Name = "txt_bairro";
-            this.txt_bairro.Size = new System.Drawing.Size(110, 21);
+            this.txt_bairro.Size = new System.Drawing.Size(143, 21);
             this.txt_bairro.TabIndex = 75;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label8.Location = new System.Drawing.Point(47, 69);
+            this.label8.Location = new System.Drawing.Point(436, 26);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(44, 13);
             this.label8.TabIndex = 74;
@@ -474,46 +539,7 @@
             this.btn_nova_empresa.TabIndex = 69;
             this.btn_nova_empresa.Text = "Novo";
             this.btn_nova_empresa.UseVisualStyleBackColor = false;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label14.Location = new System.Drawing.Point(47, 149);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(92, 13);
-            this.label14.TabIndex = 76;
-            this.label14.Text = "E-mail escritório:";
-            // 
-            // txt_email_escritorio
-            // 
-            this.txt_email_escritorio.BackColor = System.Drawing.SystemColors.Control;
-            this.txt_email_escritorio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_email_escritorio.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txt_email_escritorio.Location = new System.Drawing.Point(50, 165);
-            this.txt_email_escritorio.Name = "txt_email_escritorio";
-            this.txt_email_escritorio.Size = new System.Drawing.Size(381, 21);
-            this.txt_email_escritorio.TabIndex = 75;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label15.Location = new System.Drawing.Point(47, 187);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(88, 13);
-            this.label15.TabIndex = 78;
-            this.label15.Text = "E-mail empresa:";
-            // 
-            // txt_email_empresa
-            // 
-            this.txt_email_empresa.BackColor = System.Drawing.SystemColors.Control;
-            this.txt_email_empresa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_email_empresa.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txt_email_empresa.Location = new System.Drawing.Point(50, 203);
-            this.txt_email_empresa.Name = "txt_email_empresa";
-            this.txt_email_empresa.Size = new System.Drawing.Size(381, 21);
-            this.txt_email_empresa.TabIndex = 77;
+            this.btn_nova_empresa.Click += new System.EventHandler(this.btn_nova_empresa_Click);
             // 
             // FrmEmpresa
             // 
@@ -546,12 +572,10 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.CheckBox cb_inativar;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label ID;
@@ -582,5 +606,7 @@
         public System.Windows.Forms.TextBox txt_email_escritorio;
         private System.Windows.Forms.Label label15;
         public System.Windows.Forms.TextBox txt_email_empresa;
+        public System.Windows.Forms.CheckBox cb_inativar;
+        public System.Windows.Forms.GroupBox groupBox1;
     }
 }

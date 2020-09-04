@@ -36,7 +36,8 @@ namespace Agenda_OS_Diego
             public DateTime abertura { set; get; }
             public DateTime conclusao { set; get; }
             public string status { set; get; }
-            
+            public bool inativado { set; get; }
+
 
 
         //Listagem de Ordem de Serviço
@@ -45,7 +46,7 @@ namespace Agenda_OS_Diego
             try
             {
                 DB.AbrirConexao();
-                string query = "select os.fk_empresa, os.fk_tecnico, e.celular, e.telefone, os.id_os, t.nome_tecnico, e.fantasia, e.cnpj, os.solicitante, os.info_extra, os.assunto, os.descricao, os.atendimento, os.sistema, os.solucao, os.abertura, os.conclusao, os.status_os from tecnico as t inner join empresa as e inner join ordemservico as os where os.fk_empresa = e.id_empresa and os.fk_tecnico = t.id_tecnico and os.id_os = os.id_os";
+                string query = "select os.fk_empresa, os.inativado, os.fk_tecnico, e.celular, e.telefone, os.id_os, t.nome_tecnico, e.fantasia, e.cnpj, os.solicitante, os.assunto, os.descricao, os.atendimento, os.sistema, os.solucao, os.abertura, os.conclusao, os.status_os from tecnico as t inner join empresa as e inner join ordemservico as os where os.fk_empresa = e.id_empresa and os.fk_tecnico = t.id_tecnico and os.id_os = os.id_os and os.inativado = 0  ";
                 MySqlDataAdapter MyDA = new MySqlDataAdapter();
                 MyDA.SelectCommand = new MySqlCommand(query, DB.con);
 
@@ -61,6 +62,28 @@ namespace Agenda_OS_Diego
             }    
         }
 
+        public void ListarOSInativada(DataGridView dgv)
+        {
+            try
+            {
+                DB.AbrirConexao();
+                string query = "select os.fk_empresa, os.inativado, os.fk_tecnico, e.celular, e.telefone, os.id_os, t.nome_tecnico, e.fantasia, e.cnpj, os.solicitante, os.assunto, os.descricao, os.atendimento, os.sistema, os.solucao, os.abertura, os.conclusao, os.status_os from tecnico as t inner join empresa as e inner join ordemservico as os where os.fk_empresa = e.id_empresa and os.fk_tecnico = t.id_tecnico and os.id_os = os.id_os and os.inativado = 1  ";
+                MySqlDataAdapter MyDA = new MySqlDataAdapter();
+                MyDA.SelectCommand = new MySqlCommand(query, DB.con);
+
+                DataTable table = new DataTable();
+                MyDA.Fill(table);
+                BindingSource bSource = new BindingSource();
+                bSource.DataSource = table;
+                dgv.DataSource = bSource;
+                DB.FecharConexao();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.ToString());
+            }
+        }
+
         //Filtro para listar Ordem de Serviço pendente
         public void ListarOSPendente(DataGridView dgv)
         {
@@ -68,7 +91,7 @@ namespace Agenda_OS_Diego
             {
                 DB.AbrirConexao();
                 MySqlDataAdapter MyDA = new MySqlDataAdapter();
-                string sqlSelectAll = "SELECT * FROM ordemservico WHERE status_os = 'Pendente'";
+                string sqlSelectAll = "SELECT os.fk_empresa, os.inativado, os.fk_tecnico, e.celular, e.telefone, os.id_os, t.nome_tecnico, e.fantasia, e.cnpj, os.solicitante, os.assunto, os.descricao, os.atendimento, os.sistema, os.solucao, os.abertura, os.conclusao, os.status_os from tecnico as t inner join empresa as e inner join ordemservico as os where os.fk_empresa = e.id_empresa and os.fk_tecnico = t.id_tecnico and os.id_os = os.id_os and os.inativado = 0 and status_os = 'Pendente'";
                 MyDA.SelectCommand = new MySqlCommand(sqlSelectAll, DB.con);
                 DataTable table = new DataTable();
                 MyDA.Fill(table);
@@ -113,13 +136,14 @@ namespace Agenda_OS_Diego
         public void CadastrarOS() {
             try
             {
-                string query = "INSERT INTO ordemservico VALUES( 0, @id_empresa, @id_tecnico, @solicitante, @info_extra, @assunto, @descricao, @atendimento, @sistema, @solucao, @abertura, @conclusao, @status, 0 )";
+                DB.AbrirConexao();
+
+                string query = "INSERT INTO ordemservico VALUES( 0, @id_empresa, @id_tecnico, @solicitante, @assunto, @descricao, @atendimento, @sistema, @solucao, @abertura, @conclusao, @status, @inativado)";
                 MySqlCommand cmd = new MySqlCommand(query, DB.con);
 
                 cmd.Parameters.AddWithValue("@id_empresa", id_empresa);
                 cmd.Parameters.AddWithValue("@id_tecnico", id_tecnico);
                 cmd.Parameters.AddWithValue("@solicitante", solicitante);
-                cmd.Parameters.AddWithValue("@info_extra", informação_extra);
                 cmd.Parameters.AddWithValue("@assunto", assunto);
                 cmd.Parameters.AddWithValue("@descricao", descricao);
                 cmd.Parameters.AddWithValue("@atendimento", atendimento);
@@ -128,9 +152,9 @@ namespace Agenda_OS_Diego
                 cmd.Parameters.AddWithValue("@abertura", abertura);
                 cmd.Parameters.AddWithValue("@conclusao", conclusao);
                 cmd.Parameters.AddWithValue("@status", status);
-                DB.AbrirConexao();
-                MessageBox.Show("Cadastrado com sucesso!");
+                cmd.Parameters.AddWithValue("@inativado", inativado);
                 cmd.ExecuteNonQuery();
+                MessageBox.Show("Cadastrado com sucesso!");
                 cmd.Parameters.Clear();
                 DB.FecharConexao();
             }
@@ -174,6 +198,7 @@ namespace Agenda_OS_Diego
                     ",abertura = @abertura" +
                     ",conclusao = @conclusao" +
                     ",status_os = @status " +
+                    ",inativado = @inativado " +
                     "where id_os = @id_os";
 
                 MySqlCommand cmd = new MySqlCommand(query, DB.con);
@@ -191,6 +216,7 @@ namespace Agenda_OS_Diego
                 cmd.Parameters.AddWithValue("@abertura", abertura);
                 cmd.Parameters.AddWithValue("@conclusao", conclusao);
                 cmd.Parameters.AddWithValue("@status", status);
+                cmd.Parameters.AddWithValue("@inativado", inativado);
                 cmd.ExecuteNonQuery();
 
                 MessageBox.Show("Alterado com sucesso");
