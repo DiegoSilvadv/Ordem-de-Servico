@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRM_Add_OS));
             this.lbl_id_empresa = new System.Windows.Forms.Label();
-            this.lbl_id_tecnico = new System.Windows.Forms.Label();
             this.lbl_id_os = new System.Windows.Forms.Label();
             this.lbl2 = new System.Windows.Forms.Label();
             this.lbl1 = new System.Windows.Forms.Label();
@@ -56,6 +55,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lbl_id_tecnico = new System.Windows.Forms.Label();
             this.cb_inativar_OS = new System.Windows.Forms.CheckBox();
             this.cb_status = new System.Windows.Forms.ComboBox();
             this.cb_sistema = new System.Windows.Forms.ComboBox();
@@ -86,15 +86,6 @@
             this.lbl_id_empresa.Size = new System.Drawing.Size(13, 13);
             this.lbl_id_empresa.TabIndex = 125;
             this.lbl_id_empresa.Text = "0";
-            // 
-            // lbl_id_tecnico
-            // 
-            this.lbl_id_tecnico.AutoSize = true;
-            this.lbl_id_tecnico.Location = new System.Drawing.Point(486, 29);
-            this.lbl_id_tecnico.Name = "lbl_id_tecnico";
-            this.lbl_id_tecnico.Size = new System.Drawing.Size(13, 13);
-            this.lbl_id_tecnico.TabIndex = 124;
-            this.lbl_id_tecnico.Text = "0";
             // 
             // lbl_id_os
             // 
@@ -237,7 +228,7 @@
             // 
             this.mtb_celular.BackColor = System.Drawing.SystemColors.Control;
             this.mtb_celular.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.mtb_celular.Location = new System.Drawing.Point(247, 75);
+            this.mtb_celular.Location = new System.Drawing.Point(281, 72);
             this.mtb_celular.Mask = "(99) 9 9999-9999";
             this.mtb_celular.Name = "mtb_celular";
             this.mtb_celular.Size = new System.Drawing.Size(99, 21);
@@ -247,7 +238,7 @@
             // 
             this.mtb_cnpj.BackColor = System.Drawing.SystemColors.Control;
             this.mtb_cnpj.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.mtb_cnpj.Location = new System.Drawing.Point(45, 75);
+            this.mtb_cnpj.Location = new System.Drawing.Point(79, 72);
             this.mtb_cnpj.Mask = "99.999.999/9999-99";
             this.mtb_cnpj.Name = "mtb_cnpj";
             this.mtb_cnpj.Size = new System.Drawing.Size(110, 21);
@@ -256,7 +247,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(48, 59);
+            this.label3.Location = new System.Drawing.Point(82, 56);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 13);
             this.label3.TabIndex = 89;
@@ -266,7 +257,7 @@
             // 
             this.mtb_telefone.BackColor = System.Drawing.SystemColors.Control;
             this.mtb_telefone.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.mtb_telefone.Location = new System.Drawing.Point(167, 75);
+            this.mtb_telefone.Location = new System.Drawing.Point(201, 72);
             this.mtb_telefone.Mask = "(99) 9999-9999";
             this.mtb_telefone.Name = "mtb_telefone";
             this.mtb_telefone.Size = new System.Drawing.Size(74, 21);
@@ -275,7 +266,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(47, 19);
+            this.label4.Location = new System.Drawing.Point(81, 16);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(84, 13);
             this.label4.TabIndex = 93;
@@ -285,9 +276,9 @@
             // 
             this.txt_fantasia.BackColor = System.Drawing.SystemColors.Control;
             this.txt_fantasia.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txt_fantasia.Location = new System.Drawing.Point(45, 35);
+            this.txt_fantasia.Location = new System.Drawing.Point(79, 32);
             this.txt_fantasia.Name = "txt_fantasia";
-            this.txt_fantasia.Size = new System.Drawing.Size(425, 21);
+            this.txt_fantasia.Size = new System.Drawing.Size(380, 21);
             this.txt_fantasia.TabIndex = 91;
             // 
             // groupBox2
@@ -316,7 +307,7 @@
             this.btn_selecionar_empresa.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.btn_selecionar_empresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_selecionar_empresa.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_selecionar_empresa.Location = new System.Drawing.Point(476, 35);
+            this.btn_selecionar_empresa.Location = new System.Drawing.Point(466, 32);
             this.btn_selecionar_empresa.Name = "btn_selecionar_empresa";
             this.btn_selecionar_empresa.Size = new System.Drawing.Size(34, 21);
             this.btn_selecionar_empresa.TabIndex = 100;
@@ -328,7 +319,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(244, 59);
+            this.label6.Location = new System.Drawing.Point(278, 56);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(45, 13);
             this.label6.TabIndex = 99;
@@ -337,7 +328,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(165, 59);
+            this.label5.Location = new System.Drawing.Point(199, 56);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 13);
             this.label5.TabIndex = 98;
@@ -346,13 +337,13 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox3.Controls.Add(this.lbl_id_tecnico);
             this.groupBox3.Controls.Add(this.cb_inativar_OS);
             this.groupBox3.Controls.Add(this.cb_status);
             this.groupBox3.Controls.Add(this.cb_sistema);
             this.groupBox3.Controls.Add(this.cb_atendimento);
             this.groupBox3.Controls.Add(this.cb_tecnico);
             this.groupBox3.Controls.Add(this.Técnico);
-            this.groupBox3.Controls.Add(this.lbl_id_tecnico);
             this.groupBox3.Controls.Add(this.lbl_id_empresa);
             this.groupBox3.Controls.Add(this.lbl1);
             this.groupBox3.Controls.Add(this.label2);
@@ -382,6 +373,15 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Informações sobre Ordem de Serviço";
             // 
+            // lbl_id_tecnico
+            // 
+            this.lbl_id_tecnico.AutoSize = true;
+            this.lbl_id_tecnico.Location = new System.Drawing.Point(499, 29);
+            this.lbl_id_tecnico.Name = "lbl_id_tecnico";
+            this.lbl_id_tecnico.Size = new System.Drawing.Size(13, 13);
+            this.lbl_id_tecnico.TabIndex = 131;
+            this.lbl_id_tecnico.Text = "0";
+            // 
             // cb_inativar_OS
             // 
             this.cb_inativar_OS.AutoSize = true;
@@ -397,7 +397,11 @@
             this.cb_status.BackColor = System.Drawing.SystemColors.Control;
             this.cb_status.FormattingEnabled = true;
             this.cb_status.Items.AddRange(new object[] {
-            "Pendente"});
+            "Pendente",
+            "Aguardando ",
+            "Em andamento",
+            "Finalizado",
+            "Cliente ira retornar"});
             this.cb_status.Location = new System.Drawing.Point(369, 352);
             this.cb_status.Name = "cb_status";
             this.cb_status.Size = new System.Drawing.Size(130, 21);
@@ -429,6 +433,8 @@
             // 
             this.cb_tecnico.BackColor = System.Drawing.SystemColors.Control;
             this.cb_tecnico.FormattingEnabled = true;
+            this.cb_tecnico.Items.AddRange(new object[] {
+            "Selecione um técnico"});
             this.cb_tecnico.Location = new System.Drawing.Point(74, 77);
             this.cb_tecnico.Name = "cb_tecnico";
             this.cb_tecnico.Size = new System.Drawing.Size(143, 21);
@@ -558,7 +564,6 @@
             this.Name = "FRM_Add_OS";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FRM_Add_OS";
-            this.Load += new System.EventHandler(this.FRM_Add_OS_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -593,7 +598,6 @@
         private System.Windows.Forms.Label label12;
         public System.Windows.Forms.GroupBox groupBox2;
         public System.Windows.Forms.GroupBox groupBox3;
-        public System.Windows.Forms.Label lbl_id_tecnico;
         public System.Windows.Forms.Label lbl_id_os;
         public System.Windows.Forms.DateTimePicker dtp_conclusao;
         public System.Windows.Forms.DateTimePicker dtp_abertura;
@@ -614,5 +618,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         public System.Windows.Forms.CheckBox cb_inativar_OS;
         private System.Windows.Forms.Button btn_selecionar_empresa;
+        public System.Windows.Forms.Label lbl_id_tecnico;
     }
 }

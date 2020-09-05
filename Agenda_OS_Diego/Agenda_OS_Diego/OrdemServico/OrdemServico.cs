@@ -25,6 +25,7 @@ namespace Agenda_OS_Diego.OrdemServico
             crud_os.Listar_Dados(dgv_os);
             EsconderColunas();
             ColunanaoSelecionada();
+            cb_filtro.SelectedIndex = 0;
         }
        
         // funções
@@ -113,17 +114,6 @@ namespace Agenda_OS_Diego.OrdemServico
 
 
         //pesquisas
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            crud_os.ListarOSPendente(dgv_os);
-
-            if (cb_pendentes.Checked == false)
-            {
-                crud_os.Listar_Dados(dgv_os);
-            }
-        }
-
         private void OS_inativada_CheckedChanged(object sender, EventArgs e)
         {
             if (OS_inativada.Checked == true)
@@ -135,6 +125,15 @@ namespace Agenda_OS_Diego.OrdemServico
         private void txt_pesquisa_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void cb_filtro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            crud_os.filtro_status = cb_filtro.Text;
+            if (cb_filtro.Text == "Todas") 
+                crud_os.Listar_Dados(dgv_os);
+            else
+                crud_os.ListarOSespecifica(dgv_os);
         }
     }
 }

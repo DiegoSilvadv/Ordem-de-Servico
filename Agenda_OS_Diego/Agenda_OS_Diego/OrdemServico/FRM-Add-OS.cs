@@ -19,7 +19,9 @@ namespace Agenda_OS_Diego.OrdemServico
 
         public FRM_Add_OS()
         {
-            InitializeComponent();                
+            InitializeComponent();
+            ListarTecnico();
+            MaskaraDateTime();
         }
 
         public void PegarDados()
@@ -62,6 +64,10 @@ namespace Agenda_OS_Diego.OrdemServico
                 if (campos == "OK") {
                     PegarDados();
                     crud_os.CadastrarOS();
+
+                    OrdemServico frmOrdemServico = new OrdemServico();
+                    this.Hide();
+                    frmOrdemServico.Show();
                 }
                 
             }
@@ -71,30 +77,6 @@ namespace Agenda_OS_Diego.OrdemServico
                 crud_os.AlterarDados();
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-
-
-
-
-
-
-
 
 
 
@@ -123,6 +105,8 @@ namespace Agenda_OS_Diego.OrdemServico
             cb_tecnico.DataSource = crud_os.tecnico;
             cb_tecnico.DisplayMember = "nome_tecnico";
             cb_tecnico.ValueMember = "id_tecnico";
+            lbl_id_tecnico.Text = cb_tecnico.SelectedValue.ToString();
+
         }
 
         public void MaskaraDateTime() {
@@ -131,11 +115,7 @@ namespace Agenda_OS_Diego.OrdemServico
             dtp_conclusao.Format = DateTimePickerFormat.Custom;
             dtp_conclusao.CustomFormat = "dd/MM/yyyy 'as' H:m";
         }
-        private void FRM_Add_OS_Load(object sender, EventArgs e)
-        {
-            ListarTecnico();
-            MaskaraDateTime();
-        }
+        
 
         private void img_pesquisar_Click(object sender, EventArgs e)
         {
