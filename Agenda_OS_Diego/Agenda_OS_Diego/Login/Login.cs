@@ -24,6 +24,7 @@ namespace Agenda_OS_Diego
         {
             InitializeComponent();
         }
+        public static string id_tec = "";
 
         private void Login_Load(object sender, EventArgs e)
         {
@@ -61,13 +62,17 @@ namespace Agenda_OS_Diego
             ValidarLogin();
 
         }
-       
         private void txt_senha_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
                 ValidarLogin();
             }
+        }
+
+        private void cb_usuario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            id_tec = cb_usuario.SelectedValue.ToString();
         }
     }
 }

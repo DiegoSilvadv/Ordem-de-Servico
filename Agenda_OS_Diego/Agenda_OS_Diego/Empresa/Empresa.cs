@@ -90,6 +90,7 @@ namespace Agenda_OS_Diego
             Home ReturnHome = new Home();
             this.Hide();
             ReturnHome.ShowDialog();
+            ReturnHome.UsuarioLogado();
 
         }
     }

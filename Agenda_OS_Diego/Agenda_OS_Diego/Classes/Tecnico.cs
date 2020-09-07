@@ -32,6 +32,8 @@ namespace Agenda_OS_Diego.Tecnico
         public DateTime data_nascimento { set; get; }
         public bool inativar { set; get; }
 
+        public string tec_logado { set; get; }
+
         //criar dados dos tecnicos
         public void CriarDados() {
 
@@ -182,6 +184,23 @@ namespace Agenda_OS_Diego.Tecnico
             {
                 MessageBox.Show(error.ToString());
             }
+        }
+
+        public void ListarTeclogado(string id_tecnico) {
+
+            DB.AbrirConexao();
+            MessageBox.Show(id_tecnico);
+            string query = "SELECT id_tecnico, usuario FROM tecnico WHERE id_tecnico = "+id_tecnico.ToString()+"";
+            MySqlCommand cmd = new MySqlCommand(query, DB.con);
+            cmd.CommandType = CommandType.Text;
+
+            MySqlDataReader dr;
+            dr = cmd.ExecuteReader();
+            dr.Read(); 
+                Home frmHome = new Home();
+                frmHome.nome_tecnico.Text = dr.GetString(1);
+           
+            DB.FecharConexao();
         }
     }
 

@@ -1,11 +1,13 @@
 ﻿
 using Agenda_OS_Diego.LoginUsuarios;
+using Agenda_OS_Diego.Tecnico;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,8 +19,8 @@ namespace Agenda_OS_Diego
         public Home()
         { 
             InitializeComponent();
-
         }
+        public static string nome;
 
         //Botões laterais
         private void button3_Click(object sender, EventArgs e)
@@ -27,7 +29,7 @@ namespace Agenda_OS_Diego
             this.Hide();
             empresa.ShowDialog();
         }
-
+        
         private void button2_Click(object sender, EventArgs e)
         {
             Tecnico.Tecnico frmtec = new Tecnico.Tecnico();
@@ -62,6 +64,16 @@ namespace Agenda_OS_Diego
             }
         }
 
-       
+        public void UsuarioLogado()
+        {
+            CrudTec crud_tec = new CrudTec();
+            crud_tec.ListarTeclogado(Login.id_tec);
+        }
+
+        private void Home_Load(object sender, EventArgs e)
+        {
+            nome = nome_tecnico.Text;
+            UsuarioLogado();
+        }
     }
 }
