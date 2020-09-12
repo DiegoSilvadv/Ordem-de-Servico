@@ -16,11 +16,12 @@ namespace Agenda_OS_Diego
 {
     public partial class Home : Form
     {
+        public static string nome;
+
         public Home()
         { 
             InitializeComponent();
         }
-        public static string nome;
 
         //Botões laterais
         private void button3_Click(object sender, EventArgs e)
@@ -68,6 +69,8 @@ namespace Agenda_OS_Diego
         {
             CrudTec crud_tec = new CrudTec();
             crud_tec.ListarTeclogado(Login.id_tec);
+            nome_tecnico.Text = crud_tec.tec_logado;
+            MessageBox.Show(Login.id_tec);
         }
 
         private void Home_Load(object sender, EventArgs e)

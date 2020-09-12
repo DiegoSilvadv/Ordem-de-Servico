@@ -24,6 +24,7 @@ namespace Agenda_OS_Diego
         {
             InitializeComponent();
         }
+
         public static string id_tec = "";
 
         private void Login_Load(object sender, EventArgs e)
@@ -32,6 +33,7 @@ namespace Agenda_OS_Diego
             cb_usuario.DataSource = loginUsuario.usuarioDT;
             cb_usuario.DisplayMember = "usuario";
             cb_usuario.ValueMember = "id_tecnico";
+            id_tec = cb_usuario.SelectedValue.ToString();
         }
         public void ValidarLogin() {
             loginUsuario.usuario = cb_usuario.Text;
@@ -42,7 +44,7 @@ namespace Agenda_OS_Diego
                 loginUsuario.ConsultarLogin();
                 if (loginUsuario.logado == "Logado")
                 {
-                    frmHome.nome_tecnico.Text = loginUsuario.usuario.ToString(); ;
+                    frmHome.nome_tecnico.Text = loginUsuario.usuario.ToString(); 
                     this.Hide();
                     frmHome.ShowDialog();
 

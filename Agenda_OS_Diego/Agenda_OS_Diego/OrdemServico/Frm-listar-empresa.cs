@@ -68,9 +68,9 @@ namespace Agenda_OS_Diego.OrdemServico
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Empresa frmEmpresa = new Empresa();
+            OrdemServico frmOS = new OrdemServico();
             this.Hide();
-            frmEmpresa.Show();
+            frmOS.Show();
         }
     }
 }
