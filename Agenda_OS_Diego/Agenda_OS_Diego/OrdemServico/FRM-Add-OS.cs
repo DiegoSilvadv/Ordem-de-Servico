@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Agenda_OS_Diego.OrdemServico
 {
@@ -68,6 +69,7 @@ namespace Agenda_OS_Diego.OrdemServico
                     OrdemServico frmOrdemServico = new OrdemServico();
                     this.Hide();
                     frmOrdemServico.Show();
+                    Log("Ordem de serviço aberta por usuario: " + Home.nome + " para o tecnico " + cb_tecnico.Text);
                 }
                 
             }
@@ -75,6 +77,8 @@ namespace Agenda_OS_Diego.OrdemServico
             {
                 PegarDados();
                 crud_os.AlterarDados();
+                Log("Ordem de serviço alterada pelo usuario: " + Home.nome);
+
             }
         }
 
@@ -150,6 +154,14 @@ namespace Agenda_OS_Diego.OrdemServico
                 this.Hide();
                 frmOrdemServico.Show();
             }
+        }
+
+        private void Log(string mensagem)
+        {
+            string ficheiro = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\logs.txt";
+            StreamWriter arquivo = new StreamWriter(ficheiro, true, Encoding.Default);
+            arquivo.WriteLine(DateTime.Now + " > " + mensagem);
+            arquivo.Dispose();
         }
     }
 }

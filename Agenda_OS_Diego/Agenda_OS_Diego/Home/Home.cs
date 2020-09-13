@@ -11,6 +11,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Agenda_OS_Diego
 {
@@ -61,6 +62,7 @@ namespace Agenda_OS_Diego
         {
             nome = nome_tecnico.Text;
             UsuarioLogado();
+            Log(" usuario logado: " + nome);
         }
 
         private void Home_KeyDown(object sender, KeyEventArgs e)
@@ -94,6 +96,15 @@ namespace Agenda_OS_Diego
             {
                 Application.Exit();
             }
+            Log("Usuario " + nome + " saiu do sistema");
+        }
+
+        private void Log(string mensagem) 
+        {
+            string ficheiro = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\logs.txt";
+            StreamWriter arquivo = new StreamWriter(ficheiro, true, Encoding.Default);
+            arquivo.WriteLine(DateTime.Now + " > " + mensagem);
+            arquivo.Dispose();
         }
     }
 }
