@@ -117,7 +117,7 @@ namespace Agenda_OS_Diego
             {
                 DB.AbrirConexao();
                 MySqlDataAdapter MyDA = new MySqlDataAdapter();
-                string sqlSelectAll = "SELECT * FROM empresa";
+                string sqlSelectAll = "SELECT * FROM empresa WHERE inativado = 0";
                 MyDA.SelectCommand = new MySqlCommand(sqlSelectAll, DB.con);
                 DataTable table = new DataTable();
                 MyDA.Fill(table);
@@ -138,7 +138,7 @@ namespace Agenda_OS_Diego
             {
                 DB.AbrirConexao();
                 MySqlDataAdapter MyDA = new MySqlDataAdapter();
-                string sqlSelectAll = "SELECT * FROM empresa WHERE razao LIKE '%" + razao.ToString() + "%'";
+                string sqlSelectAll = "SELECT * FROM empresa WHERE inativado = 0 and razao LIKE '%" + razao.ToString() + "%'";
                 MyDA.SelectCommand = new MySqlCommand(sqlSelectAll, DB.con);
                 DataTable table = new DataTable();
                 MyDA.Fill(table);
@@ -148,6 +148,48 @@ namespace Agenda_OS_Diego
                 DB.FecharConexao();
             }
             catch (Exception error) {
+                MessageBox.Show(error.ToString());
+            }
+        }
+
+        public void Listar_Dados_EspecificosInativados(DataGridView DGV)
+        {
+            try
+            {
+                DB.AbrirConexao();
+                MySqlDataAdapter MyDA = new MySqlDataAdapter();
+                string sqlSelectAll = "SELECT * FROM empresa WHERE inativado = 1 and razao LIKE '%" + razao.ToString() + "%'";
+                MyDA.SelectCommand = new MySqlCommand(sqlSelectAll, DB.con);
+                DataTable table = new DataTable();
+                MyDA.Fill(table);
+                BindingSource bSource = new BindingSource();
+                bSource.DataSource = table;
+                DGV.DataSource = bSource;
+                DB.FecharConexao();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.ToString());
+            }
+        }
+
+        public void ListarInativados(DataGridView DGV)
+        {
+            try
+            {
+                DB.AbrirConexao();
+                MySqlDataAdapter MyDA = new MySqlDataAdapter();
+                string sqlSelectAll = "SELECT * FROM empresa WHERE inativado = 1";
+                MyDA.SelectCommand = new MySqlCommand(sqlSelectAll, DB.con);
+                DataTable table = new DataTable();
+                MyDA.Fill(table);
+                BindingSource bSource = new BindingSource();
+                bSource.DataSource = table;
+                DGV.DataSource = bSource;
+                DB.FecharConexao();
+            }
+            catch (Exception error)
+            {
                 MessageBox.Show(error.ToString());
             }
         }

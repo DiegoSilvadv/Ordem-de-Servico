@@ -148,7 +148,7 @@
             this.btn_add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(51)))), ((int)(((byte)(59)))));
             this.btn_add.FlatAppearance.BorderSize = 0;
             this.btn_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_add.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_add.ForeColor = System.Drawing.SystemColors.Control;
             this.btn_add.Location = new System.Drawing.Point(107, 142);
             this.btn_add.Name = "btn_add";
@@ -163,7 +163,7 @@
             this.btn_editar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(51)))), ((int)(((byte)(59)))));
             this.btn_editar.FlatAppearance.BorderSize = 0;
             this.btn_editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_editar.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_editar.ForeColor = System.Drawing.SystemColors.Control;
             this.btn_editar.Location = new System.Drawing.Point(21, 142);
             this.btn_editar.Name = "btn_editar";
@@ -208,7 +208,7 @@
             // 
             this.cb_listar_inativados.AutoSize = true;
             this.cb_listar_inativados.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.cb_listar_inativados.Location = new System.Drawing.Point(598, 95);
+            this.cb_listar_inativados.Location = new System.Drawing.Point(528, 95);
             this.cb_listar_inativados.Name = "cb_listar_inativados";
             this.cb_listar_inativados.Size = new System.Drawing.Size(102, 17);
             this.cb_listar_inativados.TabIndex = 21;
@@ -234,9 +234,11 @@
             this.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "Tecnico";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tecnico";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Tecnico_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tecnico)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

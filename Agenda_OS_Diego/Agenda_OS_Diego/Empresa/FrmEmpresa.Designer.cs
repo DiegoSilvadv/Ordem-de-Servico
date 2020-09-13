@@ -519,6 +519,7 @@
             // 
             this.btn_cadastrar_empresa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
             this.btn_cadastrar_empresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cadastrar_empresa.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cadastrar_empresa.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_cadastrar_empresa.Location = new System.Drawing.Point(600, 443);
             this.btn_cadastrar_empresa.Name = "btn_cadastrar_empresa";
@@ -532,6 +533,7 @@
             // 
             this.btn_nova_empresa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
             this.btn_nova_empresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_nova_empresa.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_nova_empresa.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_nova_empresa.Location = new System.Drawing.Point(466, 443);
             this.btn_nova_empresa.Name = "btn_nova_empresa";
@@ -553,9 +555,11 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Name = "FrmEmpresa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmEmpresa";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmEmpresa_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

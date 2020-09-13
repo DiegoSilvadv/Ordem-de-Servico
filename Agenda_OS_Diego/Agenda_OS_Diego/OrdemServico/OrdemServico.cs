@@ -135,5 +135,15 @@ namespace Agenda_OS_Diego.OrdemServico
             else
                 crud_os.ListarOSespecifica(dgv_os);
         }
+
+        private void OrdemServico_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                Home ReturnHome = new Home();
+                this.Hide();
+                ReturnHome.ShowDialog();
+            }
+        }
     }
 }

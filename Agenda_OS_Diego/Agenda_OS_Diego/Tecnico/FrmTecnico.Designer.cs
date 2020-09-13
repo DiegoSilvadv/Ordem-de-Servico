@@ -33,6 +33,7 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cb_inativar = new System.Windows.Forms.CheckBox();
             this.lbl_id = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.Label();
@@ -41,7 +42,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.txt_usuario = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cb_inativar = new System.Windows.Forms.CheckBox();
             this.label11 = new System.Windows.Forms.Label();
             this.dtp_nascimento = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
@@ -122,6 +122,16 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Login";
+            // 
+            // cb_inativar
+            // 
+            this.cb_inativar.AutoSize = true;
+            this.cb_inativar.Location = new System.Drawing.Point(552, 36);
+            this.cb_inativar.Name = "cb_inativar";
+            this.cb_inativar.Size = new System.Drawing.Size(63, 17);
+            this.cb_inativar.TabIndex = 57;
+            this.cb_inativar.Text = "Inativar";
+            this.cb_inativar.UseVisualStyleBackColor = true;
             // 
             // lbl_id
             // 
@@ -212,16 +222,6 @@
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Informações";
-            // 
-            // cb_inativar
-            // 
-            this.cb_inativar.AutoSize = true;
-            this.cb_inativar.Location = new System.Drawing.Point(552, 36);
-            this.cb_inativar.Name = "cb_inativar";
-            this.cb_inativar.Size = new System.Drawing.Size(63, 17);
-            this.cb_inativar.TabIndex = 57;
-            this.cb_inativar.Text = "Inativar";
-            this.cb_inativar.UseVisualStyleBackColor = true;
             // 
             // label11
             // 
@@ -532,9 +532,11 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Name = "FrmTecnico";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmTecnico";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmTecnico_KeyDown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

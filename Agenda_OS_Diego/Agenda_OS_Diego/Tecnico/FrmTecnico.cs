@@ -103,5 +103,16 @@ namespace Agenda_OS_Diego.Tecnico
             LimparCampos();
             btn_cadastrar_tecnico.Text = "Cadastrar";
         }
+
+        private void FrmTecnico_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            if (e.KeyCode == Keys.Escape)
+            {
+                Tecnico frmTecnico = new Tecnico();
+                this.Hide();
+                frmTecnico.Show();
+            }
+        }
     }
 }

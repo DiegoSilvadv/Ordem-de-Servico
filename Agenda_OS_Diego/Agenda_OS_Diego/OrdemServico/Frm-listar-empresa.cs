@@ -72,5 +72,15 @@ namespace Agenda_OS_Diego.OrdemServico
             this.Hide();
             frmOS.Show();
         }
+
+        private void Frm_listar_empresa_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                OrdemServico frmOS = new OrdemServico();
+                this.Hide();
+                frmOS.Show();
+            }
+        }
     }
 }

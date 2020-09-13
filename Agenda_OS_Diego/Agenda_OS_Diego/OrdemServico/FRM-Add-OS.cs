@@ -141,5 +141,15 @@ namespace Agenda_OS_Diego.OrdemServico
             frmListarEmpresa.Show();
             this.Hide();
         }
+
+        private void FRM_Add_OS_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                OrdemServico frmOrdemServico = new OrdemServico();
+                this.Hide();
+                frmOrdemServico.Show();
+            }
+        }
     }
 }

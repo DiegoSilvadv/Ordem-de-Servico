@@ -187,18 +187,23 @@ namespace Agenda_OS_Diego.Tecnico
 
         public void ListarTeclogado(string id_tecnico) {
 
-            DB.AbrirConexao();
-            
-            string query = "SELECT id_tecnico, usuario FROM tecnico WHERE id_tecnico = "+id_tecnico.ToString()+"";
-            MySqlCommand cmd = new MySqlCommand(query, DB.con);
-            cmd.CommandType = CommandType.Text;
 
-            MySqlDataReader dr;
-            dr = cmd.ExecuteReader();
-            dr.Read(); 
-            tec_logado = dr.GetString(1);
+            try
+            {
+                DB.AbrirConexao();
+                string query = "SELECT id_tecnico, usuario FROM tecnico WHERE id_tecnico = " + id_tecnico.ToString() + "";
+                MySqlCommand cmd = new MySqlCommand(query, DB.con);
+                cmd.CommandType = CommandType.Text;
+                MySqlDataReader dr;
+                dr = cmd.ExecuteReader();
+                dr.Read();
+                tec_logado = dr.GetString(1);
+                DB.FecharConexao();
+            }
+            catch (Exception error) {
+                MessageBox.Show(error.ToString());
+            }
            
-            DB.FecharConexao();
         }
     }
 

@@ -26,7 +26,7 @@ namespace Agenda_OS_Diego
         }
 
         //funções
-        
+
         //dados que serão passados para efetuar o cadastro das empresas
         public void PuxarDadosEmpresa()
         {
@@ -74,9 +74,19 @@ namespace Agenda_OS_Diego
         //campo de pesquisa
         private void txt_pesquisa_TextChanged(object sender, EventArgs e)
         {
-            //pesquisa em tempo real
-            string razao = txt_pesquisa.Text.ToString();
-            crud.Listar_Dados_Especificos(dgv_empresa, razao);
+            if (cb_inativados.Checked == true)
+            {
+                //pesquisa em tempo real
+                crud.razao = txt_pesquisa.Text.ToString();
+                crud.Listar_Dados_EspecificosInativados(dgv_empresa);
+            }
+            else
+            {
+                //pesquisa em tempo real
+                string razao = txt_pesquisa.Text.ToString();
+                crud.Listar_Dados_Especificos(dgv_empresa, razao);
+            }
+            
         }
 
         private void btn_novo_Click(object sender, EventArgs e)
@@ -91,6 +101,25 @@ namespace Agenda_OS_Diego
             this.Hide();
             ReturnHome.UsuarioLogado();
             ReturnHome.Show();
+
+        }
+
+        private void Empresa_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                Home ReturnHome = new Home();
+                this.Hide();
+                ReturnHome.ShowDialog();
+            }
+        }
+
+        private void cb_inativados_CheckedChanged(object sender, EventArgs e)
+        {
+            if(cb_inativados.Checked == true)
+                crud.ListarInativados(dgv_empresa);
+            else if(cb_inativados.Checked == false)
+                crud.Listar_Dados(dgv_empresa);
 
         }
     }

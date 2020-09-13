@@ -54,7 +54,8 @@ namespace Agenda_OS_Diego.Tecnico
         //Clicks de botão
         
         private void txt_pesquisa_TextChanged(object sender, EventArgs e)
-        {   if (cb_listar_inativados.Checked == true)
+        {   
+            if (cb_listar_inativados.Checked == true)
             {
                 crudtec.nome = txt_pesquisa.Text;
                 crudtec.Listar_Dados_EspecificosInativados(dgv_tecnico);
@@ -93,6 +94,16 @@ namespace Agenda_OS_Diego.Tecnico
                 crudtec.ListarInativados(dgv_tecnico);
             else
                 crudtec.ListarTecnico(dgv_tecnico);
+        }
+
+        private void Tecnico_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                Home ReturnHome = new Home();
+                this.Hide();
+                ReturnHome.ShowDialog();
+            }
         }
     }
 }

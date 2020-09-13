@@ -73,7 +73,6 @@ namespace Agenda_OS_Diego
             mtb_telefone.Text = crud.telefone;
             mtb_celular.Text = crud.celular;
         }
-
         public void ValidarCampos() {
             if (cb_estado.SelectedItem == null || txt_razao.Text == "" || txt_fantasia.Text == "" ||
             mtb_cnpj.Text == "" || mtb_cep.Text == "" || mtb_telefone.Text == "" || mtb_celular.Text == "")
@@ -86,7 +85,6 @@ namespace Agenda_OS_Diego
             }
             
         }
-
         private void btn_cadastrar_empresa_Click(object sender, EventArgs e)
         {
             if (btn_cadastrar_empresa.Text == "Gravar")
@@ -107,17 +105,24 @@ namespace Agenda_OS_Diego
                     
             }
         }
-
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             Empresa frmEmpresa = new Empresa();
             this.Hide();
             frmEmpresa.Show();
         }
-
         private void btn_nova_empresa_Click(object sender, EventArgs e)
         {
             LimparCampos();
+        }
+        private void FrmEmpresa_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                Empresa frmEmpresa = new Empresa();
+                this.Hide();
+                frmEmpresa.Show();
+            }
         }
     }
 }

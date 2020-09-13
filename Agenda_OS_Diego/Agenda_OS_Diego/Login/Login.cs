@@ -76,5 +76,13 @@ namespace Agenda_OS_Diego
         {
             id_tec = cb_usuario.SelectedValue.ToString();
         }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+                if (MessageBox.Show(" Deseja mesmo sair? ", "Mensage do sistema ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Application.Exit();
+                }
+        }
     }
 }

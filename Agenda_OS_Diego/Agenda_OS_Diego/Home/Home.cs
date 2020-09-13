@@ -50,33 +50,50 @@ namespace Agenda_OS_Diego
             lbl_data_hora.Text = (DateTime.Now.ToString("HH:mm:ss"));
         }
 
-        private void pictureBox5_Click(object sender, EventArgs e)
-        {
-            Login frmLogin = new Login();
-            this.Hide();
-            frmLogin.Show();
-        }
-
-        private void sair_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show(" Deseja mesmo sair? ", "Mensage do sistema ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-        }
-
         public void UsuarioLogado()
         {
             CrudTec crud_tec = new CrudTec();
             crud_tec.ListarTeclogado(Login.id_tec);
             nome_tecnico.Text = crud_tec.tec_logado;
-            MessageBox.Show(Login.id_tec);
         }
 
         private void Home_Load(object sender, EventArgs e)
         {
             nome = nome_tecnico.Text;
             UsuarioLogado();
+        }
+
+        private void Home_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                if (MessageBox.Show(" Deseja mesmo sair? ", "Mensage do sistema ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Application.Exit();
+                }
+            }
+
+        }
+
+        private void minimizar_Click_1(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+
+        }
+
+        private void logout_Click(object sender, EventArgs e)
+        {
+            Login frmLogin = new Login();
+            this.Hide();
+            frmLogin.Show();
+        }
+
+        private void sair_Click_1(object sender, EventArgs e)
+        {
+            if (MessageBox.Show(" Deseja mesmo sair? ", "Mensage do sistema ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }
