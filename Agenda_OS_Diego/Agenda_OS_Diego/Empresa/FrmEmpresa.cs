@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Agenda_OS_Diego
 {
@@ -101,8 +102,9 @@ namespace Agenda_OS_Diego
                     CamposDeCadastro();
                     crud.Criar_Dados();
                     LimparCampos();
+                    Log("usuario " + Home.nome.ToString() + " cadastrou um cliente");
                 }
-                    
+
             }
         }
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -124,5 +126,14 @@ namespace Agenda_OS_Diego
                 frmEmpresa.Show();
             }
         }
+        private void Log(string mensagem)
+        {
+            string ficheiro = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\logs.txt";
+            StreamWriter arquivo = new StreamWriter(ficheiro, true, Encoding.Default);
+            arquivo.WriteLine(DateTime.Now + " > " + mensagem);
+            arquivo.Dispose();
+        }
+
+       
     }
 }

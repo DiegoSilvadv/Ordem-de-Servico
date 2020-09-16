@@ -82,9 +82,6 @@ namespace Agenda_OS_Diego.OrdemServico
             }
         }
 
-
-
-
         public void limparCampos()
         {
             lbl_id_empresa.Text = "";

@@ -62,7 +62,7 @@ namespace Agenda_OS_Diego
         {
             nome = nome_tecnico.Text;
             UsuarioLogado();
-            Log(" usuario logado: " + nome);
+            
         }
 
         private void Home_KeyDown(object sender, KeyEventArgs e)
@@ -96,7 +96,7 @@ namespace Agenda_OS_Diego
             {
                 Application.Exit();
             }
-            Log("Usuario " + nome + " saiu do sistema");
+            Log("Usuario " + nome_tecnico.Text + " saiu do sistema");
         }
 
         private void Log(string mensagem) 

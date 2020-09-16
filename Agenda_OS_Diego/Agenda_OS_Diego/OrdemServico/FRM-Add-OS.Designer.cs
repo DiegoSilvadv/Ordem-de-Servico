@@ -81,11 +81,12 @@
             // lbl_id_empresa
             // 
             this.lbl_id_empresa.AutoSize = true;
-            this.lbl_id_empresa.Location = new System.Drawing.Point(312, 29);
+            this.lbl_id_empresa.Location = new System.Drawing.Point(239, 29);
             this.lbl_id_empresa.Name = "lbl_id_empresa";
             this.lbl_id_empresa.Size = new System.Drawing.Size(13, 13);
             this.lbl_id_empresa.TabIndex = 125;
             this.lbl_id_empresa.Text = "0";
+            this.lbl_id_empresa.Visible = false;
             // 
             // lbl_id_os
             // 
@@ -95,24 +96,27 @@
             this.lbl_id_os.Size = new System.Drawing.Size(13, 13);
             this.lbl_id_os.TabIndex = 123;
             this.lbl_id_os.Text = "0";
+            this.lbl_id_os.Visible = false;
             // 
             // lbl2
             // 
             this.lbl2.AutoSize = true;
-            this.lbl2.Location = new System.Drawing.Point(237, 29);
+            this.lbl2.Location = new System.Drawing.Point(164, 29);
             this.lbl2.Name = "lbl2";
             this.lbl2.Size = new System.Drawing.Size(66, 13);
             this.lbl2.TabIndex = 122;
             this.lbl2.Text = "id empresa:";
+            this.lbl2.Visible = false;
             // 
             // lbl1
             // 
             this.lbl1.AutoSize = true;
-            this.lbl1.Location = new System.Drawing.Point(421, 29);
+            this.lbl1.Location = new System.Drawing.Point(256, 29);
             this.lbl1.Name = "lbl1";
             this.lbl1.Size = new System.Drawing.Size(59, 13);
             this.lbl1.TabIndex = 121;
             this.lbl1.Text = "id tecnico:";
+            this.lbl1.Visible = false;
             // 
             // lbl0
             // 
@@ -122,6 +126,7 @@
             this.lbl0.Size = new System.Drawing.Size(37, 13);
             this.lbl0.TabIndex = 120;
             this.lbl0.Text = "id OS:";
+            this.lbl0.Visible = false;
             // 
             // label18
             // 
@@ -376,16 +381,17 @@
             // lbl_id_tecnico
             // 
             this.lbl_id_tecnico.AutoSize = true;
-            this.lbl_id_tecnico.Location = new System.Drawing.Point(499, 29);
+            this.lbl_id_tecnico.Location = new System.Drawing.Point(334, 29);
             this.lbl_id_tecnico.Name = "lbl_id_tecnico";
             this.lbl_id_tecnico.Size = new System.Drawing.Size(13, 13);
             this.lbl_id_tecnico.TabIndex = 131;
             this.lbl_id_tecnico.Text = "0";
+            this.lbl_id_tecnico.Visible = false;
             // 
             // cb_inativar_OS
             // 
             this.cb_inativar_OS.AutoSize = true;
-            this.cb_inativar_OS.Location = new System.Drawing.Point(419, 9);
+            this.cb_inativar_OS.Location = new System.Drawing.Point(405, 29);
             this.cb_inativar_OS.Name = "cb_inativar_OS";
             this.cb_inativar_OS.Size = new System.Drawing.Size(152, 17);
             this.cb_inativar_OS.TabIndex = 130;
@@ -462,6 +468,7 @@
             // txt_solicitante
             // 
             this.txt_solicitante.BackColor = System.Drawing.SystemColors.Control;
+            this.txt_solicitante.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_solicitante.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txt_solicitante.Location = new System.Drawing.Point(229, 78);
             this.txt_solicitante.Name = "txt_solicitante";
@@ -499,6 +506,7 @@
             // txt_assunto
             // 
             this.txt_assunto.BackColor = System.Drawing.SystemColors.Control;
+            this.txt_assunto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_assunto.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txt_assunto.Location = new System.Drawing.Point(74, 117);
             this.txt_assunto.Name = "txt_assunto";

@@ -64,10 +64,11 @@
             // cb_usuario
             // 
             this.cb_usuario.BackColor = System.Drawing.SystemColors.Menu;
+            this.cb_usuario.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_usuario.FormattingEnabled = true;
-            this.cb_usuario.Location = new System.Drawing.Point(36, 91);
+            this.cb_usuario.Location = new System.Drawing.Point(36, 72);
             this.cb_usuario.Name = "cb_usuario";
-            this.cb_usuario.Size = new System.Drawing.Size(247, 21);
+            this.cb_usuario.Size = new System.Drawing.Size(247, 31);
             this.cb_usuario.TabIndex = 20;
             this.cb_usuario.SelectedIndexChanged += new System.EventHandler(this.cb_usuario_SelectedIndexChanged);
             // 
@@ -75,7 +76,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(33, 139);
+            this.label3.Location = new System.Drawing.Point(33, 117);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 16);
             this.label3.TabIndex = 18;
@@ -85,7 +86,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(33, 72);
+            this.label2.Location = new System.Drawing.Point(33, 53);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 16);
             this.label2.TabIndex = 17;
@@ -105,11 +106,12 @@
             // txt_senha
             // 
             this.txt_senha.BackColor = System.Drawing.SystemColors.Menu;
-            this.txt_senha.Location = new System.Drawing.Point(36, 155);
+            this.txt_senha.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_senha.Location = new System.Drawing.Point(36, 136);
             this.txt_senha.Name = "txt_senha";
-            this.txt_senha.PasswordChar = '*';
-            this.txt_senha.Size = new System.Drawing.Size(247, 20);
-            this.txt_senha.TabIndex = 16;
+            this.txt_senha.Size = new System.Drawing.Size(247, 30);
+            this.txt_senha.TabIndex = 1;
+            this.txt_senha.UseSystemPasswordChar = true;
             this.txt_senha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_senha_KeyPress);
             // 
             // btn_login

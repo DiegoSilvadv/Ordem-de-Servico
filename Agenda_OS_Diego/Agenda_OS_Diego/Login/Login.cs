@@ -12,6 +12,7 @@ using System.Runtime.Serialization;
 using Agenda_OS_Diego.LoginUsuarios;
 using MySqlX.XDevAPI.Common;
 using System.Drawing;
+using System.IO;
 
 namespace Agenda_OS_Diego
 {
@@ -46,8 +47,8 @@ namespace Agenda_OS_Diego
                 {
                     frmHome.nome_tecnico.Text = loginUsuario.usuario.ToString(); 
                     this.Hide();
-                    frmHome.ShowDialog();
-
+                    frmHome.Show();
+                    Log(" usuario logado: " + loginUsuario.usuario);
                 }
                 else
                 {
@@ -69,6 +70,7 @@ namespace Agenda_OS_Diego
             if (e.KeyChar == (char)Keys.Enter)
             {
                 ValidarLogin();
+
             }
         }
 
@@ -83,6 +85,14 @@ namespace Agenda_OS_Diego
                 {
                     Application.Exit();
                 }
+        }
+
+        private void Log(string mensagem)
+        {
+            string ficheiro = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\logs.txt";
+            StreamWriter arquivo = new StreamWriter(ficheiro, true, Encoding.Default);
+            arquivo.WriteLine(DateTime.Now + " > " + mensagem);
+            arquivo.Dispose();
         }
     }
 }

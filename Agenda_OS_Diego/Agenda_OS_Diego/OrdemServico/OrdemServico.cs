@@ -127,15 +127,6 @@ namespace Agenda_OS_Diego.OrdemServico
 
         }
 
-        private void cb_filtro_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            crud_os.filtro_status = cb_filtro.Text;
-            if (cb_filtro.Text == "Todas") 
-                crud_os.Listar_Dados(dgv_os);
-            else
-                crud_os.ListarOSespecifica(dgv_os);
-        }
-
         private void OrdemServico_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)
@@ -144,6 +135,16 @@ namespace Agenda_OS_Diego.OrdemServico
                 this.Hide();
                 ReturnHome.ShowDialog();
             }
+        }
+
+        private void cb_filtro_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            crud_os.filtro_status = cb_filtro.Text;
+            if (cb_filtro.Text == "Todas")
+                crud_os.Listar_Dados(dgv_os);
+            else
+                crud_os.ListarOSespecifica(dgv_os);
+
         }
     }
 }

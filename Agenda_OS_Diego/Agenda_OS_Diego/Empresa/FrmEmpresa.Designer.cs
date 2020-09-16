@@ -232,6 +232,7 @@
             // 
             this.txt_fantasia.BackColor = System.Drawing.SystemColors.Control;
             this.txt_fantasia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_fantasia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_fantasia.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txt_fantasia.Location = new System.Drawing.Point(50, 39);
             this.txt_fantasia.Name = "txt_fantasia";
@@ -337,6 +338,7 @@
             // 
             this.txt_razao.BackColor = System.Drawing.SystemColors.Control;
             this.txt_razao.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_razao.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_razao.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txt_razao.Location = new System.Drawing.Point(50, 80);
             this.txt_razao.Name = "txt_razao";
@@ -479,6 +481,7 @@
             // 
             this.txt_rua.BackColor = System.Drawing.SystemColors.Control;
             this.txt_rua.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_rua.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_rua.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txt_rua.Location = new System.Drawing.Point(50, 42);
             this.txt_rua.Name = "txt_rua";
@@ -489,6 +492,7 @@
             // 
             this.txt_cidade.BackColor = System.Drawing.SystemColors.Control;
             this.txt_cidade.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_cidade.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_cidade.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txt_cidade.Location = new System.Drawing.Point(439, 42);
             this.txt_cidade.Name = "txt_cidade";
@@ -499,6 +503,7 @@
             // 
             this.txt_bairro.BackColor = System.Drawing.SystemColors.Control;
             this.txt_bairro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_bairro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_bairro.ForeColor = System.Drawing.SystemColors.ControlText;
             this.txt_bairro.Location = new System.Drawing.Point(150, 84);
             this.txt_bairro.Name = "txt_bairro";

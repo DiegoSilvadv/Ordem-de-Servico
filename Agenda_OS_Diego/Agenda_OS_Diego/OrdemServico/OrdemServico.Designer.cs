@@ -241,6 +241,7 @@
             this.cb_filtro.Name = "cb_filtro";
             this.cb_filtro.Size = new System.Drawing.Size(121, 21);
             this.cb_filtro.TabIndex = 34;
+            this.cb_filtro.SelectedIndexChanged += new System.EventHandler(this.cb_filtro_SelectedIndexChanged_1);
             // 
             // OrdemServico
             // 
