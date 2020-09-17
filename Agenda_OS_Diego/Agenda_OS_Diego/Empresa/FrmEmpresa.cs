@@ -53,7 +53,7 @@ namespace Agenda_OS_Diego
             crud.numero = txt_numero.Text;
             crud.cep = mtb_cep.Text;
             crud.telefone = mtb_telefone.Text;
-            crud.celular = mtb_telefone.Text;
+            crud.celular = mtb_celular.Text;
             crud.inscricao_estadual = mtb_IE.Text;
             crud.email = txt_email_empresa.Text;
             crud.email_contador = txt_email_escritorio.Text;

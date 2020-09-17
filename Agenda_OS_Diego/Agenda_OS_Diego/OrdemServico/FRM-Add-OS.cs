@@ -155,7 +155,7 @@ namespace Agenda_OS_Diego.OrdemServico
 
         private void Log(string mensagem)
         {
-            string ficheiro = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\logs.txt";
+            string ficheiro = @"c:\DevFiles\logs.txt";
             StreamWriter arquivo = new StreamWriter(ficheiro, true, Encoding.Default);
             arquivo.WriteLine(DateTime.Now + " > " + mensagem);
             arquivo.Dispose();

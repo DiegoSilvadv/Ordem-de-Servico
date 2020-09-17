@@ -145,7 +145,7 @@ namespace Agenda_OS_Diego
             try
             {
                 DB.AbrirConexao();
-                MySqlCommand cmd = new MySqlCommand("SELECT id_tecnico, nome_tecnico FROM tecnico ORDER BY id_tecnico", DB.con);
+                MySqlCommand cmd = new MySqlCommand("SELECT id_tecnico, nome_tecnico FROM tecnico WHERE id_tecnico > 0 ORDER BY id_tecnico", DB.con);
                 MySqlDataReader dr = cmd.ExecuteReader();
                 DataTable dt = new DataTable();
                 dt.Load(dr);

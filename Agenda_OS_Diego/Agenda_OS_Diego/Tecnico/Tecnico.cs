@@ -21,10 +21,16 @@ namespace Agenda_OS_Diego.Tecnico
         {
             InitializeComponent();
             crudtec.ListarTecnico(dgv_tecnico);
+            EsconderColunas();
         }
 
+
+        public void EsconderColunas() {
+            dgv_tecnico.Columns["Inativado"].Visible = false;
+            dgv_tecnico.Columns["Senha"].Visible = false;
+        }
         //funções da página
-        
+
         //Função para listar os dados do grid view nos campos
         public void ListarDados()
         {
@@ -83,9 +89,16 @@ namespace Agenda_OS_Diego.Tecnico
 
         private void btn_editar_Click_1(object sender, EventArgs e)
         {
-            ListarDados();
-            frmTecnico.Show();
-            this.Hide();
+            if (dgv_tecnico.SelectedRows.Count > 0) {
+                ListarDados();
+                frmTecnico.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Selecione um registro");
+            }
+
         }
 
         private void cb_listar_inativados_CheckedChanged(object sender, EventArgs e)

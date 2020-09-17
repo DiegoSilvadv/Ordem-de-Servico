@@ -73,7 +73,7 @@ namespace Agenda_OS_Diego.Tecnico
                 DB.AbrirConexao();
                 DataTable table = new DataTable();
                 MySqlDataAdapter MyDA = new MySqlDataAdapter();
-                string sqlSelectAll = "SELECT * FROM tecnico WHERE inativado = 0";
+                string sqlSelectAll = "SELECT * FROM tecnico WHERE inativado = 0 and id_tecnico > 0";
                 MyDA.SelectCommand = new MySqlCommand(sqlSelectAll, DB.con);
                 MyDA.Fill(table);
                 BindingSource bSource = new BindingSource();
@@ -129,7 +129,7 @@ namespace Agenda_OS_Diego.Tecnico
             {
                 DB.AbrirConexao();
                 MySqlDataAdapter MyDA = new MySqlDataAdapter();
-                string sqlSelectAll = "SELECT * FROM tecnico WHERE inativado = 0 and nome_tecnico LIKE '%" + nome.ToString() + "%'";
+                string sqlSelectAll = "SELECT * FROM tecnico WHERE inativado = 0 and id_tecnico > 0 and nome_tecnico LIKE '%" + nome.ToString() + "%'";
                 MyDA.SelectCommand = new MySqlCommand(sqlSelectAll, DB.con);
                 DataTable table = new DataTable();
                 MyDA.Fill(table);
@@ -149,7 +149,7 @@ namespace Agenda_OS_Diego.Tecnico
             {
                 DB.AbrirConexao();
                 MySqlDataAdapter MyDA = new MySqlDataAdapter();
-                string sqlSelectAll = "SELECT * FROM tecnico WHERE inativado = 1 and nome_tecnico LIKE '%" + nome.ToString() + "%'";
+                string sqlSelectAll = "SELECT * FROM tecnico WHERE inativado = 1 and id_tecnico > 0 and nome_tecnico LIKE '%" + nome.ToString() + "%'";
                 MyDA.SelectCommand = new MySqlCommand(sqlSelectAll, DB.con);
                 DataTable table = new DataTable();
                 MyDA.Fill(table);
@@ -170,7 +170,7 @@ namespace Agenda_OS_Diego.Tecnico
             {
                 DB.AbrirConexao();
                 MySqlDataAdapter MyDA = new MySqlDataAdapter();
-                string sqlSelectAll = "SELECT * FROM tecnico WHERE inativado = 1";
+                string sqlSelectAll = "SELECT * FROM tecnico WHERE inativado = 1 and id_tecnico > 0";
                 MyDA.SelectCommand = new MySqlCommand(sqlSelectAll, DB.con);
                 DataTable table = new DataTable();
                 MyDA.Fill(table);

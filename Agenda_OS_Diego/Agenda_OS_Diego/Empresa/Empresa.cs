@@ -66,10 +66,17 @@ namespace Agenda_OS_Diego
 
         //botões
         private void btn_editar_Click(object sender, EventArgs e)
-        {   
-            PuxarDadosEmpresa();
-            frmempresa.Show();
-            this.Hide();
+        {
+            if (dgv_empresa.SelectedRows.Count > 0) {
+                PuxarDadosEmpresa();
+                frmempresa.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Selecione um registro");
+            }
+
         }
         //campo de pesquisa
         private void txt_pesquisa_TextChanged(object sender, EventArgs e)

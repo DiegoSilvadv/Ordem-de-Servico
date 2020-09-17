@@ -221,7 +221,7 @@
             this.btn_abrir_os.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(68)))), ((int)(((byte)(78)))));
             this.btn_abrir_os.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_abrir_os.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_abrir_os.Location = new System.Drawing.Point(336, 557);
+            this.btn_abrir_os.Location = new System.Drawing.Point(561, 558);
             this.btn_abrir_os.Name = "btn_abrir_os";
             this.btn_abrir_os.Size = new System.Drawing.Size(128, 34);
             this.btn_abrir_os.TabIndex = 92;
@@ -373,7 +373,7 @@
             this.groupBox3.Font = new System.Drawing.Font("Roboto", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(112, 169);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(577, 401);
+            this.groupBox3.Size = new System.Drawing.Size(577, 383);
             this.groupBox3.TabIndex = 127;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Informações sobre Ordem de Serviço";

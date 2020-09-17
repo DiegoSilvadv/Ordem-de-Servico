@@ -37,8 +37,8 @@ namespace Agenda_OS_Diego.OrdemServico
             //txt_cidade.Text = dgv_Empresa_os.CurrentRow.Cells["cidade"].Value.ToString();
             //txt_numero.Text = dgv_Empresa_os.CurrentRow.Cells["numero"].Value.ToString();
             //mtb_cep.Text = dgv_Empresa_os.CurrentRow.Cells["cep"].Value.ToString();
-            this.telefone = dgv_Empresa_os.CurrentRow.Cells[8].Value.ToString();
-            this.celular = dgv_Empresa_os.CurrentRow.Cells[9].Value.ToString();
+            this.telefone = dgv_Empresa_os.CurrentRow.Cells[11].Value.ToString();
+            this.celular = dgv_Empresa_os.CurrentRow.Cells[12].Value.ToString();
         }
         private void Frm_listar_empresa_Load(object sender, EventArgs e)
         {
@@ -52,8 +52,14 @@ namespace Agenda_OS_Diego.OrdemServico
             FRM.lbl_id_empresa.Text = this.dgv_Empresa_os.CurrentRow.Cells["id_empresa"].Value.ToString();
             FRM.txt_fantasia.Text = this.dgv_Empresa_os.CurrentRow.Cells["fantasia"].Value.ToString();
             FRM.mtb_cnpj.Text = this.dgv_Empresa_os.CurrentRow.Cells["cnpj"].Value.ToString();
-            FRM.mtb_celular.Text = this.dgv_Empresa_os.CurrentRow.Cells[8].Value.ToString();
-            FRM.mtb_telefone.Text = this.dgv_Empresa_os.CurrentRow.Cells[9].Value.ToString();
+            FRM.mtb_celular.Text = this.dgv_Empresa_os.CurrentRow.Cells["celular"].Value.ToString();
+            FRM.mtb_telefone.Text = this.dgv_Empresa_os.CurrentRow.Cells["telefone"].Value.ToString();
+
+            FRM.lbl_id_empresa.Enabled = false;
+            FRM.txt_fantasia.Enabled = false;
+            FRM.mtb_cnpj.Enabled = false;
+            FRM.mtb_celular.Enabled = false;
+            FRM.mtb_telefone.Enabled = false;
             this.Hide();
             FRM.ShowDialog();
             

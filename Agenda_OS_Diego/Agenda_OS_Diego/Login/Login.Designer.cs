@@ -144,11 +144,12 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.Control;
-            this.label6.Location = new System.Drawing.Point(443, 9);
+            this.label6.Location = new System.Drawing.Point(433, 9);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(17, 16);
+            this.label6.Size = new System.Drawing.Size(27, 25);
             this.label6.TabIndex = 20;
             this.label6.Text = "X";
             this.label6.Click += new System.EventHandler(this.label6_Click);

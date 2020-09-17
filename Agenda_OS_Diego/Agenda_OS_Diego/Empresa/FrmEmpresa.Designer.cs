@@ -203,8 +203,9 @@
             this.mtb_IE.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.mtb_IE.ForeColor = System.Drawing.SystemColors.ControlText;
             this.mtb_IE.Location = new System.Drawing.Point(148, 124);
+            this.mtb_IE.Mask = "999999999";
             this.mtb_IE.Name = "mtb_IE";
-            this.mtb_IE.Size = new System.Drawing.Size(113, 21);
+            this.mtb_IE.Size = new System.Drawing.Size(118, 21);
             this.mtb_IE.TabIndex = 73;
             // 
             // label12

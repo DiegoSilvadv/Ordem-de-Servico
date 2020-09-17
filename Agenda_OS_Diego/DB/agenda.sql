@@ -1,99 +1,127 @@
-create database agenda;
+-- phpMyAdmin SQL Dump
+-- version 5.0.2
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1:3306
+-- Tempo de geração: 16-Set-2020 às 23:41
+-- Versão do servidor: 5.7.31
+-- versão do PHP: 7.3.21
 
-use agenda;
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
 
-create table empresa(
-  id_empresa int primary key AUTO_INCREMENT,
-  razao VARCHAR(300),
-  fantasia VARCHAR(300),
-  cnpj CHAR(18),
-  inscricao_estadual char(9),
-  rua VARCHAR(200),
-  bairro VARCHAR(100),
-  cidade VARCHAR(100),
-  numero VARCHAR(5),
-  cep CHAR(10),
-  uf char(2),
-  telefone VARCHAR(20),
-  celular VARCHAR(20),
-  email_contador VARCHAR(100),
-  email VARCHAR(100),
-  inativado bool
-) ENGINE = innodb;
 
-CREATE table tecnico(
-  id_tecnico int primary key auto_increment,
-  usuario VARCHAR(20),
-  senha VARCHAR(20),
-  nome_tecnico VARCHAR(200),
-  cnh CHAR(20),
-  cidade VARCHAR(100),
-  bairro VARCHAR(100),
-  rua VARCHAR(150),
-  numero VARCHAR(5),
-  cep CHAR(10),
-  uf char(2),
-  complemento VARCHAR(150),
-  celular VARCHAR(20),
-  data_nascimento datetime,
-  inativado bool
-) ENGINE = innodb;
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
-create table ordemservico (
-  id_os int primary key auto_increment,
-  fk_empresa int,
-  fk_tecnico int,
-  solicitante VARCHAR(200),
-  info_extra VARCHAR(250),
-  assunto VARCHAR(250),
-  descricao text,
-  atendimento VARCHAR(150),
-  sistema VARCHAR(150),
-  solucao text,
-  abertura datetime,
-  conclusao datetime,
-  status_os VARCHAR(150),
-  inativado bool
-) ENGINE = innodb;
+--
+-- Banco de dados: `agenda`
+--
+CREATE DATABASE IF NOT EXISTS `agenda` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `agenda`;
 
-ALTER TABLE ordemservico
-ADD CONSTRAINT id_empresa
-FOREIGN KEY (fk_empresa) 
-REFERENCES empresa (id_empresa);
+-- --------------------------------------------------------
 
-ALTER TABLE ordemservico
-ADD CONSTRAINT id_tecnico
-FOREIGN KEY (fk_tecnico) 
-REFERENCES tecnico (id_tecnico);
+--
+-- Estrutura da tabela `empresa`
+--
 
-insert into empresa VALUES(0, "nike", "nike ltd", "12345678912345", "123456789",
- "Pulo holtz", "Inocoop", "Tatuí", "123", "18555236", "sp", null, "153053333", "15996286530", "contador@gmail.com", 0);
+DROP TABLE IF EXISTS `empresa`;
+CREATE TABLE IF NOT EXISTS `empresa` (
+  `id_empresa` int(11) NOT NULL AUTO_INCREMENT,
+  `razao` varchar(300) DEFAULT NULL,
+  `fantasia` varchar(300) DEFAULT NULL,
+  `cnpj` char(18) DEFAULT NULL,
+  `inscricao_estadual` char(9) DEFAULT NULL,
+  `rua` varchar(200) DEFAULT NULL,
+  `bairro` varchar(100) DEFAULT NULL,
+  `cidade` varchar(100) DEFAULT NULL,
+  `numero` varchar(5) DEFAULT NULL,
+  `cep` char(10) DEFAULT NULL,
+  `uf` char(2) DEFAULT NULL,
+  `telefone` varchar(20) DEFAULT NULL,
+  `celular` varchar(20) DEFAULT NULL,
+  `email_contador` varchar(100) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `inativado` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`id_empresa`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
- insert into tecnico VALUES (0, "diego", "123", "Diego da Silva", "12345678998745698562"
-, "TAtuí", "Centro", "XV de novembro", "1234", "105831256", "SP", NULL, "15996989530", now(), 0 );
+-- --------------------------------------------------------
 
-insert into ordemservico VALUES(0, 1, 1, "Diego", "outro telefone 123"
-, "pinpad", "pinpad nao funciona", "Telefone", "TEF", "colocou novamento na porta usb", now(), now(), "Pendente", 0);
+--
+-- Estrutura da tabela `ordemservico`
+--
 
-select t.nome, e.fantasia, e.cnpj, os.solicitante, os.info_extra, os.assunto, os.descricao, os.atendimento, os.sistema, os.solucao, os.abertura, os.conclusao, os.status_os from tecnico as t inner join empresa as e inner join ordemservico as os where os.fk_tecnico = t.id_tecnico and os.fk_empresa = e.id_empresa;
+DROP TABLE IF EXISTS `ordemservico`;
+CREATE TABLE IF NOT EXISTS `ordemservico` (
+  `id_os` int(11) NOT NULL AUTO_INCREMENT,
+  `fk_empresa` int(11) DEFAULT NULL,
+  `fk_tecnico` int(11) DEFAULT NULL,
+  `solicitante` varchar(200) DEFAULT NULL,
+  `info_extra` varchar(250) DEFAULT NULL,
+  `assunto` varchar(250) DEFAULT NULL,
+  `descricao` text,
+  `atendimento` varchar(150) DEFAULT NULL,
+  `sistema` varchar(150) DEFAULT NULL,
+  `solucao` text,
+  `abertura` datetime DEFAULT NULL,
+  `conclusao` datetime DEFAULT NULL,
+  `status_os` varchar(150) DEFAULT NULL,
+  `inativado` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`id_os`),
+  KEY `id_empresa` (`fk_empresa`),
+  KEY `id_tecnico` (`fk_tecnico`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-update ordemservico
-set fk_tecnico = 4
-, fk_empresa = 3
-, solicitante = "teste de update" 
-, info_extra = "olá mundo"
-, assunto = "hotline"
-, descricao = "teste"
-, atendimento = "Telefone"
-, sistema = "Hotline"
-, solucao = "Teste de update"
-, abertura = now()
-, conclusao = now()
-, status_os = "Pendente"
-where id_os = 4;
+-- --------------------------------------------------------
 
-update ordemservico
-set fk_empresa = 3
-where id_os = 4;
+--
+-- Estrutura da tabela `tecnico`
+--
 
-select os.fk_empresa, os.fk_tecnico, e.celular, e.telefone, os.id_os, t.nome, e.fantasia, e.cnpj, os.solicitante, os.info_extra, os.assunto, os.descricao, os.atendimento, os.sistema, os.solucao, os.abertura, os.conclusao, os.status_os from tecnico as t inner join empresa as e inner join ordemservico as os where os.fk_empresa = e.id_empresa and os.fk_tecnico = t.id_tecnico and os.id_os = os.id_os;
+DROP TABLE IF EXISTS `tecnico`;
+CREATE TABLE IF NOT EXISTS `tecnico` (
+  `id_tecnico` int(11) NOT NULL AUTO_INCREMENT,
+  `usuario` varchar(20) DEFAULT NULL,
+  `senha` varchar(20) DEFAULT NULL,
+  `nome_tecnico` varchar(200) DEFAULT NULL,
+  `cnh` char(20) DEFAULT NULL,
+  `cidade` varchar(100) DEFAULT NULL,
+  `bairro` varchar(100) DEFAULT NULL,
+  `rua` varchar(150) DEFAULT NULL,
+  `numero` varchar(5) DEFAULT NULL,
+  `cep` char(10) DEFAULT NULL,
+  `uf` char(2) DEFAULT NULL,
+  `complemento` varchar(150) DEFAULT NULL,
+  `celular` varchar(20) DEFAULT NULL,
+  `data_nascimento` datetime DEFAULT NULL,
+  `inativado` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`id_tecnico`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `tecnico`
+--
+
+INSERT INTO `tecnico` (`id_tecnico`, `usuario`, `senha`, `nome_tecnico`, `cnh`, `cidade`, `bairro`, `rua`, `numero`, `cep`, `uf`, `complemento`, `celular`, `data_nascimento`, `inativado`) VALUES
+(0, 'Default', '123456', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0);
+
+--
+-- Restrições para despejos de tabelas
+--
+
+--
+-- Limitadores para a tabela `ordemservico`
+--
+ALTER TABLE `ordemservico`
+  ADD CONSTRAINT `id_empresa` FOREIGN KEY (`fk_empresa`) REFERENCES `empresa` (`id_empresa`),
+  ADD CONSTRAINT `id_tecnico` FOREIGN KEY (`fk_tecnico`) REFERENCES `tecnico` (`id_tecnico`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

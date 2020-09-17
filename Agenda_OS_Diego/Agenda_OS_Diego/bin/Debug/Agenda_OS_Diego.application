@@ -7,14 +7,14 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Agenda_OS_Diego.exe.manifest" size="12459">
+    <dependentAssembly dependencyType="install" codebase="Agenda_OS_Diego.exe.manifest" size="12938">
       <assemblyIdentity name="Agenda_OS_Diego.exe" version="1.0.0.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>n9J/mjJ9XdaUuhE4AjxMDabWvC4r4DxMjkAM+3KsEkU=</dsig:DigestValue>
+        <dsig:DigestValue>h/aUL/whxGgihXgOTOlT3n6jMHCt4WxZRyMNA8Y2dCY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
